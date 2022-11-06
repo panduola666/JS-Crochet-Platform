@@ -1,0 +1,40 @@
+.orderDetails{
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid $darkColor;
+}
+.steps{
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid $darkColor;
+    @media (max-width:992px) {
+        flex-direction: column;
+    }
+}
+.stepsLine{
+    width: 5rem;
+    height: 2px;
+    border-top:2px solid $secondaryColor;
+    transform: translateY(25px);
+    flex-grow: 1;
+}
+.orderStep,.storeHouseStep,.logisticsStep,.homeStep{
+    img{
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+    }
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.orderGoods{
+    li{
+        border-top: 1px solid $darkColor;
+        img{
+            height: 10rem;
+            object-fit: cover;
+        }
+    }
+}

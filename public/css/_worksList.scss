@@ -1,0 +1,125 @@
+.chooseBTN{
+    display: flex;
+    text-align: center;
+    a{
+        cursor: pointer;
+        margin-right: 1rem;
+        padding: .5rem;
+        color: $darkColor;
+        border-bottom: 2px solid rgba(0,0,0,0);
+        &:hover{
+            border-bottom: 2px solid $secondaryColor;
+        }
+        &.active{
+        border-bottom: 2px solid $primaryColor;
+        }
+        @media (max-width:768px) {
+            flex-grow: 1;
+            margin-right: 0;
+        }
+        @media (max-width:576px) {
+            transition: all .5s;
+            font-size: 1.25rem;
+        }
+    }
+}
+.tagList{
+    padding-top: 1rem;
+    font-size: 1.25rem;
+    @media (max-width:768px) {
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+        margin-bottom: 20px;
+    }
+    li{
+        margin: 1rem 1.5rem;
+        cursor: pointer;
+        &:first-child{
+            cursor: default;
+            color: $darkColor;
+            margin: 0;
+            user-select: none;
+            &:hover{
+                color:$darkColor;
+            }
+        }
+        &:hover{
+            color: $primaryColor;
+        }
+        &.active{
+            color: $primaryColor;
+        }
+        @media (max-width:768px) {
+            margin: 0 .5rem;
+        }
+    }
+    
+}
+.sortBTN{
+    button{
+        margin-right: 1rem;
+        border: 1px solid $primaryColor;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        color: $primaryColor;
+        background-color: rgba(0,0,0,0);
+        &:hover{
+            font-weight: 600;
+        }
+        &.active{
+            background-color: $primaryColor;
+            color: #fff;
+        }
+        @media (max-width:768px) {
+            padding: .5rem;
+            margin-right: 0;
+            flex-grow: 1;
+        }
+    }
+    @media (max-width:768px) {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.addArticleBTN{
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    button{
+        border: none;
+        background-color: $primaryColor;
+        color: #fff;
+        padding: 1rem 3rem;
+        border-radius: 8px;
+        &:hover{
+            background-color: $secondaryColor;
+        }
+        @media (max-width:768px) {
+            margin-top: 20px;
+            width: 100%;
+            padding: .5rem;
+        }
+    }
+}
+.pageList{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+.page{
+    margin: 0 1rem;
+}
+.card{
+    margin-bottom: 1rem;
+    text-align: center;
+    img{
+        height: 20vw;
+        object-fit: cover;
+    }
+    @media (max-width:576px) {
+        font-size: 0.75rem;
+    }
+}

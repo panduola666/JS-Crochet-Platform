@@ -1,0 +1,117 @@
+.myArticle,.myMessage,.mySave,.article{
+    // background-color: #fff;
+    border: 1px solid $darkColor;
+    width: 100%;
+    border-radius: 8px;
+    article{
+        cursor: pointer;
+        &:hover{
+            color: $primaryColor;
+        }
+    }
+}
+.actionBTN{
+    display: flex;
+    justify-content: end;
+    button{
+        padding: .5rem 1rem;
+        margin-right: 1rem;
+        border: 1px solid $secondaryColor;
+        border-radius: 8px;
+        background-color: rgba(0,0,0,0);
+        &:hover{
+            background-color: $secondaryColor;
+        }
+    }
+}
+.articleImg{
+    height: 180px;
+    background-image: url('../images/cakeBag.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.articleFont{
+    line-height: 1.5rem;
+}
+.myArticleInfo{
+    margin: .5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $darkColor;
+    border-bottom: 1px solid $darkColor;
+}
+.articleBTN{
+    display: flex;
+    justify-content: space-around;
+    button{
+        margin-bottom: -1px;
+        padding: .5rem;
+        width: 100%;
+        border:none;
+        background-color: $secondaryColor;
+        &:hover{
+            background-color: $primaryColor;
+            font-weight: 600;
+        }
+        &.active{
+            background-color: $primaryColor;
+            color: #fff;
+        }
+    }
+}
+.myArticleQA,.myMessageQA{
+    li{
+        padding: .5rem 1rem;
+        border-bottom: 1px solid $secondaryColor;
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+    textarea{
+        width: 60vw;
+        padding: .5rem;
+        border: 1px solid $darkColor;
+        border-radius: 8px;
+        outline: none;
+        resize: none;
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $secondaryColor;
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $primaryColor;
+        }
+        @media (max-width:768px) {
+            width: 50vw;
+        }
+        @media (max-width:576px) {
+            width: 80vw;
+        }
+    }
+}
+.myAvatar{
+    margin: 0 1rem;
+    flex-shrink:0;
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    background-image: url('../images/IMG_8748.jpg');
+}
+.myArticleQAMore,.myMessageQAMore{
+    padding: .5rem;
+    width: 100%;
+    background-color: $secondaryColor;
+    border: none;
+    &:hover{
+        background-color: $primaryColor;
+    }
+}
+.myMessageQA{
+    border-top: 1px solid $secondaryColor;
+}

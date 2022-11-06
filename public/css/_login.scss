@@ -1,0 +1,73 @@
+.userForm{
+    border: 1px solid $primaryColor;
+    border-radius: 8px;
+    padding: 40px 0;
+}
+.register,.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    input{
+        border: none;
+        outline: none;
+        background-image: url(../images/background.png);
+        border-bottom: 2px solid $secondaryColor;
+        margin-bottom: 20px;
+    }
+    button{
+        margin-top: 20px;
+        width: 15rem;
+        height: 3rem;
+        border: none;
+        background-color: $primaryColor;
+        border-radius: 8px;
+        color: #fff;
+        white-space:nowrap;
+        &:hover{
+            background-color: $secondaryColor;
+        }
+        @media (max-width:768px) {
+            width: 30vw;
+            min-width: 5rem;
+        }
+    }
+}
+.login{
+    border-left: 1px solid $secondaryColor;
+    @media (max-width:768px) {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid $secondaryColor;
+        border-left: 0;
+    }
+}
+.registerForm,.loginForm{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.verifyNumber>div{
+    user-select: none;
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 20rem;
+    height: 5rem;
+    background-color: #fff;
+    border: 1px solid $primaryColor;
+    border-radius: 8px;
+    margin-bottom: .5rem;
+    @media (max-width:768px) {
+        font-size: 8vw;
+        width: 50vw;
+        height: 20vw;
+        max-height: 8rem;
+        min-height: 3rem;
+    }
+    ~p{
+        text-align: end;
+    }
+}

@@ -1,0 +1,67 @@
+.mySell{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.mySellBTN{
+    border: 1px solid $secondaryColor;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 8px;
+    z-index: 2;
+    &:hover{
+        background-color: $secondaryColor;
+    }
+}
+.mySellBTNToggle{
+    border-radius: 8px 8px 0 0;
+}
+.mySellGoods{
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    @media (max-width:576px) {
+        padding: 1rem;
+    }
+}
+.mySellContent{
+    padding: 1rem 2rem;
+    border: 1px solid $primaryColor;
+    background-color: #fff;
+    a{
+        display: block;
+        text-align: end;
+    }
+}
+.myGoods{
+    border: 1px solid $secondaryColor;
+    border-radius: 8px;
+    width: 100%;
+    border-collapse: separate;
+    text-align: center;
+    margin-top: 20px;
+    th,td{
+        
+        padding: 1rem .5rem;
+        vertical-align: middle;
+    }
+    td{
+        border-top: 1px solid $secondaryColor;
+    }
+}
+.myGoodsBTN{
+    background-color: $secondaryColor;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    &:hover{
+        background-color: $primaryColor;
+    }
+}
+.salesAnalysis{
+    width: 100%;
+    overflow: auto;
+    height: 30vw;
+}

@@ -1,0 +1,94 @@
+.payInfo,.shoppingFinish{
+    background-color: #fff;
+    border: 1px solid $secondaryColor;
+}
+.whoPay,.send,.pay{
+    border-bottom: 1px solid $darkColor;
+}
+.whoPay{
+    input{
+        margin-top: .5rem;
+        border-radius: 8px;
+        padding: .5rem;
+        letter-spacing: 5px;
+        text-indent: 5px;
+        border: 1px solid $darkColor;
+        outline: none;
+    }
+}
+.areaChoose{
+    input[type=button]{
+        width: 100%;
+        background-color: $secondaryColor;
+        border:none;
+        padding: .5rem;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: .1rem;
+        &:hover{
+            background-color: $primaryColor;
+        }
+        &:disabled{
+        background-color:#E8E7E7;
+        +div{
+            display: none;
+        }
+        }
+    }
+    button{
+        background-color: #fff;
+        border: 1px solid $primaryColor;
+        padding: .5rem;
+        border-radius: 8px;
+        &:hover{
+            background-color: $primaryColor;
+        }
+        &.active{
+            background-color: $primaryColor;
+            color: #fff;
+        }
+    }
+}
+.payByCardNum{
+    margin-left: 3rem;
+    margin-top: .5rem;
+    display: none;
+    flex-direction: column;
+    label{
+        margin-bottom: .5rem;
+        input{
+                width: 3rem;
+                text-align: center;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid $primaryColor;
+                margin-left: 1rem;
+                @media (max-width:576px) {
+                    margin-left: 0;
+                    width: 15vw;
+                    
+                }
+            }
+            span{
+                margin: 0 0 0 1rem;
+                @media (max-width:576px) {
+                    margin: 0 .1rem;
+                }
+            }
+        &:first-child{
+            input{
+                width: 13rem;
+                @media (max-width:768px) {
+                    width: 90%;
+                    margin-left: 0;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        
+    }
+}
+.endPrice{
+    color: $primaryColor;
+}

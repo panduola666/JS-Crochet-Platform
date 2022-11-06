@@ -1,0 +1,189 @@
+@import url('https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css');
+#editor—wrapper {
+    border: 1px solid #ccc;
+  }
+  #toolbar-container { border-bottom: 1px solid #ccc; }
+  #editor-container { height: 300px; }
+.addArticle{
+    padding: 40px 2rem;
+    border: 2px solid $secondaryColor;
+    background-color: #fff;
+}
+.addContent{
+    display: none;
+    padding: 1rem;
+    border: 2px solid $secondaryColor;
+    border-radius: 8px;
+}
+.contentTitle{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    input{
+        width: 80%;
+        margin-left: 1rem;
+        background-color: rgba(0,0,0,0);
+        border: 0;
+        border-bottom: 1px solid $primaryColor;
+        outline:none;
+        line-height: 2.5rem;
+    }
+}
+.choose{
+    margin-right: 1rem;
+    cursor: pointer;
+    input{
+        margin-right: .5rem;
+    }
+}
+.contentImg{
+    min-height: 10rem;
+    overflow: hidden;
+    height: 80%;
+    background-image: url(../images/cover.webp);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    input{
+        opacity: 0;
+    }
+    @media (max-width:768px) {
+        height: 60%;
+        margin-top: 20px;
+    }
+}
+.coverBTN{
+    text-align: center;
+    margin-top: 1rem;
+    cursor: pointer;
+    &:hover{
+        color: $primaryColor;
+    }
+}
+.addMaterial{
+    border: none;
+    background-color: $primaryColor;
+    color: #fff;
+    border-radius: 8px;
+    padding: .5rem 2rem;
+    &:hover{
+        background-color: $secondaryColor;
+    }
+}
+
+.inputWidth{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid $darkColor;
+    background-color: rgba(0,0,0,0);
+    outline: none;
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    }
+    /* Firefox */
+    &[type=number] {
+    -moz-appearance: textfield;
+    }
+}
+.materialTable{
+    border: 1px solid $darkColor;
+    border-radius: 8px;
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: separate;
+    text-align: center;
+    th,td{
+        padding:.5rem;
+        vertical-align: middle;
+    }
+    td{
+        border-top: 1px solid $darkColor;
+        &:last-child{
+            color: $secondaryColor;
+            font-weight: 600;
+            cursor: pointer;
+            &:hover{
+                color: $primaryColor;
+            }
+        }
+    }
+}
+.sellPrice{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    input{
+        @extend .inputWidth;
+        width: 20%;
+        margin-left: 1rem;
+    }
+}
+.articleContent{
+    background-color: $secondaryColor;
+    padding: 2rem;
+    button{
+        background-color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: .5rem 1rem;
+        margin-right: .5rem;
+        &.active{
+            background-color: $primaryColor;
+            color: #fff;
+        }
+        &:first-child{
+            font-weight: 600;
+        }
+        &:nth-child(2){
+            font-style: italic;
+        }
+    }
+    select{
+        outline: none;
+        margin-right: .5rem;
+    }
+    label{
+        background-color: #fff;
+        padding: .5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}
+.fColor option{
+    &:nth-child(2){
+        background-color: #000;
+        color: #fff;
+    }
+    &:nth-child(3){
+        background-color: red;
+    }
+    &:nth-child(4){
+        background-color: blue;
+    }
+}
+.articleMain{
+    width: 100%;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid $darkColor;
+    margin-top: 20px;
+    overflow: auto;
+    outline: none;
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 5px; 
+    }
+}
+button.postArticle{
+    background-color: $primaryColor;
+    color: #fff;
+    padding: 1rem 3rem;
+    &:hover{
+        font-weight: 600;
+    }
+}

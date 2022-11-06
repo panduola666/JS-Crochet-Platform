@@ -1,0 +1,19 @@
+.orderList{
+    li{
+        border: 1px solid $darkColor;
+        border-radius: 8px;
+        margin-bottom: 3rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        button{
+            padding: .5rem 2rem;
+            background-color: $secondaryColor;
+            border: none;
+            border-radius: 8px;
+            &:hover{
+                background-color: $primaryColor;
+            }
+        }
+    }
+}

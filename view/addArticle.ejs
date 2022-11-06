@@ -1,0 +1,107 @@
+<main class="container-sm my3">
+    <a href="javascript:history.back();" class="mb-3 d-block h3Size">回上頁 ></a>
+    <div class="addArticle">
+        <div class="row">
+            <div class="col">
+                <label class="contentTitle">
+                    <h1 class="h1Size">標題:</h1><input type="text" name="" id="" class="">
+                </label>
+                <p class="h2Size my1">分類:</p>
+                <div class="js-articleType">
+                    <label for="worksList" class="choose"><input type="radio" name="type" id="worksList">作品列表</label>
+                    <label for="articlesList" class="choose"><input type="radio" name="type"
+                            id="articlesList">技巧文章</label>
+                </div>
+
+                <p class="h2Size my1">標籤:</p>
+                <div class="js-tagType">
+                    <label for="clothes" class="choose"><input type="radio" name="tag" id="clothes">衣服</label>
+                    <label for="doll" class="choose"><input type="radio" name="tag" id="doll">玩偶</label>
+                    <label for="bag" class="choose"><input type="radio" name="tag" id="bag">包包</label>
+                    <label for="flower" class="choose"><input type="radio" name="tag" id="flower">花束</label>
+                    <label for="hat" class="choose"><input type="radio" name="tag" id="hat">帽子</label>
+                    <label for="fitting" class="choose"><input type="radio" name="tag" id="fitting">配件</label>
+                    <label for="base" class="choose"><input type="radio" name="tag" id="base">針法介紹</label>
+                    <label for="interpret" class="choose"><input type="radio" name="tag" id="interpret">織圖解讀</label>
+                    <label for="material" class="choose"><input type="radio" name="tag" id="material">材料選取</label>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex flex-column 
+        justify-content-center">
+                <label class="contentImg">
+                    <input type="file">
+                </label>
+                <p class="coverBTN">封面上傳</p>
+            </div>
+        </div>
+        <p class="h2Size my1">是否將此作品製成材料包販售:</p>
+        <div class="js-isSell d-flex flex-column">
+            <label for="no" class="choose"><input type="radio" name="isSell" id="no" checked>否</label>
+            <label for="yes" class="choose mt1"><input type="radio" name="isSell" id="yes">是,我要販售材料包:</label>
+        </div>
+        <div class="addContent mt1 js-sellContent">
+            <div class="js-sellBy">
+                <div class="d-flex align-items-md-center flex-column flex-md-row ">
+                    <label for="sellBySelf" class="choose my-2"><input type="radio" name="sellSelf" id="sellBySelf"
+                            checked>我有自己的販售平台:</label>
+                    <label for="" class="flex-grow-1"><input type="text" name="" id="" placeholder="材料包網址..."
+                            class="inputWidth"></label>
+                </div>
+                <label for="sellByWeb" class="choose my-2"><input type="radio" name="sellSelf"
+                        id="sellByWeb">我需要委託該平台販售:</label>
+            </div>
+            <div class="js-sellByWeb">
+                <div class="d-flex flex-column flex-md-row align-items-md-center">
+                    <select name="" id="" class="flex-grow-1 js-material">
+                        <option value="五股牛奶棉">五股牛奶棉</option>
+                        <option value="四股牛奶棉">四股牛奶棉</option>
+                        <option value="三股牛奶棉">三股牛奶棉</option>
+                        <option value="16股情人棉">16股情人棉</option>
+                        <option value="段染布條線">段染布條線</option>
+                        <option value="蕾絲線">蕾絲線</option>
+                    </select>
+                    <select name="" id="" class="flex-grow-1 js-materialColor">
+                        <option value="紅色">紅色</option>
+                        <option value="咖啡色">咖啡色</option>
+                        <option value="藍色">藍色</option>
+                        <option value="墨綠色">墨綠色</option>
+                        <option value="卡其色">卡其色</option>
+                        <option value="膚色">膚色</option>
+                        <option value="白色">白色</option>
+                    </select>
+                    <label for="" class="flex-shrink-1 my-2 my-md-0"><input type="number" name="" id="" min="1"
+                            placeholder="需求數量" value="1" class="inputWidth text-center js-materialNum"></label>
+                    <button class="addMaterial flex-shrink-1 js-addMaterial">添加</button>
+                </div>
+                <table class="materialTable js-materialTable">
+                    <thead>
+                        <tr>
+                            <th>所需材料</th>
+                            <th>需求數量</th>
+                            <th>刪除</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <label for="" class="sellPrice js-materialPrice">販售金額:<input type="number" min="0"
+                        class="text-center">元</label>
+            </div>
+
+        </div>
+    </div>
+    <div class="articleContent">
+        <div id="editor—wrapper">
+            <div id="toolbar-container">
+                <!-- 工具栏 -->
+            </div>
+            <div id="editor-container" style="height: 300px;">
+                <!-- 编辑器 -->
+            </div>
+        </div>
+        <div class="d-flex justify-content-end mt1">
+            <button class="postArticle">發布</button>
+        </div>
+    </div>
+</main>
+<script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+<script src="js/addArticle.js"></script>

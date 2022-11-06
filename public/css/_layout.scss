@@ -1,0 +1,32 @@
+@import 'header';
+@import 'footer';
+.backTop{
+    position:fixed;
+    display: none;
+    right: 3rem;
+    bottom: 3rem;
+    z-index: 999;
+    @media (max-width:768px) {
+        right: 0;
+    }
+}
+body{
+    background-image: url(../images/background.png);
+    background-size: cover;
+    color: $darkColor;
+}
+.shoppingCart{
+    position: relative;
+    .shoppingCartNum{
+        padding: 2px;
+        position: absolute;
+        right: -3px;
+        bottom: 3px;
+        background-color: #B00606;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        font-size: .5rem;
+        color: #fff;
+    }
+}

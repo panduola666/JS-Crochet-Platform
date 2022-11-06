@@ -1,0 +1,154 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+// 開始
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+$primaryColor:#FC7F79;
+$secondaryColor:#FFBEBA;
+$darkColor:#1F0707;
+.h1Size{
+    font-size: 2.5rem;
+}
+.h2Size{
+    font-size: 1.75rem;
+}
+.h3Size{
+    font-size: 1.25rem;
+}
+.h4Size{
+    font-size: 1.125rem;
+}
+.small{
+	font-size: 0.75rem;
+}
+a{
+	text-decoration: none;
+}
+.mr1{
+	margin-right: 20px;
+}
+.mr2{
+	margin-right: 40px;
+}
+.mr3{
+	margin-right: 60px;
+}
+.mr4{
+	margin-right: 80px;
+}
+.mb1{
+	margin-bottom: 20px;
+}
+.mb2{
+	margin-bottom: 40px;
+}
+.mb3{
+	margin-bottom: 60px;
+}
+.mb4{
+	margin-bottom: 80px;
+}
+.mt1{
+	margin-top: 20px;
+}
+.mt2{
+	margin-top: 40px;
+}
+.my1{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.my3{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+.pb2{
+	padding-bottom: 40px;
+}
+.py3{
+	padding: 60px 0;
+}
+
+.pointer{
+	cursor: pointer;
+}
+.textHidden{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.textHidden-2{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.textHidden-4{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 4;
+	overflow: hidden;
+}
+.primaryColor{
+	color: $primaryColor;
+}
+.secondaryColor{
+	color: $secondaryColor;
+}
+
+@import 'layout.scss';
+@import 'index.scss';
+@import 'login.scss';
+@import 'success.scss';
+@import 'user.scss';
+@import 'userSell.scss';
+@import 'manage.scss';
+@import 'worksList.scss';
+@import 'article.scss';
+@import 'addArticle.scss';
+@import 'shoppingCar.scss';
+@import 'shoppingPay.scss';
+@import 'myOrder.scss';
+@import 'orderDetails.scss';

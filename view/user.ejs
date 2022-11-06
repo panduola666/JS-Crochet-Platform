@@ -1,0 +1,74 @@
+<main class="container-sm my3">
+    <p class="h1Size">基本資料</p>
+    <div class="baseDB my1 row">
+        <div class="baseDBImg col">
+            <div class="avatar">d</div>
+            <button type="button" class="h2Size my1 js-application" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">原創申請</button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">原創申請注意事項</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <ol class="modal-body">
+                            <li>1. 不得重複發布相似作品以充數量</li>
+                            <li>2. 材料包若委託平台販售,平台將給予10%的收益金額</li>
+                        </ol>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                            <button type="button" class="btn btn-primary js-agree">同意</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="baseDBList col js-baseDBList">
+            <li>
+                <h1 class="h3Size">我的文章<span class="small newQuestion">new</span></h1>
+                <h2 class="h1Size"><span>0</span>篇</h2>
+            </li>
+            <li>
+                <h1 class="h3Size">我的留言<span class="small newMessage">new</span></h1>
+                <h2 class="h1Size"><span>0</span>則</h2>
+            </li>
+            <li>
+                <h1 class="h3Size">我的收藏</h1>
+                <h2 class="h1Size"><span>0</span>篇</h2>
+            </li>
+            <li class="h2Size">材料包管理</li>
+        </ul>
+    </div>
+    <p class="h1Size">會員資料</p>
+    <div class="userDB my1 js-userDB">
+        <p class="mb1">帳號: <span></span></p>
+        <label class="userName">用戶名:<input type="text" disabled></label>
+        <label>手機:<input type="text" value="09" disabled></label>
+        <label>手機載具:<input type="text" placeholder="格式:/123-ABC(共8為字元)" disabled></label>
+        <p>我的帳戶:<span class="ms-3 js-myCreditCard"></span><button class="creditCardBTN js-addCreditCard" disabled>+
+                新增帳戶</button></span>
+        <div class="creditCardNum js-creditCardInfo">
+            <label for="">卡號:<input type="text" maxlength="16"></label>
+            <label for="">到期日:<input type="text" maxlength="2">　/　<input type="text" maxlength="2"></label>
+            <label for="">安全碼:<input type="text" maxlength="4"></label>
+        </div>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="h3Size userDBChange js-userDBChange">編輯</button>
+        </div>
+    </div>
+    <p class="h1Size">修改密碼</p>
+    <div class="passwordDB mt1 js-passwordDB">
+        <label>輸入原密碼:<input type="password" disabled></label>
+        <label>輸入新密碼:<input type="password" disabled></label>
+        <label>確認新密碼:<input type="password" disabled></label>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="h3Size passwordDBChange">編輯</button>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+<script src="/js/user.js"></script>

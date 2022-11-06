@@ -1,0 +1,100 @@
+header{
+    justify-content: space-between;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
+    padding: .5rem 0;
+}
+nav{
+    white-space:nowrap;
+    justify-content: space-around;
+    a{
+        color: $primaryColor;
+        &:hover{
+            font-weight: 600;
+            color: $primaryColor;
+        }
+    }
+}
+.more{
+    position: relative;
+    &:hover{
+        ul{
+            display: block;
+            z-index: 3;
+        }
+    }
+    ul{
+        display: none;
+        width: 10rem;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        border-radius: 8px;
+        border: 1px solid $primaryColor;
+        overflow: hidden;
+        li{
+            padding: 8px 10px;
+        border-bottom: 1px solid $primaryColor;
+            &:last-child{
+                padding: 14px 18px;
+                border-bottom: 0;
+            }
+            &:hover{
+                background-color: $secondaryColor;
+            &:last-child{
+                background-color: #fff;
+            }
+            }
+            a{
+                display: block;
+                padding: 6px 8px;
+                background-color: $primaryColor;
+                border-radius: 8px;
+                white-space: nowrap;
+                text-align: center;
+                color: #ffffff;
+                &:hover{
+                    background-color: $secondaryColor;
+                }
+            }
+        }
+    }
+}
+.search{
+    display: flex;
+    label{
+        border-bottom: 2px solid $primaryColor;
+    }
+}
+.searchList{
+    border: none;
+    background-color: $primaryColor;
+    color: #fff;
+    width: 6rem;
+    &:hover{
+        background-color: $secondaryColor;
+    }
+}
+.searchListColor{
+    color: $primaryColor;
+}
+.searchContent{
+    padding: .5rem;
+    width: 20rem;
+    outline: none;
+    border: none;
+    &::placeholder{
+    color:$secondaryColor;
+    }
+}
+.searchBtn{
+    position: absolute;
+right: .5rem;
+top: .3rem;
+border: none;
+background-color: #fff;
+}
+a#primaryColor{
+    color: $primaryColor;
+}

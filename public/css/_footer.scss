@@ -1,0 +1,51 @@
+footer{
+    background-color: $secondaryColor;
+    color: $darkColor;
+    white-space:nowrap;
+    a{
+        color: $darkColor;
+    }
+}
+.connection{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    @media (max-width:768px) {
+        flex-direction: column;
+        text-align: center;
+        h2{
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}
+.connectionInfo{
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $darkColor;
+    padding-left: 60px;
+    a:hover{
+        color: $darkColor;
+    }
+    @media (max-width:768px) {
+        width: 100%;
+        padding-left: 0;
+        padding-top: 1rem;
+        border: 0;
+        border-top: 2px solid $darkColor;
+    }
+}
+.footerNav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    li{
+        margin-right: 24px;
+        a:hover{
+            color: $darkColor;
+            font-weight: 600;
+        }
+    }
+}

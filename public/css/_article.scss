@@ -1,0 +1,177 @@
+.articleAside{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondaryColor;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+    padding-top: 4rem;
+    @media (max-width:768px) {
+        border-radius: 8px 8px 0 0;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.authorAvatar{
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    background-image: url(../images/avatar.png);
+    background-size: contain;
+    background-position:center;
+    @media (max-width:768px) {
+        width: 10vw;
+        height: 10vw;
+    }
+    @media (max-width:576px) {
+        display: none;
+    }
+}
+.addSave{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    @media (max-width:768px) {
+        flex-grow: 1;
+        justify-content: end;
+        margin-right: 2rem;
+    }
+}
+.savedNum{
+    margin-left: 1rem;
+}
+.articleBg{
+    border-radius:0 8px 8px 0;
+    border: 2px solid $secondaryColor;
+    @media (max-width:768px) {
+        border-radius:0 0 8px 8px;
+    }
+}
+.articleWrap{
+    padding:2rem;
+}
+.articleTitle{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-bottom: 2px dashed $secondaryColor;
+    padding-bottom: 2rem;
+}
+.articleBody{
+    padding-top: 2rem;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img{
+        max-width: 100%;
+    }
+}
+.articleSell{
+    display: flex;
+    align-items: center;
+    min-height: 20vw;
+    border-radius: 8px;
+    border: 1px solid $primaryColor;
+    @media (max-width:576px) {
+        flex-direction: column;
+    }
+    img{
+        object-fit: cover;
+        height: 20vw;
+        @media (max-width:768px) {
+            height: 30vw;
+        }
+    }
+    
+}
+.articleSellBody{
+    height:20vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    @media (max-width:768px) {
+        height: 30vw;
+    }
+    @media (max-width:576px) {
+        .goodsPrice{
+            margin: 1rem;
+        }
+    }
+    button{
+        right: 1rem;
+        bottom: 1rem;
+        padding: 1rem 2rem;
+        color: #fff;
+        background-color: $primaryColor;
+        border: none;
+        border-radius: 8px;
+        &:hover{
+            background-color: $secondaryColor;
+        }
+    }
+}
+.articleQA{
+    padding-top: 1rem;
+    border-top: 2px dashed $secondaryColor;
+}
+
+.question{
+    width: 100%;
+    textarea{
+        width: 100%;
+        // max-height: 5rem;
+        padding: .5rem;
+        border-radius: 8px;
+        resize: none;
+        border: 3px solid $secondaryColor;
+        outline-color: $primaryColor;
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $secondaryColor;
+            border-radius: 8px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: $primaryColor;
+        }
+    }
+}
+.addQuestion{
+    padding: .5rem 1rem;
+    background-color:$secondaryColor;
+    border: none;
+    border-radius: 8px;
+    &:hover{
+        background-color: $primaryColor;
+    }
+}
+.questionList{
+    li{
+        padding: 1rem;
+        border-bottom: 1px solid $darkColor;
+        &:last-child{
+            border-bottom: 0;
+        }
+        p:first-child{
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        span{
+            // margin-left: 1rem;
+            color: #9c9c9c;
+        }
+    }
+}
+.qaMask{
+    filter: blur(3px);
+    user-select: none;
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../public/css/all.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-sm">
+            <div class="row justify-content-around">
+                <div class="col d-flex align-items-center justify-content-between">
+                    <a href="#"><img src="../images/logoPrimary.png" alt="鉤針手作平台"></a>
+                    <div class="more">
+                        <img src="../public/images/hambergur.png" alt="更多選項" class="d-sm-none pointer">
+                        <ul class="small">
+                            <li class="pointer">作品列表</li>
+                            <li class="pointer">技巧文章</li>
+                            <li class="pointer">購買商城</li>
+                            <li class="pointer">常見問題</li>
+                            <li><a href="">會員登入/註冊</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="col col-md-8 d-sm-flex align-items-center d-none">
+                    <div class="d-flex flex-column align-items-center">
+                        <ul class="d-flex mb-3">
+                            <li class="mr2 d-none d-md-block">
+                                <a href="">關於我們</a>
+                            </li>
+                            <li class="mr2">
+                                <a href="">作品列表</a>
+                            </li>
+                            <li class="mr2">
+                                <a href="">技巧文章</a>
+                            </li>
+                            <li class="mr2">
+                                <a href="">購買商城</a>
+                            </li>
+                        </ul>
+                        <div class="search">
+                            <button type="button" class="searchList">作品名　></button>
+                            <label class="position-relative">
+                                <input type="text" class="searchContent" placeholder="搜尋...">
+                                <img src="../images/search.png" alt="搜尋" class="searchBtn pointer">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="shoppingCart">
+                        <img src="../images/shoppingcart.png" alt="購物車" class="pointer">
+                        <span class="shoppingCartNum">9+</span>
+                    </div>
+                    <img src="../images/user.png" alt="用戶專區" class="pointer">
+                </nav>
+            </div>
+        </div>
+    </header>
+    <aside class="backTop">
+        <img src="../images/gotop.png" alt="返回頂部">
+    </aside>
+
+
+    <main>
+        <div class="banner">
+            <img src="../images/unsplash_jZSL_Dt4Fes.jpg" alt="橫幅">
+            <div class="bannerFont">
+                <h1 class="h1Size mb-3">蒐集最全的鉤針教程</h1>
+                <h2 class="h2Size">初學者也能安心輕鬆上路</h2>
+            </div>
+        </div>
+        <div class="indexWrap">
+            <p class="h2Size mb2">熱門作品</p>
+            <div class="worksList">
+                <ul class="mr1">
+                    <li class="textHidden pointer active">
+                        <h3>可愛蛋糕水桶包(含圖解)</h3>
+                    </li>
+                    <li class="textHidden pointer">
+                        <h3>桃心小猴玩偶</h3>
+                    </li>
+                    <li class="textHidden pointer">
+                        <h3>兩用變形圍脖帽</h3>
+                    </li>
+                    <li class="textHidden pointer">
+                        <h3>12生肖-豬寶寶布偶</h3>
+                    </li>
+                </ul>
+                <div class="worksImg pointer">
+                    <img src="../public/images/cakeBag.jpg" alt="可愛蛋糕水桶包(含圖解)">
+                    <div class="worksMask">
+                        <p class="h4Size textHidden">可愛蛋糕水桶包(含圖解)</p>
+                        <img src="../images/save.png" alt="收藏" class="pointer saveIcon">
+                    </div>
+                </div>
+            </div>
+            <div class="articlesTitle h2Size mb2">
+                <p class="active mr2 pointer">最新文章</p>
+                <p class=" pointer">熱門文章</p>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="articlesList">
+                            <div class="articlesImg">
+                                <img src="../images/unsplash_6Az0fM7LCUs.jpg" alt="新手必知:環狀起針的無痕引拔">
+                                <div class="articlesMask">
+                                    <p class="small textHidden">新手必知:環狀起針的無痕引拔</p>
+                                </div>
+                            </div>
+                            <article class="pb2">
+                                <h3 class="h3Size mb1 textHidden-2">新手必知:環狀起針的無痕引拔</h3>
+                                <p class="textHidden-4">
+                                    舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="articlesList">
+                            <div class="articlesImg">
+                                <img src="../images/monkey.jpg" alt="新手必知:環狀起針的無痕引拔">
+                                <div class="articlesMask">
+                                    <p class="small textHidden">新手必知:環狀起針的無痕引拔</p>
+                                </div>
+                            </div>
+                            <article class="pb2">
+                                <h3 class="h3Size mb1 textHidden-2">新手必知:環狀起針的無痕引拔</h3>
+                                <p class="textHidden-4">
+                                    舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="articlesList">
+                            <div class="articlesImg">
+                                <img src="../images/cakeBag.jpg" alt="新手必知:環狀起針的無痕引拔">
+                                <div class="articlesMask">
+                                    <p class="small textHidden">新手必知:環狀起針的無痕引拔</p>
+                                </div>
+                            </div>
+                            <article class="pb2">
+                                <h3 class="h3Size mb1 textHidden-2">新手必知:環狀起針的無痕引拔</h3>
+                                <p class="textHidden-4">
+                                    舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面舊時的引拔方法會在玩偶上留下一條醜醜的引拔針，讓你心愛的小娃娃留下恐怖的疤痕。不過請你放心！本篇文章將教你如何才能做出完全無痕的引拔方法，讓你的作品上不再有不同其他位置的針法暴露在外，讓他恢復光滑的表面
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+            </div>
+            <p class="h2Size goodsTitle">推薦商品</p>
+        </div>
+        <div class="goodsList">
+            <img src="../images/chevron-left.png" alt="後退">
+            <ul>
+                <li>
+                    <img src="../images/cotton.jpg" alt="DIY手工玩偶填充棉">
+                    <h3 class="h3Size">DIY手工玩偶填充棉</h3>
+                </li>
+                <li>
+                    <img src="../images/yarn.webp" alt="五股牛奶棉-50g">
+                    <h3 class="h3Size">五股牛奶棉-50g</h3>
+                </li>
+                <li>
+                    <img src="../images/crochet.webp" alt="超值鉤針套裝">
+                    <h3 class="h3Size">超值鉤針套裝</h3>
+                </li>
+                <li>
+                    <img src="../images/cotton.jpg" alt="DIY手工玩偶填充棉">
+                    <h3 class="h3Size">DIY手工玩偶填充棉</h3>
+                </li>
+                <li>
+                    <img src="../images/yarn.webp" alt="五股牛奶棉-50g" class="mb-3">
+                    <h3 class="h3Size">五股牛奶棉-50g</h3>
+                </li>
+            </ul>
+            <img src="../images/chevron-right.png" alt="前進">
+        </div>
+    </main>
+
+
+
+    <footer class="py3">
+        <div class="container-sm">
+            <div class="row align-items-center flex-wrap">
+                <div class="col col-md-3 text-center mb2">
+                    <a href="#"><img src="../images/logo.png" alt="鉤針手作平台"></a>
+                </div>
+                <div class="col-12 col-md d-flex flex-column align-items-center">
+                    <ul class="footerNav mb4">
+                        <li><a href="">版權規定</a></li>
+                        <li><a href="">退貨說明</a></li>
+                        <li><a href="">到貨進度</a></li>
+                        <li><a href="">常見問題</a></li>
+                        <li><a href="">隱私權政策</a></li>
+                    </ul>
+                    <div class="connection">
+                        <p class="h2Size mr3">聯絡我們</p>
+                        <div class="connectionInfo">
+                            <a href="tel:+" class="h3Size mb-3">TEL: 0912345678</a>
+                            <a href="mailto:" class="h3Size">MAIL: xxxxxxx@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

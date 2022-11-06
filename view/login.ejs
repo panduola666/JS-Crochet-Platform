@@ -1,0 +1,36 @@
+<main class="container-sm my3 userForm">
+    <div class="row flex-column flex-md-row">
+        <div class="col register">
+            <div class="registerForm">
+                <h1 class="h2Size mb2 text-center">會員註冊</h1>
+                <label for="registerAccount">帳號:</label>
+                <input type="text" name="registerAccount" id="registerAccount" class="account" placeholder="請輸入Email">
+                <label for="registerPassword">密碼:</label>
+                <input type="password" name="registerPassword" id="registerPassword" placeholder="最少6位數,不可使用特殊字符"
+                    class="js-password">
+                <label for="registerPasswordCheck">確認密碼:</label>
+                <input type="password" name="registerPasswordCheck" id="registerPasswordCheck" class="js-passwordCheck">
+            </div>
+            <p><label><input type="checkbox" name="" checked>我同意</label><a href="">網站服務條款及隱私政策</a></p>
+            <button type="button" class="h3Size registerBtn">註冊</h2></button>
+        </div>
+        <div class="col login">
+            <div class="loginForm">
+                <h1 class="h2Size mb2 text-center">會員登入</h1>
+                <label for="loginAccount">帳號:</label>
+                <input type="text" name="loginAccount" id="loginAccount" class="account">
+                <label for="loginPassword">密碼:</label>
+                <input type="password" name="loginPassword" id="loginPassword" class="js-password">
+                <label for="verify">驗證碼:</label>
+                <input type="text" name="verify" id="verify" class="verifyText" placeholder="不區分大小寫">
+            </div>
+            <div class="verifyNumber">
+                <div class="js-verifyImg"></div>
+                <p>點擊圖片刷新</p>
+            </div>
+            <button type="button" class="h3Size loginBtn">登入</button>
+        </div>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="js/login.js"></script>
