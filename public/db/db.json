@@ -120,9 +120,9 @@
       "img": [
         "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
       ],
-      "saveNum": "2",
-      "scanNum": 0,
-      "createDate": "2022-10-15 12:21:11"
+      "saveNum": "22",
+      "scanNum": 8,
+      "createDate": "2012-08-15 12:21:11"
     },
     {
       "tag": "材料選取",
@@ -133,8 +133,8 @@
         "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
       ],
       "saveNum": 10,
-      "scanNum": 100,
-      "createDate": "2019-08-15 12:21:11",
+      "scanNum": 104,
+      "createDate": "2020-10-15 02:21:11",
       "id": 2
     },
     {
@@ -146,7 +146,7 @@
         "https://upload.cc/i1/2022/11/06/4nbtyE.jpg"
       ],
       "saveNum": 20,
-      "scanNum": 600,
+      "scanNum": 601,
       "createDate": "2009-08-11 10:21:11",
       "id": 3
     }
@@ -197,7 +197,7 @@
         }
       ],
       "saveNum": 3,
-      "scanNum": 237,
+      "scanNum": 238,
       "createDate": "2022-10-15 12:21:11"
     },
     {

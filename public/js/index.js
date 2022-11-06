@@ -137,17 +137,61 @@ function readerWorks() {
 
 
 
-//文章列表切換
-const articlesTitle = document.querySelectorAll(".articlesTitle>p");
-articlesTitle.forEach((title) => {
-    title.addEventListener("click", () => {
-    articlesTitle.forEach((p) => p.classList.remove("active"));
-    title.classList.add("active");
+//文章列表-完成
+const articlesTitle = document.querySelectorAll('.articlesTitle>p');
+const articlesList = document.querySelectorAll('.articlesList');
+axios.get(`${baseUrl}/articles`)
+.then(res=>{
+    //最新最熱切換+畫面渲染
+    articlesTitle.forEach(title => {
+        readerArticles(title);
+        title.addEventListener("click", () => {
+        articlesTitle.forEach( p => p.classList.remove("active") );
+        title.classList.add("active");
+        readerArticles(title);
+        });
     });
-    if(title.classList.contains('active')){
-        console.log(title.textContent);
-    }
+    //點擊數增加
+    articlesList.forEach(article => {
+        article.addEventListener('click',(e)=>{
+            res.data.forEach(item=>{
+                if(item.title == article.children[1].children[0].textContent.trim()){
+                    item.scanNum++;
+                    axios.patch(`${baseUrl}/articles/${item.id}`,{
+                        scanNum:item.scanNum
+                    });
+                    window.location.href=`article/articles/${item.id}`;
+                };
+            });
+        });
+    });
+    //畫面渲染
+    function readerArticles(item){
+        const top3Article = res.data.sort((a,b)=>b.saveNum-a.saveNum).slice(0,3);
+        const new3Article = res.data.sort((a,b)=>new Date (b.createDate) - new Date (a.createDate) ).slice(0,3);
+        if(item.classList.contains('active')){
+            if(item.textContent=='最新文章'){
+                for (let i = 0, j = 0; i < new3Article.length, j < articlesList.length; i++, j++) {
+                    articlesList[j].children[0].children[1].children[0].textContent = new3Article[i].title;
+                    articlesList[j].children[1].children[0].textContent = new3Article[i].title;
+                    articlesList[j].children[0].children[0].setAttribute('src', new3Article[i].cover)
+                    articlesList[j].children[1].children[1].innerHTML = new3Article[i].content;
+                }
+            }else if(item.textContent=='熱門文章'){
+                for (let i = 0, j = 0; i < top3Article.length, j < articlesList.length; i++, j++) {
+                    articlesList[j].children[0].children[1].children[0].textContent = top3Article[i].title;
+                    articlesList[j].children[1].children[0].textContent = top3Article[i].title;
+                    articlesList[j].children[0].children[0].setAttribute('src', top3Article[i].cover)
+                    articlesList[j].children[1].children[1].innerHTML = top3Article[i].content;
+                }
+            }
+        };
+    };
 });
+    
+
+
+
 
 //推薦商品輪播
 const goodsChangeLeft = document.querySelector(".leftBTN");

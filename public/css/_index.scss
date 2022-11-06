@@ -189,6 +189,8 @@
             }
         }
         article{
+            overflow: hidden;
+            height: 13.75rem;
             h3{
                 line-height: 27px;
                 @media (max-width:768px) {
@@ -196,7 +198,7 @@
                     }
             }
             p{
-                line-height: 22px;
+               line-height: 1.5rem;
             }
         }
 }
