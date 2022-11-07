@@ -36,38 +36,41 @@ app.get('/goodsList', function (req, res) {
 app.get('/login', function (req, res) {
     res.render('layout', {title:'登入/註冊',body:'login.ejs'});
 });
-app.get('/myOrder', function (req, res) {
+app.get('/myOrder/:id', function (req, res) {
     res.render('layout', {title:'我的訂單',body:'myOrder.ejs'});
 });
-app.get('/orderDerails', function (req, res) {
+app.get('/orderDerails/:id', function (req, res) {
     res.render('layout', {title:'訂單詳情',body:'orderDerails.ejs'});
 });
-app.get('/shoppingCar', function (req, res) {
+app.get('/shoppingCar/:id', function (req, res) {
     res.render('layout', {title:'購買清單',body:'shoppingCar.ejs'});
 });
-app.get('/shoppingFinish', function (req, res) {
+app.get('/shoppingFinish/:id', function (req, res) {
     res.render('layout', {title:'完成',body:'shoppingFinish.ejs'});
 });
-app.get('/shoppingPay', function (req, res) {
+app.get('/shoppingPay/:id', function (req, res) {
     res.render('layout', {title:'購買人資訊',body:'shoppingPay.ejs'});
 });
-app.get('/success', function (req, res) {
+app.get('/success/:id', function (req, res) {
     res.render('layout', {title:'成功',body:'success.ejs'});
 });
-app.get('/userSell', function (req, res) {
+app.get('/userSell/:id', function (req, res) {
     res.render('layout', {title:'材料包管理',body:'userSell.ejs'});
 });
 app.get('/worksList', function (req, res) {
     res.render('layout', {title:'作品列表',body:'worksList.ejs'});
 });
-app.get('/myArticle', function (req, res) {
+app.get('/myArticle/:id', function (req, res) {
     res.render('layout', {title:'我的文章',body:'myArticle.ejs'});
 });
-app.get('/myMessage', function (req, res) {
+app.get('/myMessage/:id', function (req, res) {
     res.render('layout', {title:'我的留言',body:'myMessage.ejs'});
 });
-app.get('/mySave', function (req, res) {
+app.get('/mySave/:id', function (req, res) {
     res.render('layout', {title:'我的收藏',body:'mySave.ejs'});
+});
+app.get('/admin', function (req, res) {
+    res.render('layout', {title:'後台管理',body:'admin.ejs'});
 });
 
 

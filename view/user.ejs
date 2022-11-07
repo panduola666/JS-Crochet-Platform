@@ -3,7 +3,7 @@
     <div class="baseDB my1 row">
         <div class="baseDBImg col">
             <div class="avatar">d</div>
-            <button type="button" class="h2Size my1 js-application" data-bs-toggle="modal"
+            <button type="button" class="h2Size my1 application" data-bs-toggle="modal"
                 data-bs-target="#exampleModal">原創申請</button>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -19,47 +19,47 @@
                         </ol>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                            <button type="button" class="btn btn-primary js-agree">同意</button>
+                            <button type="button" class="btn btn-primary agree">同意</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <ul class="baseDBList col js-baseDBList">
+        <ul class="baseDBList col">
             <li>
                 <h1 class="h3Size">我的文章<span class="small newQuestion">new</span></h1>
-                <h2 class="h1Size"><span>0</span>篇</h2>
+                <h2 class="h1Size">0篇</h2>
             </li>
             <li>
                 <h1 class="h3Size">我的留言<span class="small newMessage">new</span></h1>
-                <h2 class="h1Size"><span>0</span>則</h2>
+                <h2 class="h1Size">0則</h2>
             </li>
             <li>
                 <h1 class="h3Size">我的收藏</h1>
-                <h2 class="h1Size"><span>0</span>篇</h2>
+                <h2 class="h1Size">0篇</h2>
             </li>
             <li class="h2Size">材料包管理</li>
         </ul>
     </div>
     <p class="h1Size">會員資料</p>
-    <div class="userDB my1 js-userDB">
-        <p class="mb1">帳號: <span></span></p>
+    <div class="userDB my1">
+        <p class="mb1 userAccount">帳號: <span></span></p>
         <label class="userName">用戶名:<input type="text" disabled></label>
-        <label>手機:<input type="text" value="09" disabled></label>
-        <label>手機載具:<input type="text" placeholder="格式:/123-ABC(共8為字元)" disabled></label>
-        <p>我的帳戶:<span class="ms-3 js-myCreditCard"></span><button class="creditCardBTN js-addCreditCard" disabled>+
+        <label>手機:<input type="text" value="09" maxlength="10" disabled></label>
+        <label>手機載具:<input type="text" placeholder="格式:/123-ABC(共8為字元)" maxlength="8" disabled></label>
+        <p>我的帳戶:<span class="ms-3 myCreditCard"></span><button class="creditCardBTN addCreditCard" disabled>+
                 新增帳戶</button></span>
-        <div class="creditCardNum js-creditCardInfo">
+        <div class="creditCardNum creditCardInfo">
             <label for="">卡號:<input type="text" maxlength="16"></label>
             <label for="">到期日:<input type="text" maxlength="2">　/　<input type="text" maxlength="2"></label>
             <label for="">安全碼:<input type="text" maxlength="4"></label>
         </div>
         <div class="d-flex justify-content-end">
-            <button type="button" class="h3Size userDBChange js-userDBChange">編輯</button>
+            <button type="button" class="h3Size userDBChange">編輯</button>
         </div>
     </div>
     <p class="h1Size">修改密碼</p>
-    <div class="passwordDB mt1 js-passwordDB">
+    <div class="passwordDB mt1 passwordDB">
         <label>輸入原密碼:<input type="password" disabled></label>
         <label>輸入新密碼:<input type="password" disabled></label>
         <label>確認新密碼:<input type="password" disabled></label>

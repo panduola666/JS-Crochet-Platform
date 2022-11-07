@@ -102,6 +102,10 @@ function readerWorks() {
         
         //收藏數據變更
         function saveIconClick(){
+            const headers = {
+                headers:{
+                    Authorization : localStorage.getItem('accessToken')
+                }};
             worksImg.addEventListener('click',(e)=>{
                 if(e.target.nodeName=='path' || e.target.nodeName=='svg' || e.target.nodeName=='rect'){
                     if (saveIcon.children[0].getAttribute("d") == normal) {
@@ -110,6 +114,22 @@ function readerWorks() {
                                 item.saveNum++;
                                 axios.patch(`${baseUrl}/works/${item.id}`,{
                                     saveNum:item.saveNum
+                                });
+                                axios.get(`${baseUrl}/users/${localStorage.getItem('userId')}`,headers).then(res=>{
+                                    const newSaveArticle = res.data.saveArticle;
+                                    newSaveArticle.push(item.title)
+                                    axios.patch(`${baseUrl}/users/${localStorage.getItem('userId')}`,{
+                                        saveArticles:newSaveArticle
+                                    },headers).catch(err=>{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: '帳號過期!',
+                                            text: '請重新登入'
+                                        });
+                                        setTimeout(() => {
+                                            document.location.href = '/login';
+                                        }, 2000);
+                                    });
                                 });
                             };
                         });
@@ -120,6 +140,23 @@ function readerWorks() {
                                 item.saveNum--;
                                 axios.patch(`${baseUrl}/works/${item.id}`,{
                                     saveNum:item.saveNum
+                                });
+                                axios.get(`${baseUrl}/users/${localStorage.getItem('userId')}`,headers).then(res=>{
+                                    const newSaveArticle = res.data.saveArticle;
+                                    const deleteIndex = newSaveArticle.indexOf(item.title);
+                                    newSaveArticle.splice(deleteIndex,1);
+                                    axios.patch(`${baseUrl}/users/${localStorage.getItem('userId')}`,{
+                                        saveArticles:newSaveArticle
+                                    },headers).catch(err=>{
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: '帳號過期!',
+                                            text: '請重新登入'
+                                        });
+                                        setTimeout(() => {
+                                            document.location.href = '/login';
+                                        }, 2000);
+                                    });
                                 });
                             };
                         });
@@ -132,9 +169,6 @@ function readerWorks() {
     })
     .catch((err) => console.log(err));
 };
-
-
-
 
 
 //文章列表-完成

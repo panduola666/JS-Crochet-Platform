@@ -100,7 +100,9 @@ loginBtn.addEventListener('click',()=>{
             console.log(res);
             const expires = new Date();
             expires.setTime(expires.getTime() + (60 * 60 *1000));
-            document.cookie = `accessToken=${res.data.accessToken};expires=${expires.toGMTString()}`;
+            // document.cookie = `accessToken=${res.data.accessToken};expires=${expires.toGMTString()}`;
+            localStorage.setItem('accessToken',`Bearer ${res.data.accessToken}`);
+            localStorage.setItem('userId',res.data.user.id);
             window.location.href = `/user/${res.data.user.id}`;
         }).catch(err=>{
             Swal.fire({
