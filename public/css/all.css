@@ -169,19 +169,28 @@ a {
 header {
   justify-content: space-between;
   width: 100%;
-  background: #ffffff;
+  background: #fff;
   box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
   padding: 0.5rem 0;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 0.5px 5px rgba(0, 0, 0, 0.3);
 }
 
-nav {
+.nav {
   white-space: nowrap;
+  align-items: center;
   justify-content: space-around;
+  top: 0;
 }
-nav a {
+.nav:first-child {
+  align-items: center;
+  flex-direction: column;
+}
+.nav a {
   color: #FC7F79;
 }
-nav a:hover {
+.nav a:hover {
   font-weight: 600;
   color: #FC7F79;
 }
@@ -207,15 +216,16 @@ nav a:hover {
   padding: 8px 10px;
   border-bottom: 1px solid #FC7F79;
 }
+.more ul li:first-child {
+  display: none;
+}
 .more ul li:last-child {
   padding: 14px 18px;
   border-bottom: 0;
+  background-color: #fff;
 }
 .more ul li:hover {
   background-color: #FFBEBA;
-}
-.more ul li:hover:last-child {
-  background-color: #fff;
 }
 .more ul li a {
   display: block;
@@ -232,9 +242,17 @@ nav a:hover {
 
 .search {
   display: flex;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
 }
 .search label {
   border-bottom: 2px solid #FC7F79;
+}
+
+.goToAdmin {
+  display: none;
 }
 
 .searchList {
@@ -499,6 +517,10 @@ body {
 }
 .worksMask p {
   width: 90%;
+}
+
+.saveIcon {
+  display: none;
 }
 
 .articlesTitle {
@@ -1454,9 +1476,10 @@ body {
 .articleBody {
   padding-top: 2rem;
   line-height: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+.articleBody th, .articleBody td {
+  border-collapse: collapse;
+  border: 1px solid black;
 }
 .articleBody img {
   max-width: 100%;
@@ -2036,4 +2059,122 @@ button.postArticle:hover {
   height: 10rem;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.adminNav {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+.adminNav .active {
+  border-bottom: 2px solid #FC7F79;
+}
+.adminNav li {
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+}
+.adminNav li:hover {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #FFBEBA;
+}
+
+.withdrawalApplication, .ordersManagement, .userSellAudit {
+  display: none;
+}
+
+.addGoods {
+  padding: 1rem 3rem;
+  background-color: #FFBEBA;
+  border-radius: 8px;
+  border: none;
+}
+.addGoods:hover {
+  background-color: #FC7F79;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .addGoods {
+    padding: 0.5rem 2rem;
+  }
+}
+
+.filterGoods {
+  width: 30%;
+}
+
+.adminTable {
+  width: 100%;
+  border: 1px solid #1F0707;
+  border-radius: 8px;
+  border-collapse: separate;
+  text-align: center;
+  background-color: #fff;
+}
+.adminTable input[type=checkbox] {
+  transform: scale(1.5);
+}
+.adminTable input[type=text] {
+  width: 80%;
+  text-align: center;
+  border: none;
+  outline: none;
+}
+.adminTable input[type=text]:focus {
+  border-bottom: 1px solid black;
+}
+.adminTable input[type=text]:disabled {
+  background-color: rgba(0, 0, 0, 0);
+}
+.adminTable th, .adminTable td {
+  padding: 1rem 0.5rem;
+  vertical-align: middle;
+}
+.adminTable td {
+  max-width: 15rem;
+  border-top: 1px solid #1F0707;
+}
+
+.modal-dialog {
+  max-width: 60vw;
+  min-width: 18rem;
+}
+@media (max-width: 768px) {
+  .modal-dialog {
+    max-width: 80vw;
+  }
+}
+
+.modal-content {
+  overflow: auto;
+  border: 3px solid #FC7F79;
+}
+
+.modal-body {
+  white-space: nowrap;
+}
+.modal-body label, .modal-body p {
+  margin-right: 0.5rem;
+}
+.modal-body input[type=text] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  width: 100%;
+  max-width: 25rem;
+}
+.modal-body button {
+  border-radius: 8px;
+  border: none;
+  background-color: #FFBEBA;
+  padding: 0.5rem 2rem;
+}
+@media (max-width: 576px) {
+  .modal-body button {
+    padding: 0.5rem 1rem;
+  }
+}
+.modal-body img {
+  max-width: 80%;
+  min-width: 50%;
 }/*# sourceMappingURL=all.css.map */

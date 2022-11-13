@@ -64,9 +64,10 @@
 .articleBody{
     padding-top: 2rem;
     line-height: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    th,td{
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
     img{
         max-width: 100%;
     }

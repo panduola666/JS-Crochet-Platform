@@ -73,6 +73,7 @@ registerBtn.addEventListener('click',()=>{
             passwordCheck.value='';
             window.location.href = '/success';
         }).catch(err=>{
+            localStorage.clear();
             Swal.fire({
                 icon: 'error',
                 title: '註冊失敗!',
@@ -105,11 +106,13 @@ loginBtn.addEventListener('click',()=>{
             localStorage.setItem('userId',res.data.user.id);
             window.location.href = `/user/${res.data.user.id}`;
         }).catch(err=>{
+            localStorage.clear();
             Swal.fire({
                 icon: 'error',
                 title: '登入失敗!',
                 text: '請重新確認資料'
             });
+            console.log(err);
             verifyImg.click();
         })
     }

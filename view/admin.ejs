@@ -1,84 +1,304 @@
-<main>
+<main class="container-sm my3">
     <h1 class="h1Size mb2">後台管理</h1>
-    <ul class="d-flex h2Size">
-        <li class="active">商品管理</li>
-        <li>訂單管理</li>
-        <li>材料包審核</li>
-        <li>收益提領審核</li>
+    <ul class="row adminNav">
+        <li class="col active">商品管理</li>
+        <li class="col">訂單管理</li>
+        <li class="col">材料包審核</li>
+        <li class="col">收益提領審核</li>
     </ul>
-    <!-- Button trigger modal -->
-    <button type="button" class="" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        添加商品
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">新增商品</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="d-flex">
-                        <label class="d-flex">
-                            <p>*商品類別:</p>
-                            <select name="" id="">
-                                <option value="" selected disabled hidden>商品種類</option>
-                                <option value="">五股牛奶棉</option>
-                                <option value="">四股牛奶棉</option>
-                            </select>
-                        </label>
-                        <label class="d-flex">
-                            <p>新增種類:</p><input type="text" name="" id="">
-                        </label>
-                        <button type="button">新增</button>
+    <div class="commodityManagement">
+        <!-- Button trigger modal -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <select name="" id="" class="filterGoods">
+                <option value="全部分類" selected>全部分類</option>
+                <option value="毛線">毛線</option>
+                <option value="鉤針">鉤針</option>
+                <option value="配件">配件</option>
+                <option value="材料包">材料包</option>
+                <option value="收納袋">收納袋</option>
+            </select>
+            <button type="button" class="addGoods h3Size" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                添加商品
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">新增商品</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <label class="d-flex">
-                        <p>重量</p><input type="text" name="" id="" placeholder="單位:g">
-                    </label>
-                    <div class="d-flex">
-                        <label class="d-flex">
-                            <p>*分類:</p>
-                            <select name="" id="">
-                                <option value="" selected disabled hidden>請選擇分類</option>
-                                <option value="">毛線</option>
-                                <option value="">鉤針</option>
-                            </select>
+                    <div class="modal-body">
+                        <div class="d-block d-md-flex align-items-center mb-3">
+                            <label class="d-flex">
+                                <p>*名稱:</p>
+                                <select name="" id="" required>
+                                    <option value="" selected disabled hidden>商品種類</option>
+                                    <option value="">五股牛奶棉</option>
+                                    <option value="">四股牛奶棉</option>
+                                </select>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <label class="d-flex">
+                                    <p>新增:</p><input type="text" name="" id="">
+                                </label>
+                                <button type="button">新增</button>
+                            </div>
+                        </div>
+                        <label class="d-flex mb-3">
+                            <p>重量</p><input type="text" name="" id="" placeholder="單位:g">
                         </label>
-                        <label class="d-flex">
-                            <p>新增分類:</p><input type="text" name="" id="">
+                        <div class="d-block d-md-flex align-items-center mb-3">
+                            <label class="d-flex">
+                                <p>*分類:</p>
+                                <select name="" id="" required>
+                                    <option value="" selected disabled hidden>請選擇分類</option>
+                                    <option value="">毛線</option>
+                                    <option value="">鉤針</option>
+                                </select>
+                            </label>
+                            <div class="d-flex align-items-center">
+                                <label class="d-flex">
+                                    <p>新增:</p><input type="text" name="" id="">
+                                </label>
+                                <button type="button">新增</button>
+                            </div>
+                        </div>
+                        <label class="d-flex mb-3">
+                            <p>*單價:</p><input type="number" required>
                         </label>
-                        <button type="button">新增</button>
+                        <div class="d-block d-md-flex align-items-center mb-3">
+                            <label class="d-flex mb-3">
+                                <p>顏色:</p><input type="text" name="" id="">
+                            </label>
+                            <label class="d-flex">
+                                <p>顏色碼:</p><input type="text" name="" id="">
+                            </label>
+                        </div>
+                        <div class="d-block d-md-flex mb-3">
+                            <p>*商品封面:</p>
+                            <img src="images/yarn3.jpg" alt="">
+                        </div>
+                        <label class="d-flex">
+                            <p>封面上傳:</p><input type="text" name="" id=""><button class="button">上傳</button>
+                        </label>
                     </div>
-                    <label class="d-flex">
-                        <p>售價:</p><input type="text">
-                    </label>
-                    <div class="d-flex">
-                        <label class="d-flex">
-                            <p>顏色名稱:</p><input type="text" name="" id="">
-                        </label>
-                        <label class="d-flex">
-                            <p>顏色碼:</p><input type="text" name="" id="">
-                        </label>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary">新增</button>
                     </div>
-                    <div class="d-flex">
-                        <p>*商品封面:</p>
-                        <img src="images/yarn3.jpg" alt="" style="width: 60%;">
-                    </div>
-                    <label class="d-flex">
-                        <p>封面上傳:</p><input type="text" name="" id=""><button class="button">上傳</button>
-                    </label>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                    <button type="button" class="btn btn-primary">新增</button>
                 </div>
             </div>
         </div>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>*名稱</th>
+                    <th>重量</th>
+                    <th>*分類</th>
+                    <th>*單價</th>
+                    <th>顏色</th>
+                    <th>推薦</th>
+                    <th>修改</th>
+                    <th>刪除</th>
+                </tr>
+            </thead>
+            <tbody class="goodsTable"></tbody>
+        </table>
+    </div>
+    <div class="ordersManagement">
+        <p class="h2Size mb-3">待處理訂單</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>編號</th>
+                    <th>審核狀態</th>
+                    <th>理貨進度</th>
+                    <th>收件人信息</th>
+                    <th>寄件編號</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="待處理" selected>待處理</option>
+                            <option value="已出貨">已出貨</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>
+                        <p>王曉明(0912345829)</p>
+                        <p>全家-某某門市</p>
+                    </td>
+                    <td><input type="text" value="待出貨要用focus"></td>
+                    <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="待處理" selected>待處理</option>
+                            <option value="已出貨">已出貨</option>
+                        </select>
+                    </td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>
+                        <p>王曉明(0912345829)</p>
+                        <p>全家-某某門市</p>
+                    </td>
+                    <td><input type="text" value="待出貨要用focus"></td>
+                    <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="h2Size my-3">已完成訂單</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>編號</th>
+                    <th>審核狀態</th>
+                    <th>理貨進度</th>
+                    <th>收件人信息</th>
+                    <th>寄件編號</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>已出貨</td>
+                    <td><input type="checkbox" name="" id="" checked disabled></td>
+                    <td>
+                        <p>王曉明(0912345829)</p>
+                        <p>全家-某某門市</p>
+                    </td>
+                    <td><input type="text" disabled></td>
+                    <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="userSellAudit">
+        <p class="h2Size mb-3">待審額</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>材料包名稱</th>
+                    <th>售價</th>
+                    <th>所需材料</th>
+                    <th>審核結果</th>
+                    <th>原因</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12生肖-豬玩偶</td>
+                    <td>200</td>
+                    <td class="small">五股牛奶棉-紅色*2、五股牛奶棉-黑色*2</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="待審核" selected disabled hidden>待審核</option>
+                            <option value="通過">通過</option>
+                            <option value="失敗">失敗</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" value="客服將在3~7天內完成審核" disabled>
+                        <img src="/images/Vector.png" alt="" class="pointer">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h2Size my-3">審核完畢</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>材料包名稱</th>
+                    <th>售價</th>
+                    <th>所需材料</th>
+                    <th>審核結果</th>
+                    <th>原因</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12生肖-豬玩偶</td>
+                    <td>200</td>
+                    <td class="small">五股牛奶棉-紅色*2、五股牛奶棉-黑色*2</td>
+                    <td>
+                        <select name="" id="" disabled>
+                            <option value="待審核" selected disabled hidden>待審核</option>
+                            <option value="通過">通過</option>
+                            <option value="失敗">失敗</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" value="客服將在3~7天內完成審核" disabled>
+                        <img src="/images/Vector.png" alt="" class="pointer">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="withdrawalApplication">
+        <p class="h2Size mb-3">待審額</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>材料包名稱</th>
+                    <th>售價</th>
+                    <th>所需材料</th>
+                    <th>審核結果</th>
+                    <th>原因</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>圈圈</td>
+                    <td>123114251123</td>
+                    <td>800</td>
+                    <td>20</td>
+                    <td>
+                        <select name="" id="">
+                            <option value="待處理" selected>待處理</option>
+                            <option value="已轉帳">已轉帳</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h2Size my-3">審核完畢</p>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>提領人</th>
+                    <th>帳戶</th>
+                    <th>銀行代碼</th>
+                    <th>提領金額</th>
+                    <th>進度</th>
+                    <th>撥款日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>圈圈</td>
+                    <td>123114251123</td>
+                    <td>800</td>
+                    <td>20</td>
+                    <td>完成</td>
+                    <td class="small d-flex flex-column flex-shrink-0">
+                        2012-12-02
+                        <span class="ms-3">12:45</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"></script>
+<script src="js/admin.js"></script>

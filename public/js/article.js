@@ -38,7 +38,7 @@ axios.get(`${baseURL}/${nowHref[nowHref.length-2]}`)
     });
     
 })
-.catch(err=>console.log(err));
+.catch(err=>localStorage.clear());
 
 //點擊收藏變動
 function optionSave(item,which){
@@ -63,6 +63,7 @@ function optionSave(item,which){
 }
 function showDb(item){
     articleTitle.textContent = item.title;
+    document.title = item.title;
     articleTitle.nextElementSibling.children[0].textContent = `收藏: ${item.saveNum}`;
     articleTitle.nextElementSibling.children[1].textContent = `人氣: ${item.scanNum}`;
     savedNum.textContent = item.saveNum;
@@ -72,24 +73,23 @@ function showDb(item){
 //把內容裡面的圖片新增到資料中
 //可以考慮搬到發布新文章頁面
 function patchImg(baseURL,item,which){
-    const imgRegExp = /src=['"][\d\w\s,:,/,.,/,;,+]*/g;
-    const imgUrl = item.content.match(imgRegExp);
-    if(imgUrl!=null){
-        const onlyUrl = imgUrl.reduce((obj,url)=>{
-            obj[url]?obj[url]++:obj[url]=1;
-            return obj;
-        },{});
-        let str='';
-        for (const key in onlyUrl) {
-            str+=`${key.replace(/src=["']/g,'')} `;
-        }
-        const needUrl = str.split(' ')
-        needUrl.pop();
+    const imgRegExp = /^http/g;
+    const imgUrl = item.content.split('\"').filter(item=>imgRegExp.test(item));
+    if(imgUrl.length != 0){
+        const needUrl = [];
+        imgUrl.forEach(item=>{
+            needUrl.includes(item) ? item : needUrl.push(item)
+        })
         axios.patch(`${baseURL}/${which}/${item.id}`,{
-            img:[needUrl],
+            img:needUrl,
             cover:needUrl[0]
         });
-    };
+    }else{
+        axios.patch(`${baseURL}/${which}/${item.id}`,{
+            img:["https://upload.cc/i1/2022/11/06/4nbtyE.jpg"],
+            cover:"https://upload.cc/i1/2022/11/06/4nbtyE.jpg"
+        });
+    }
 }
 
 

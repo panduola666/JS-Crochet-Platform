@@ -1,0 +1,106 @@
+.adminNav{
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 1rem;
+    .active{
+        border-bottom: 2px solid $primaryColor;
+    }
+    li{
+        cursor: pointer;
+        padding-bottom: .5rem;
+        &:hover{
+            font-size: 1.5rem;
+            border-bottom: 2px solid $secondaryColor;
+        }
+    }
+}
+.withdrawalApplication,.ordersManagement,.userSellAudit{
+    display: none;
+}
+.addGoods{
+    padding: 1rem 3rem;
+    background-color: $secondaryColor;
+    border-radius: 8px;
+    border: none;
+    &:hover{
+        background-color: $primaryColor;
+        color: #fff;
+    }
+    @media (max-width:768px) {
+        padding: .5rem 2rem;
+    }
+}
+.filterGoods{
+    width: 30%;
+}
+.adminTable{
+    width: 100%;
+    border: 1px solid $darkColor;
+    border-radius: 8px;
+    border-collapse: separate;
+    text-align: center;
+    background-color: #fff;
+    input[type=checkbox]{
+        transform: scale(1.5);
+    }
+    input[type=text]{
+        width: 80%;
+        text-align: center;
+        border: none;
+        outline: none;
+        &:focus{
+            border-bottom: 1px solid black;
+        }
+        &:disabled{
+            background-color: rgba(0,0,0,0);
+        }
+    }
+    th,td{
+        padding: 1rem .5rem;
+        vertical-align: middle;
+    }
+    td{
+        max-width: 15rem;
+        border-top: 1px solid $darkColor;
+    }
+}
+
+
+.modal-dialog{
+    max-width: 60vw;
+    min-width: 18rem;
+    @media (max-width:768px) {
+        max-width: 80vw;
+    }
+}
+.modal-content{
+    overflow: auto;
+    border: 3px solid $primaryColor;
+}
+.modal-body{
+    white-space: nowrap;
+    label,p{
+        margin-right: .5rem;
+    }
+    input[type=text]{
+        border: none;
+        border-bottom: 1px solid black;
+        outline: none;
+        width: 100%;
+        max-width: 25rem;
+    }
+    button{
+        border-radius: 8px;
+        border: none;
+        background-color: $secondaryColor;
+        padding: .5rem 2rem;
+        @media (max-width:576px) {
+            padding: .5rem 1rem;
+        }
+    }
+    img{
+        max-width: 80%;
+        min-width: 50%;
+    }
+}

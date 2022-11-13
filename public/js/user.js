@@ -1,11 +1,8 @@
 //缺修改密碼未完成 - 如何解碼?
-const token = localStorage.getItem('accessToken');
 const baseUrl = `http://127.0.0.1:3000`;
-const href = window.location.href.split('/');
-const userId = href[href.length-1];
 const headers = {
     headers:{
-        Authorization:token
+        Authorization:localStorage.getItem('accessToken')
     }};
 //頭像
 const avatar = document.querySelector('.avatar');
@@ -16,14 +13,14 @@ const applicationAgree = document.querySelector('.agree');
 const userDBInput = document.querySelectorAll('.userDB input');
 const userDBChange = document.querySelector('.userDBChange');
 const userAccount = document.querySelector('.userAccount');
-const addCreditCard = document.querySelector('.addCreditCard');
-const creditCardInfo = document.querySelector('.creditCardInfo');
+const addCreditCard = document.querySelector('.creditCardBTN');
+const creditCardInfo = document.querySelector('.creditCardNum');
 const myCreditCard = document.querySelector('.myCreditCard');
 //密碼
 const passwordDB = document.querySelector('.passwordDB');
 const pwInput = document.querySelectorAll('.passwordDB input');
 const passwordChange = passwordDB.querySelector('button');
-axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
+axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=works&_embed=articles`,headers)
 .then(res=>{
     const userDb = res.data;
     userDbInit();
@@ -37,6 +34,9 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
         userDBInput[1].value = userDb.phoneNumber;
         userDBInput[2].value = userDb.barcode;
         userDBInput[3].value = userDb.creditCard.cardNumber;
+        userDBInput[4].value = userDb.creditCard.expiryDate.split('/')[0];
+        userDBInput[5].value = userDb.creditCard.expiryDate.split('/')[1];
+        userDBInput[6].value = userDb.creditCard.securityCode;
         myCreditCard.textContent = userDb.creditCard.cardNumber.replace(userDb.creditCard.cardNumber.slice(3,-3),'*'.repeat(userDb.creditCard.cardNumber.slice(3,-3).length));
         baseDBList[0].children[1].textContent = `${userDb.articles.length + userDb.works.length}篇`;
         baseDBList[1].children[1].textContent = `${userDb.boughtArticles.length}篇`;
@@ -59,7 +59,7 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
                 myCreditCard.textContent = creditCardNum.replace(needChang,'*'.repeat(needChang.length));
                 creditCardInfo.style.display = 'none';
                 userDBChange.textContent = '編輯';
-                axios.patch(`${baseUrl}/users/${userDb.id}`,{
+                axios.patch(`${baseUrl}/600/users/${userDb.id}`,{
                     userName:userDBInput[0].value,
                     phoneNumber:userDBInput[1].value,
                     barcode:userDBInput[2].value,
@@ -71,8 +71,10 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
                 },headers);
             };
         });
+
+        //新增帳戶
         addCreditCard.addEventListener('click',()=>{
-            creditCardInfo.style.display = 'block';
+            creditCardInfo.style.display =  creditCardInfo.style.display == 'block' ? 'none' : 'block';
         });
     };
     
@@ -87,7 +89,7 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
                 document.querySelector('div.modal-backdrop').classList.remove('show');
                 application.style.display = 'none';
                 baseDBList[3].style.display = 'flex';
-                axios.patch(`${baseUrl}/users/${userDb.id}`,{
+                axios.patch(`${baseUrl}/600/users/${userDb.id}`,{
                     isCreator:true
                 },headers);
             });
@@ -99,6 +101,7 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
     if(err.request.status==403){
         document.location.href = `/user/${localStorage.getItem('userId')}`;
     }else if (err.request.status==401){
+        localStorage.clear();
         Swal.fire({
             icon: 'error',
             title: '帳號過期!',
@@ -113,21 +116,21 @@ axios.get(`${baseUrl}/users/${userId}?_embed=works&_embed=articles`,headers)
 
 
 //管理文章
-// baseDBList.forEach(li=>{
-//     li.addEventListener('click',(e)=>{
-//         console.log(li.textContent.includes('我的文章'));
-//         if(li.textContent.includes('我的文章')){
-//             document.location.href = '/myArticle';
-//         }else if(li.textContent.includes('我的留言')){
-//             document.location.href = '/myMessage';
-//         }else if(li.textContent.includes('我的收藏')){
-//             document.location.href = '/mySave';
-//         }else if(li.textContent.includes('材料包管理')){
-//             console.log(li);
-//             document.location.href = '/userSell';
-//         }
-//     })
-// })
+baseDBList.forEach(li=>{
+    li.addEventListener('click',(e)=>{
+        console.log(li.textContent.includes('我的文章'));
+        if(li.textContent.includes('我的文章')){
+            document.location.href = `/myArticle/${localStorage.getItem('userId')}`;
+        }else if(li.textContent.includes('我的留言')){
+            document.location.href = `/myMessage/${localStorage.getItem('userId')}`;
+        }else if(li.textContent.includes('我的收藏')){
+            document.location.href = `/mySave/${localStorage.getItem('userId')}`;
+        }else if(li.textContent.includes('材料包管理')){
+            console.log(li);
+            document.location.href = `/userSell/${localStorage.getItem('userId')}`;
+        }
+    })
+})
 
 
 

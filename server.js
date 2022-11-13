@@ -19,13 +19,7 @@ app.get('/addArticle', function (req, res) {
     res.render('layout', {title:'發布',body:'addArticle.ejs'});
 });
 app.get('/article/:tag/:id', function (req, res) {
-    //這裡放文章標題
-    //這裡放文章標題
-    //這裡放文章標題
-    //這裡放文章標題
-    //這裡放文章標題
-    //這裡放文章標題
-    res.render('layout', {title:'  這裡放文章標題   ',body:'article.ejs'});
+    res.render('layout', {title:'文章',body:'article.ejs'});
 });
 app.get('/articleList', function (req, res) {
     res.render('layout', {title:'技巧文章',body:'articleList.ejs'});

@@ -69,7 +69,7 @@ const { createEditor, createToolbar } = window.wangEditor
 const editorConfig = {
     placeholder: '請輸入內容...',
     onChange(editor) {
-        const html = editor.getHtml()
+        const html = editor.getHtml().replace(/"/g,'\\"')
         console.log('editor content', html)
     }
 }

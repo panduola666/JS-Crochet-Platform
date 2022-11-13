@@ -14,7 +14,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "jsonDB": "json-server --watch public/db/db.json -m ./node_modules/json-server-auth -r public/db/routes.json",
+    "jsonDB": "json-server --watch public/db/db.json -m ./node_modules/json-server-auth",
     "server": "nodemon server.js",
     "start": "concurrently \"npm run server\" \"npm run jsonDB\""
   },

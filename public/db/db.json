@@ -8,10 +8,10 @@
       "isCreator": "false",
       "isAdmin": "true",
       "shoppingCar": [],
-      "saveArticles": [
+      "saveArticles": [],
+      "boughtArticles": [
         "可愛蛋糕水桶包(含圖解)"
       ],
-      "boughtArticles":["可愛蛋糕水桶包(含圖解)"],
       "phoneNumber": "09",
       "barcode": "",
       "creditCard": {
@@ -25,18 +25,25 @@
       "password": "$2a$10$1hBqxUXZ.IIH3w9omu19TO6y9bUazanaR0/XTh7zvI5OxRVxLxAce",
       "userName": "68891",
       "isCreator": false,
-      "isAdmin": false,
-      "shoppingCar": [],
-      "saveArticles": [
-        "12生肖-豬寶寶布偶"
+      "isAdmin": true,
+      "shoppingCar": [
+        {
+          "id": 3,
+          "price": 20,
+          "num": 2
+        }
       ],
-      "boughtArticles":["12生肖-豬寶寶布偶"],
+      "saveArticles": [],
+      "boughtArticles": [
+        1,
+        3
+      ],
       "phoneNumber": "0972198312",
       "barcode": "/2edcdWQ",
       "creditCard": {
-        "cardNumber": "",
-        "expiryDate": "/",
-        "securityCode": ""
+        "cardNumber": "3112313123231",
+        "expiryDate": "01/12",
+        "securityCode": "125"
       },
       "id": 2
     },
@@ -44,15 +51,13 @@
       "email": "panduola666@yahoo.com",
       "password": "$2a$10$oJEaFgm9vJ3tmL.w5wzJ9.eEBIJuubmTpEbTviLO9BV9gyqRhf4lm",
       "userName": "小圈圈",
-      "isCreator": true,
+      "isCreator": false,
       "isAdmin": false,
       "shoppingCar": [],
-      "boughtArticles":[],
+      "boughtArticles": [],
       "saveArticles": [
-        "可愛蛋糕水桶包(含圖解)",
-        "兩用變形圍脖帽",
-        "桃心小猴玩偶",
-        "可愛蛋糕水桶包(含圖解)"
+        1,
+        2
       ],
       "id": 3,
       "phoneNumber": "0979902713",
@@ -69,26 +74,58 @@
       "id": 1,
       "title": "五股牛奶棉-50g",
       "price": "20",
-      "color": [
-        "紅色",
-        "黑色",
-        "卡其",
-        "深咖",
-        "淺咖",
-        "白色"
+      "isRecommend": true,
+      "colors": [
+        {
+          "name": "紅色",
+          "code": "red"
+        },
+        {
+          "name": "黑色",
+          "code": "#000"
+        },
+        {
+          "name": "卡其",
+          "code": "#A0522D"
+        },
+        {
+          "name": "深咖",
+          "code": "#800000"
+        },
+        {
+          "name": "白色",
+          "code": "#fff"
+        }
       ],
-      "sellNum": 0
+      "type": "毛線",
+      "sellNum": 0,
+      "cover":"https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn.webp"
     },
     {
       "title": "四股牛奶棉-50g",
       "price": "18",
-      "color": [
-        "深咖",
-        "淺咖",
-        "白色",
-        "膚色",
-        "天藍",
-        "灰色"
+      "isRecommend": true,
+      "colors": [
+        {
+          "name": "黑色",
+          "code": "#000"
+        },
+        {
+          "name": "天藍",
+          "code": "#00BFFF"
+        },
+        {
+          "name": "深咖",
+          "code": "#800000"
+        },
+        {
+          "name": "白色",
+          "code": "#fff"
+        },
+        {
+          "name": "膚色",
+          "code": "#FFDEAD"
+        }
       ],
       "id": 2,
       "type": "毛線",
@@ -97,37 +134,70 @@
     {
       "title": "三股牛奶棉-50g",
       "price": "21",
-      "color": [
-        "深咖",
-        "淺咖",
-        "白色",
-        "膚色",
-        "天藍",
-        "灰色"
+      "isRecommend": true,
+      "colors": [
+        {
+          "name": "黑色",
+          "code": "#000"
+        },
+        {
+          "name": "天藍",
+          "code": "#00BFFF"
+        },
+        {
+          "name": "深咖",
+          "code": "#800000"
+        },
+        {
+          "name": "白色",
+          "code": "#fff"
+        },
+        {
+          "name": "膚色",
+          "code": "#FFDEAD"
+        }
       ],
       "id": 3,
       "type": "毛線",
-      "sellNum": 0
+      "sellNum": 0,
+      "cover":"https://github.com/panduola666/2022JS-/blob/main/public/images/yarn2.jpg?raw=true"
     },
     {
       "title": "16股情人棉-200g",
       "price": "30",
-      "color": [
-        "深咖",
-        "淺咖",
-        "白色",
-        "紅色",
-        "黑色",
-        "天藍色"
+      "isRecommend": true,
+      "colors": [
+        {
+          "name": "黑色",
+          "code": "#000"
+        },
+        {
+          "name": "天藍",
+          "code": "#00BFFF"
+        },
+        {
+          "name": "深咖",
+          "code": "#800000"
+        },
+        {
+          "name": "白色",
+          "code": "#fff"
+        },
+        {
+          "name": "膚色",
+          "code": "#FFDEAD"
+        }
       ],
       "id": 4,
       "type": "毛線",
-      "sellNum": 0
+      "sellNum": 0,
+      "cover":"https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn4.webp"
     },
     {
       "title": "超值鉤針套裝",
       "price": "88",
-      "color": [],
+      "isRecommend": true,
+      "colors": [],
       "type": "鉤針",
       "id": 5,
       "sellNum": 0
@@ -135,7 +205,8 @@
     {
       "title": "DIY手工玩偶填充棉",
       "price": "13",
-      "color": [],
+      "isRecommend": false,
+      "colors": [],
       "type": "配件",
       "id": 6,
       "sellNum": 0
@@ -147,7 +218,7 @@
       "tag": "材料選取",
       "cover": "https://upload.cc/i1/2022/11/06/auU0xi.jpg",
       "title": "鉤針選擇指南-給初學者的建議",
-      "content": "<h3 style='text-align: start; line-height: 1.5;'><span style='font-size: 19px;'>選擇鉤針的方式：看針號或直徑(以mm表示)</span></h3><p><span style='color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); font-size: 16px;'>在鉤針方面，直徑指的是鉤頭後面那段的直徑長度。鉤針直徑和針號可以互相對應，因此選購鉤針時不論看針號或直徑都可以。但是，不同國家有不一樣的規格，因此必須注意你所選購的鉤針是遵照哪一個國家規格，避免買錯尺寸。</span></p><p style='text-align: start;'>以舒適性來說建議買軟柄 &gt; 扁竹柄 &gt; 金屬柄。軟柄握起來最舒適較適合長時間使用，而竹柄較輕較省力。金屬柄最硬，我之前每天使用它造成右手食指側面長繭，因此建議如果你是長時間編織的人盡量選擇其他兩種使用。</p><p style='text-align: start;'>金屬柄雖然沒有其他兩種用起來舒服，但仍有其他優點存在。1. 有的金屬柄鉤針是雙頭設計，等於買一支抵兩支用，很經濟實惠 2. 金屬柄鉤針從頭到尾一體成型，因此不容易斷裂，非常堅固耐用。</p><h3 style='text-align: start; line-height: 1.5;'><span style='font-size: 19px;'>怎麼選鉤針針號</span></h3><p style='text-align: start;'>初學者的鉤針常用針號是<strong> 2.5~3.5mm</strong>，通常數字越大鉤針越粗喔。</p><p style='text-align: start;'>還沒習慣鉤針針法和拿毛線的方式時，初學者較常遇到短針大小不均、針目鉤太小很難穿過去等等問題，這是因為現在還不能熟練地控制毛線，力道時大時小。除了提醒自己不要把線拉過緊之外，當發現鉤不進去時，也可以用小一點的鉤針鉤起立針 (也就是第一針之前的鎖針) 和引拔針，再換回原本的鉤針繼續鉤，以此達到改善的效果。</p><h3 style='text-align: start; line-height: 1.5;'><span style='font-size: 19px;'>鉤針要買整組還是幾支就好?</span></h3><p><span style='color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); font-size: 16px;'>不論是網購或實體店面你可能會看到一整套的鉤針組，這可能令人很心動，但真實情況是「常用的鉤針只有那幾支」，畢竟你買的毛線通常也就固定幾種不是嗎？因此我建議初學者選購 1~2 支鉤針就好，這樣已經很夠用了。未來當你想挑戰更多作品，需要用到其他粗細的毛線時，再來買適合的鉤針更實在呢。</span></p>'",
+      "content": "<h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">選擇鉤針的方式：看針號或直徑(以mm表示)</span></h3><p style=\"text-align: start;\">在鉤針方面，直徑指的是鉤頭後面那段的直徑長度。鉤針直徑和針號可以互相對應，因此選購鉤針時不論看針號或直徑都可以。但是，不同國家有不一樣的規格，因此必須注意你所選購的鉤針是遵照哪一個國家規格，避免買錯尺寸。</p><p style=\"text-align: start;\">以舒適性來說建議買軟柄 &gt; 扁竹柄 &gt; 金屬柄。軟柄握起來最舒適較適合長時間使用，而竹柄較輕較省力。金屬柄最硬，我之前每天使用它造成右手食指側面長繭，因此建議如果你是長時間編織的人盡量選擇其他兩種使用。</p><p style=\"text-align: start;\">金屬柄雖然沒有其他兩種用起來舒服，但仍有其他優點存在。1. 有的金屬柄鉤針是雙頭設計，等於買一支抵兩支用，很經濟實惠 2. 金屬柄鉤針從頭到尾一體成型，因此不容易斷裂，非常堅固耐用。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">怎麼選鉤針針號</span></h3><p style=\"text-align: start;\">初學者的鉤針常用針號是<strong> 2.5~3.5mm</strong>，通常數字越大鉤針越粗喔。</p><p style=\"text-align: start;\">還沒習慣鉤針針法和拿毛線的方式時，初學者較常遇到短針大小不均、針目鉤太小很難穿過去等等問題，這是因為現在還不能熟練地控制毛線，力道時大時小。除了提醒自己不要把線拉過緊之外，當發現鉤不進去時，也可以用小一點的鉤針鉤起立針 (也就是第一針之前的鎖針) 和引拔針，再換回原本的鉤針繼續鉤，以此達到改善的效果。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">鉤針要買整組還是幾支就好?</span></h3><p>不論是網購或實體店面你可能會看到一整套的鉤針組，這可能令人很心動，但真實情況是「常用的鉤針只有那幾支」，畢竟你買的毛線通常也就固定幾種不是嗎？因此我建議初學者選購 1~2 支鉤針就好，這樣已經很夠用了。未來當你想挑戰更多作品，需要用到其他粗細的毛線時，再來買適合的鉤針更實在呢。</p>",
       "img": [
         "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
       ],
@@ -160,12 +231,12 @@
       "tag": "材料選取",
       "cover": "https://upload.cc/i1/2022/11/06/auU0xi.jpg",
       "title": "毛線編織線材推薦",
-      "content": "<p><span style='color: rgb(51, 51, 51); background-color: rgb(255, 255, 255); font-size: 24px;'><strong>最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</strong></span></p><p style='text-align: start;'>毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style='text-align: start;'>適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style='text-align: start; line-height: 1.5;'><span style='font-size: 19px;'>編織初學者的地雷毛線</span></h3><p style='text-align: start;'>太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</p>'",
+      "content": "<p><span style=\"color: rgb(51, 51, 51); font-size: 24px;\"><strong>最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</strong></span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
       "img": [
         "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
       ],
       "saveNum": 10,
-      "scanNum": 104,
+      "scanNum": 105,
       "createDate": "2020-10-15 02:21:11",
       "id": 2,
       "userId": 2
@@ -179,7 +250,7 @@
         "https://upload.cc/i1/2022/11/06/4nbtyE.jpg"
       ],
       "saveNum": 20,
-      "scanNum": 601,
+      "scanNum": 604,
       "createDate": "2009-08-11 10:21:11",
       "id": 3,
       "userId": 1
@@ -191,7 +262,7 @@
       "tag": "包包",
       "cover": "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg",
       "title": "可愛蛋糕水桶包(含圖解)",
-      "content": "<p><span style='color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);'>最近很火的一款鉤針蛋糕包,這次分享草莓款的,擺在桌上又是一個收納神器!這邊的範例是白奶油蛋糕上面做草莓裝飾，同時草莓可以做抽繩的推拉扣來控制包包的開啟與否。</span></p><p><span style='color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);'>另外如果是第一次接觸鉤針的寶寶們，建議可以購買材料包，可以提供ＱＡ的問答服務，另外加碼提供視頻教學參考。</span></p><p><img src='https://upload.cc/i1/2022/11/03/9ZQhvS.jpg' alt='可愛蛋糕水桶包(含圖解)' data-href='https://upload.cc/i1/2022/11/03/9ZQhvS.jpg' style='width: 50%;'/></p><p><span style='color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);'>配色方面可以自己選擇喜歡的口味，這裡示範的是巧克力蛋糕，如果家裡有其他的配飾可以在綁在抽繩末端做裝飾唷！</span></p>",
+      "content": "<p style=\"text-align: start;\">最近很火的一款鉤針蛋糕包,這次分享草莓款的,擺在桌上又是一個收納神器!這邊的範例是白奶油蛋糕上面做草莓裝飾，同時草莓可以做抽繩的推拉扣來控制包包的開啟與否。</p><p style=\"text-align: start;\">另外如果是第一次接觸鉤針的寶寶們，建議可以購買材料包，可以提供ＱＡ的問答服務，另外加碼提供視頻教學參考。</p><p style=\"text-align: start;\"><img src=\"https://upload.cc/i1/2022/11/03/9ZQhvS.jpg\" alt=\"\" data-href=\"https://upload.cc/i1/2022/11/03/9ZQhvS.jpg\" style=\"width: 50%;\"></p><p style=\"text-align: start;\"><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">配色方面可以自己選擇喜歡的口味，這裡示範的是巧克力蛋糕，如果家裡有其他的配飾可以在綁在抽繩末端做裝飾唷！</span></p>",
       "isSell": {
         "title": "可愛蛋糕水桶包(含圖解)",
         "price": "200",
@@ -211,12 +282,13 @@
               1
             ]
           }
-        ]
+        ],
+        "canSell": "通過",
+        "reason": "通過"
       },
       "img": [
-        [
-          "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg"
-        ]
+        "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg",
+        "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg"
       ],
       "q&a": [
         {
@@ -230,8 +302,8 @@
           }
         }
       ],
-      "saveNum": 5,
-      "scanNum": 239,
+      "saveNum": 11,
+      "scanNum": 244,
       "createDate": "2022-10-15 12:21:11",
       "userId": 3
     },
@@ -254,9 +326,11 @@
       ],
       "id": 2,
       "cover": "https://upload.cc/i1/2022/11/03/byu3aL.jpg",
-      "saveNum": 6,
-      "scanNum": 9,
-      "createDate": "2012-12-15 02:01:11"
+      "saveNum": 14,
+      "scanNum": 10,
+      "createDate": "2012-12-15 02:01:11",
+      "canSell": "通過",
+      "reason": "通過"
     },
     {
       "title": "兩用變形圍脖帽",
@@ -279,9 +353,11 @@
       "id": 3,
       "cover": "https://upload.cc/i1/2022/11/03/RvxOwz.jpg",
       "saveNum": 32,
-      "scanNum": 18,
+      "scanNum": 24,
       "createDate": "2022-12-30 11:21:11",
-      "userId": 3
+      "userId": 3,
+      "canSell": "通過",
+      "reason": "通過"
     },
     {
       "title": "12生肖-豬寶寶布偶",
@@ -295,17 +371,33 @@
         ]
       },
       "img": [
-        "https://upload.cc/i1/2022/11/03/hvxgUz.jpg"
+        "https://upload.cc/i1/2022/11/13/wzgqrS.jpg"
       ],
       "q&a": [
         {}
       ],
       "id": 4,
-      "cover": "https://upload.cc/i1/2022/11/03/hvxgUz.jpg",
-      "saveNum": 12,
-      "scanNum": 3,
+      "cover": "https://upload.cc/i1/2022/11/13/wzgqrS.jpg",
+      "saveNum": 14,
+      "scanNum": 6,
       "createDate": "2020-10-15 12:21:11",
-      "userId": 2
+      "userId": 2,
+      "canSell": "通過",
+      "reason": "通過"
+    }
+  ],
+  "order": [
+    {
+      "id": 1,
+      "userId": 1,
+      "state": "待處理",
+      "isTally": false,
+      "toShop": {
+        "name": "登峰門市",
+        "type": "全家",
+        "address": "",
+        "sendNumber": ""
+      }
     }
   ]
 }
