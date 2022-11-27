@@ -218,33 +218,33 @@
     align-items: center;
     overflow: hidden;
     width: 90vw;
-    ul{
-        display: flex;
-        li{
-            cursor: pointer;
-            margin-right:3rem;
-            text-align: center;
-            &:hover{
-                font-weight: 600;
-            }
+}
+.goodsRecommend{
+    display: flex;
+    li{
+        cursor: pointer;
+        margin-right:3rem;
+        text-align: center;
+        &:hover{
+            font-weight: 600;
+        }
+        @media (max-width:768px) {
+            transform: translateX(-25vw);
+        }
+        img{
+            height: 25vw;
+            width: 28vw;
+            border-radius: 8px;
+            object-fit: cover;
             @media (max-width:768px) {
-                transform: translateX(-25vw);
+                width: 43vw;
+                height: 53vw;
             }
-            img{
-                height: 25vw;
-                width: 28vw;
-                border-radius: 8px;
-                object-fit: cover;
-                @media (max-width:768px) {
-                    width: 43vw;
-                    height: 53vw;
-                }
-            }
-            h3{
-                padding: 1rem;
-                @media (max-width:768px) {
-                    padding: .5rem;
-                }
+        }
+        h3{
+            padding: 1rem;
+            @media (max-width:768px) {
+                padding: .5rem;
             }
         }
     }

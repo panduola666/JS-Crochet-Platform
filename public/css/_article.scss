@@ -15,15 +15,15 @@
     }
 }
 .authorAvatar{
+    @extend .avatar;
     width: 15vw;
     height: 15vw;
-    border-radius: 50%;
-    background-image: url(../images/avatar.png);
-    background-size: contain;
-    background-position:center;
+    font-size: 9vw;
     @media (max-width:768px) {
+        -webkit-text-stroke: 1px black;
         width: 10vw;
         height: 10vw;
+        font-size: 6vw;
     }
     @media (max-width:576px) {
         display: none;
@@ -64,9 +64,17 @@
 .articleBody{
     padding-top: 2rem;
     line-height: 3rem;
+    word-wrap: break-word;
     th,td{
         border-collapse: collapse;
         border: 1px solid black;
+        text-align: center;
+        &:nth-child(2){
+            text-align: start;
+        }
+    }
+    th{
+        background-color: $secondaryColor;
     }
     img{
         max-width: 100%;
@@ -120,7 +128,6 @@
     padding-top: 1rem;
     border-top: 2px dashed $secondaryColor;
 }
-
 .question{
     width: 100%;
     textarea{
@@ -155,23 +162,22 @@
 .questionList{
     li{
         padding: 1rem;
-        border-bottom: 1px solid $darkColor;
+        border-bottom: authorAvatar1px solid $darkColor;
         &:last-child{
             border-bottom: 0;
         }
-        p:first-child{
+        p{
             margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
             flex-wrap: wrap;
-            justify-content: space-between;
         }
         span{
-            // margin-left: 1rem;
+            display: block;
+            text-align: end;
             color: #9c9c9c;
         }
     }
 }
+
 .qaMask{
     filter: blur(3px);
     user-select: none;

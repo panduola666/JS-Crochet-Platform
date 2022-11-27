@@ -1,14 +1,7 @@
 .myArticle,.myMessage,.mySave,.article{
-    // background-color: #fff;
     border: 1px solid $darkColor;
     width: 100%;
     border-radius: 8px;
-    article{
-        cursor: pointer;
-        &:hover{
-            color: $primaryColor;
-        }
-    }
 }
 .actionBTN{
     display: flex;
@@ -24,14 +17,18 @@
         }
     }
 }
-.articleImg{
+img.articleImg{
     height: 180px;
-    background-image: url('../images/cakeBag.jpg');
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
 }
 .articleFont{
     line-height: 1.5rem;
+    overflow: hidden;
+    max-height: 6rem;
+    cursor: pointer;
+        &:hover{
+            font-weight: 600;
+        }
 }
 .myArticleInfo{
     margin: .5rem 1rem;
@@ -61,6 +58,18 @@
     }
 }
 .myArticleQA,.myMessageQA{
+    overflow: auto;
+    max-height: 15rem;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(222, 222, 222);
+        border-radius: 8px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $primaryColor;
+    }
     li{
         padding: .5rem 1rem;
         border-bottom: 1px solid $secondaryColor;
@@ -94,24 +103,59 @@
     }
 }
 .myAvatar{
+    @extend .avatar;
     margin: 0 1rem;
     flex-shrink:0;
     width: 4rem;
     height: 4rem;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    background-image: url('../images/IMG_8748.jpg');
-}
-.myArticleQAMore,.myMessageQAMore{
-    padding: .5rem;
-    width: 100%;
-    background-color: $secondaryColor;
-    border: none;
-    &:hover{
-        background-color: $primaryColor;
-    }
+    -webkit-text-stroke: 1px black;
+    font-size: 2rem;
+    line-height: 4rem;
+    text-align: center;
 }
 .myMessageQA{
     border-top: 1px solid $secondaryColor;
+}
+#answer{
+    &:focus{
+        box-shadow: 1px 1px 5px $darkColor;
+    }
+}
+.myQuestion{
+    cursor: default;
+    word-wrap: break-word;
+    line-height: 1.3rem;
+    width: 100%;
+    min-height: 2rem;
+    max-height: 5rem;
+    overflow: auto;
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: $secondaryColor;
+        border-radius: 8px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: $primaryColor;
+    }
+}
+.creatorReply{
+    @extend .myQuestion;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 8px;
+    padding: .3rem 1rem;
+    background-color: #fff;
+}
+.addNewQA{
+    background-color: $secondaryColor;
+    &:hover{
+        background-color: $primaryColor;
+        a{
+            color: #fff;
+        }
+    }
+    a{
+        color: $darkColor;
+    }
 }

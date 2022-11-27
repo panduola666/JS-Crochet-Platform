@@ -1,0 +1,74 @@
+.goodImg{
+    width: 40vw;
+    height: 15rem;
+    object-fit: cover;
+    margin-right: 2rem;
+}
+.introduce{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.goodColor{
+    height: 5rem;
+    input[type=button]{
+        width: 100%;
+        height: 3rem;
+        box-shadow: 1px 1px gray;
+        border: 1px solid gray;
+    }
+    .active{
+        transform: scale(.8);
+    }
+}
+.shoppingNum{
+    button{
+        width: 2rem;
+        font-size: 1.5rem;
+        background-color: $secondaryColor;
+        border: none;
+        &:hover{
+            background-color: $primaryColor;
+        }
+    }
+    input[type=number]{
+        text-align: center;
+        width: 30%;
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+    }
+}
+.addShoppingCar{
+    width: 100%;
+    padding: 1rem 0;
+    background-color: $primaryColor;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px $darkColor;
+    color: #fff;
+    &:hover{
+        font-weight: 600;
+    }
+}
+.remind{
+    line-height: 2rem;
+    font-size: 1.25rem;
+    border: 3px dashed $primaryColor;
+    animation: remindColor .3s alternate infinite ;
+    //  
+    padding: 1rem 2rem;
+    list-style: decimal;
+}
+@keyframes remindColor {
+    from{
+        border-color:$primaryColor;
+    }
+    to{
+        border-color:$secondaryColor;
+    }
+}

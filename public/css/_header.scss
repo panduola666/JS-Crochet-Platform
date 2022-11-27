@@ -4,16 +4,20 @@ header{
     background: #fff;
     box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.1);
     padding: .5rem 0;
-    // position: fixed;
     top: 0;
     z-index: 3;
     box-shadow: 0 .5px 5px rgba(0, 0, 0, 0.3);
 }
-.nav{
+img.headerLogo{
+    min-width: 6rem;
+    @media (max-width:768px) {
+        width: 20vw;
+    }
+}
+.headerNav{
     white-space:nowrap;
     align-items: center;
     justify-content: space-around;
-    top: 0;
     &:first-child{
         align-items: center;
         flex-direction: column;
@@ -25,16 +29,17 @@ header{
             color: $primaryColor;
         }
     }
-}
-.more{
-    position: relative;
-    &:hover{
-        ul{
-            display: block;
-            z-index: 3;
-        }
+    @media (max-width:1000px) {
+        justify-content: end;
     }
-    ul{
+    @media (max-width:768px) {
+        justify-content: space-around;
+    }
+}
+.more,.userMore{
+    position: relative;
+    z-index: 2;
+    .moreList{
         display: none;
         width: 10rem;
         position: absolute;
@@ -53,6 +58,9 @@ header{
                 padding: 14px 18px;
                 border-bottom: 0;
                 background-color: #fff;
+                &:hover{
+                    background-color:#fff;
+                }
             }
             &:hover{
                 background-color: $secondaryColor;
@@ -64,21 +72,20 @@ header{
                 border-radius: 8px;
                 white-space: nowrap;
                 text-align: center;
-                color: #ffffff;
-                &:hover{
-                    background-color: $secondaryColor;
-                }
+                color: #fff;
             }
         }
     }
 }
-
+.more:hover{
+    .moreList{
+        display: block;
+        z-index: 3;
+    }
+}
 .search{
+    background-color: #fff;
     display: flex;
-    z-index: 5;
-    top: 0;
-    right: 0;
-    transition: all .5s;
     label{
         border-bottom: 2px solid $primaryColor;
     }
@@ -103,6 +110,12 @@ header{
     width: 20rem;
     outline: none;
     border: none;
+    @media (max-width:768px) {
+        width: 70vw;
+    }
+    @media (max-width:376px) {
+        width: 55vw;
+    }
     &::placeholder{
     color:$secondaryColor;
     }

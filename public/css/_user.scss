@@ -17,32 +17,32 @@
             background-color: #E8E7E7;
         }
     }
-    .avatar{
-        width: 20vw;
-        height: 20vw;
-        border-radius: 50%;
-        background-color: #E8E7E7;
-        // position: relative;
-        text-align: center;
-        font-size: 10vw;
-        -webkit-text-stroke: 3px black;
-        -webkit-text-fill-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        text-transform: uppercase;
-        @media (max-width:992px) {
-            font-size: 15vw;
-            width: 30vw;
-            height: 30vw;
-        }
-        @media (max-width:576px) {
-            min-width: 10rem;
-            min-height: 10rem;
-            width: 45vw;
-            height: 45vw;
-            font-size: 5rem;
-        }
+    
+}
+.avatar{
+    width: 20vw;
+    height: 20vw;
+    border-radius: 50%;
+    background-color: #E8E7E7;
+    text-align: center;
+    font-size: 10vw;
+    -webkit-text-stroke: 3px black;
+    -webkit-text-fill-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    @media (max-width:992px) {
+        font-size: 15vw;
+        width: 30vw;
+        height: 30vw;
+    }
+    @media (max-width:576px) {
+        min-width: 10rem;
+        min-height: 10rem;
+        width: 45vw;
+        height: 45vw;
+        font-size: 5rem;
     }
 }
 .baseDBList{
@@ -53,12 +53,12 @@
         cursor: pointer;
         display: flex;
         justify-content: space-between;
-        padding: 1.5rem 1rem;
+        padding: 1rem;
         border: 1px solid $primaryColor;
         border-radius: 8px;
         min-width: 15rem;
         background-color: #fff;
-
+        margin-bottom: 1rem;
         &:hover{
             background-color: $secondaryColor;
         }

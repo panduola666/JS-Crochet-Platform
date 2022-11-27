@@ -2,21 +2,38 @@
 //帳號正則驗證
 const account = document.querySelectorAll('.account');
 const account_regex = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+let testText;
 account.forEach(accountText=>{
-    accountText.addEventListener('keyup',()=>accountText.style.borderBottom = account_regex.test(accountText.value) ? '2px solid #FFBEBA' : '2px solid red')
+    accountText.addEventListener('change',()=>{
+        clearTimeout(testText);
+        testText = setTimeout(() => {
+            accountText.style.borderBottom = account_regex.test(accountText.value) ? '2px solid #FFBEBA' : '2px solid red'; 
+        }, 200);
+    })
 })
 
 //密碼正則驗證
-const password = document.querySelectorAll('.js-password');
-const passwordCheck = document.querySelector('.js-passwordCheck');
+const password = document.querySelectorAll('.password');
+const passwordCheck = document.querySelector('.passwordCheck');
 const password_regex = /[a-zA-Z0-9]{6,}/;
 password.forEach(passwordText=>{
-    passwordText.addEventListener('keyup',()=>{passwordText.style.borderBottom = password_regex.test(passwordText.value) ? '2px solid #FFBEBA' : '2px solid red'})
+    passwordText.addEventListener('change',()=>{
+        clearTimeout(testText);
+        testText = setTimeout(() => {
+            passwordText.style.borderBottom = password_regex.test(passwordText.value) ? '2px solid #FFBEBA' : '2px solid red'
+        }, 200);
+    })
 })
-passwordCheck.addEventListener('keyup',()=>passwordCheck.style.borderBottom = passwordCheck.value==password[0].value && password_regex.test(passwordCheck.value)?'2px solid #FFBEBA' : '2px solid red')
+passwordCheck.addEventListener('change',()=>{
+    clearTimeout(testText);
+    testText = setTimeout(() => {
+        passwordCheck.style.borderBottom = passwordCheck.value==password[0].value && password_regex.test(passwordCheck.value)?'2px solid #FFBEBA' : '2px solid red'
+        console.log(passwordCheck.value);
+    }, 200);
+})
 
 //驗證碼生成
-const verifyImg = document.querySelector('.js-verifyImg');
+const verifyImg = document.querySelector('.verifyImg');
 const fontColor=["blue","yellow","red"];
 const bgColor=["yellow","red","blue","black"];
 const fLetterSpacing=["2px","8px","-2px","5px"];
@@ -40,17 +57,19 @@ function createCode(){
     } 
     verifyImg.innerHTML= code;//把code值賦給驗證碼
 }
-verifyText.addEventListener('keyup',verifyCheck);
+verifyText.addEventListener('change',verifyCheck);
 //驗證碼驗證
 function verifyCheck(){
-    verifyText.style.borderBottom = verifyText.value.toUpperCase() === verifyImg.textContent.toUpperCase() ? '2px solid #FFBEBA' : '2px solid red'
+    clearTimeout(testText);
+    testText = setTimeout(() => {
+        verifyText.style.borderBottom = verifyText.value.toUpperCase() === verifyImg.textContent.toUpperCase() ? '2px solid #FFBEBA' : '2px solid red'
+    }, 200);
 }
 
 
 
 /* 註冊邏輯 */
 const registerBtn = document.querySelector('.registerBtn');
-const baseUrl = `http://127.0.0.1:3000`;
 registerBtn.addEventListener('click',()=>{
     if(account[0].style.borderBottomColor==='red'||passwordCheck.style.borderBottomColor==='red'||password[0].style.borderBottomColor==='red'||account[0].value.trim()===''||passwordCheck.value.trim()===''||password[0].value.trim()===''){
         Swal.fire({
@@ -87,7 +106,8 @@ registerBtn.addEventListener('click',()=>{
 /* 登入邏輯 */
 const loginBtn = document.querySelector('.loginBtn');
 loginBtn.addEventListener('click',()=>{
-    if(account[1].style.borderBottomColor=='red'||verifyText.style.borderBottomColor=='red'||password[1].style.borderBottomColor=='red'){
+    if(account[1].style.borderBottomColor=='red'|| password[1].style.borderBottomColor=='red'|| verifyText.value.toUpperCase() !== verifyImg.textContent.toUpperCase()){
+        verifyImg.click();
         Swal.fire({
             icon: 'error',
             title: '資料輸入錯誤!',
@@ -98,10 +118,6 @@ loginBtn.addEventListener('click',()=>{
             "email": account[1].value,
             "password": password[1].value
         }).then(res=>{
-            console.log(res);
-            const expires = new Date();
-            expires.setTime(expires.getTime() + (60 * 60 *1000));
-            // document.cookie = `accessToken=${res.data.accessToken};expires=${expires.toGMTString()}`;
             localStorage.setItem('accessToken',`Bearer ${res.data.accessToken}`);
             localStorage.setItem('userId',res.data.user.id);
             window.location.href = `/user/${res.data.user.id}`;
@@ -112,8 +128,10 @@ loginBtn.addEventListener('click',()=>{
                 title: '登入失敗!',
                 text: '請重新確認資料'
             });
-            console.log(err);
             verifyImg.click();
         })
     }
-})
+});
+window.addEventListener('change',(e)=>{
+    if(e.key === 'Enter')loginBtn.focus();
+});

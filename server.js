@@ -21,8 +21,8 @@ app.get('/addArticle', function (req, res) {
 app.get('/article/:tag/:id', function (req, res) {
     res.render('layout', {title:'文章',body:'article.ejs'});
 });
-app.get('/articleList', function (req, res) {
-    res.render('layout', {title:'技巧文章',body:'articleList.ejs'});
+app.get('/articlesList', function (req, res) {
+    res.render('layout', {title:'技巧文章',body:'articlesList.ejs'});
 });
 app.get('/goodsList', function (req, res) {
     res.render('layout', {title:'購買商城',body:'goodsList.ejs'});
@@ -33,8 +33,8 @@ app.get('/login', function (req, res) {
 app.get('/myOrder/:id', function (req, res) {
     res.render('layout', {title:'我的訂單',body:'myOrder.ejs'});
 });
-app.get('/orderDerails/:id', function (req, res) {
-    res.render('layout', {title:'訂單詳情',body:'orderDerails.ejs'});
+app.get('/orderDerail/:id/:orderId', function (req, res) {
+    res.render('layout', {title:'訂單詳情',body:'orderDerail.ejs'});
 });
 app.get('/shoppingCar/:id', function (req, res) {
     res.render('layout', {title:'購買清單',body:'shoppingCar.ejs'});
@@ -45,7 +45,7 @@ app.get('/shoppingFinish/:id', function (req, res) {
 app.get('/shoppingPay/:id', function (req, res) {
     res.render('layout', {title:'購買人資訊',body:'shoppingPay.ejs'});
 });
-app.get('/success/:id', function (req, res) {
+app.get('/success', function (req, res) {
     res.render('layout', {title:'成功',body:'success.ejs'});
 });
 app.get('/userSell/:id', function (req, res) {
@@ -63,11 +63,12 @@ app.get('/myMessage/:id', function (req, res) {
 app.get('/mySave/:id', function (req, res) {
     res.render('layout', {title:'我的收藏',body:'mySave.ejs'});
 });
+app.get('/commodity/:id', function (req, res) {
+    res.render('layout', {title:'商品',body:'commodity.ejs'});
+});
 app.get('/admin', function (req, res) {
     res.render('layout', {title:'後台管理',body:'admin.ejs'});
 });
-
-
 
 app.listen(333);
 console.log( `點擊這裡開始:http://localhost:333`);

@@ -9,7 +9,7 @@
         <div class="payInfo px-3">
             <div class="whoPay py-3">
                 <p class="mb1 h3Size">收件人信息:</p>
-                <div class="d-flex flex-column js-buyerInfo">
+                <div class="d-flex flex-column buyerInfo">
                     <label for="" class="mb1 d-flex flex-column">收件人姓名:<input type="text" name="" id=""></label>
                     <label for="" class="d-flex flex-column">手機號碼:<input type="text" name="" id="" maxlength="10"
                             value="09"></label>
@@ -17,58 +17,38 @@
             </div>
             <div class="send py-3">
                 <p class="mb1 h3Size">寄送方式:</p>
-                <div class="row flex-column flex-sm-row">
-                    <div class="col-12 mb-2 mb-md-0 col-md-4 d-flex flex-column justify-content-between">
-                        <label for="familyMart" class="ps-3"><input type="radio" name="mark" id="familyMart"
-                                class="me-3">全家便利商店</label>
-                        <label for="sevenMark" class="ps-3"><input type="radio" name="mark" id="sevenMark"
-                                class="me-3">7-ELEVEN</label>
-                        <label for="lairfordMark" class="ps-3"><input type="radio" name="mark" id="lairfordMark"
-                                class="me-3">萊爾富便利商店</label>
-                        <label for="okMark" class="ps-3"><input type="radio" name="mark" id="okMark" class="me-3">OK
-                            Mart</label>
-                    </div>
-                    <div class="col-12 col-sm areaChoose js-areaChoose">
-                        <input type="button" value="請選擇縣市">
-                        <div class="js-cityBNT">
-                            <button>臺北市</button>
-                            <button>新北市</button>
-                            <button>桃園市</button>
-                        </div>
-                        <input type="button" value="請選擇鄉、鎮、市、區" disabled>
-                        <div class="js-areaBTN">
-                            <button>汐止區</button>
-                            <button>中正區</button>
-                        </div>
-                        <input type="button" value="請選擇街道" disabled>
-                        <div class="js-streetBTN">
-                            <button>汐萬路一段</button>
-                            <button>新台五路一段</button>
-                        </div>
-                        <input type="button" value="請選擇門市" disabled>
-                        <div class="js-shopBTN">
-                            <button>汐科門市</button>
-                            <button>新興門市</button>
-                        </div>
-                    </div>
+                <div class="marks">
+                    <p class="mb-3">
+                        <input type="radio" name="mark" id="familyMart" value="全家便利商店">
+                        <label for="familyMart">全家便利商店</label>
+                        <a href="https://www.family.com.tw/Marketing/Map" target="_blank">(店號查詢)</a>
+                    </p>
+                    <p class="mb-3">
+                        <input type="radio" name="mark" id="sevenMark" value="7-ELEVEN">
+                        <label for="sevenMark">7-ELEVEN</label>
+                        <a href="https://emap.pcsc.com.tw/emap.aspx" target="_blank">(店號查詢)</a>
+                    </p>
+                    <label for="shopNumber">寄件店號: </label>
+                    <input type="number" name="shopNumber" id="shopNumber" placeholder="請輸入店號..." required>
                 </div>
             </div>
             <div class="pay py-3">
                 <p class="mb1 h3Size">付款方式:</p>
-                <div class="js-payMethod  d-flex flex-column">
+                <div class="payMethod  d-flex flex-column">
                     <label for="byMoney" class="mb1"><input type="radio" name="pay" id="byMoney" class="mx-3"
-                            checked>貨到付款</label>
-                    <label for="byCard" class="mb-1"><input type="radio" name="pay" id="byCard" class="mx-3">信用卡</label>
+                            value="貨到付款">貨到付款</label>
+                    <label for="byCard" class="mb-1"><input type="radio" name="pay" id="byCard" class="mx-3"
+                            value="信用卡">信用卡</label>
                 </div>
-                <div class="payByCardNum js-payCardInfo">
-                    <label for="">卡號:<input type="text" maxlength="16"></label>
-                    <label for="">到期日:<input type="text" maxlength="2"><span>/</span><input type="text"
-                            maxlength="2"></label>
-                    <label for="">安全碼:<input type="text" maxlength="4"> </label>
+                <div class="payByCardNum">
+                    <label>卡號:<input type="text" maxlength="16" required></label>
+                    <label>到期日:<input type="text" maxlength="2" required>　/<input type="text" maxlength="2"
+                            required></label>
+                    <label>安全碼:<input type="text" maxlength="4" required> </label>
                 </div>
             </div>
             <div class="price py-3 d-flex flex-column">
-                <p class="h3Size mb1">商品總金額:<span class="h4Size ms-3">$60</span></p>
+                <p class="h3Size mb1">商品總金額:<span class="h4Size ms-3 goodsPrice">$60</span></p>
                 <p class="h3Size mb1">運費總金額:<span class="h4Size ms-3">$60</span></p>
                 <p class="h3Size">應付款金額:<span class="h3Size ms-3 endPrice">$120</span></p>
             </div>
@@ -80,4 +60,4 @@
         <button type="button" class="mt1">確認購買</button>
     </div>
 </main>
-<script src="js/shoppingPay.js"></script>
+<script src="/js/shoppingPay.js"></script>

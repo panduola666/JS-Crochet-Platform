@@ -7,7 +7,6 @@
         <li class="col">收益提領審核</li>
     </ul>
     <div class="commodityManagement">
-        <!-- Button trigger modal -->
         <div class="d-flex justify-content-between align-items-center mb-3">
             <select name="" id="" class="filterGoods">
                 <option value="全部分類" selected>全部分類</option>
@@ -17,6 +16,7 @@
                 <option value="材料包">材料包</option>
                 <option value="收納袋">收納袋</option>
             </select>
+            <!-- Button trigger modal -->
             <button type="button" class="addGoods h3Size" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 添加商品
             </button>
@@ -26,68 +26,79 @@
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">新增商品</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="d-block d-md-flex align-items-center mb-3">
-                            <label class="d-flex">
-                                <p>*名稱:</p>
-                                <select name="" id="" required>
-                                    <option value="" selected disabled hidden>商品種類</option>
-                                    <option value="">五股牛奶棉</option>
-                                    <option value="">四股牛奶棉</option>
-                                </select>
-                            </label>
-                            <div class="d-flex align-items-center">
-                                <label class="d-flex">
-                                    <p>新增:</p><input type="text" name="" id="">
-                                </label>
-                                <button type="button">新增</button>
-                            </div>
+                    <form action="" class="dialogText">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">新增商品</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <label class="d-flex mb-3">
-                            <p>重量</p><input type="text" name="" id="" placeholder="單位:g">
-                        </label>
-                        <div class="d-block d-md-flex align-items-center mb-3">
-                            <label class="d-flex">
-                                <p>*分類:</p>
-                                <select name="" id="" required>
-                                    <option value="" selected disabled hidden>請選擇分類</option>
-                                    <option value="">毛線</option>
-                                    <option value="">鉤針</option>
-                                </select>
-                            </label>
-                            <div class="d-flex align-items-center">
+                        <div class="modal-body">
+                            <div class="d-block d-md-flex align-items-center mb-3">
                                 <label class="d-flex">
-                                    <p>新增:</p><input type="text" name="" id="">
+                                    <p>*名稱:</p>
+                                    <select name="" id="goodsName" required></select>
                                 </label>
-                                <button type="button">新增</button>
+                                <form class="d-flex align-items-center">
+                                    <label class="d-flex">
+                                        <p>新增:</p><input type="text" name="" id="newGoodsName" placeholder="請輸入新增名稱">
+                                    </label>
+                                    <button type="button" class="newGoodsNameBtn">新增</button>
+                                </form>
                             </div>
-                        </div>
-                        <label class="d-flex mb-3">
-                            <p>*單價:</p><input type="number" required>
-                        </label>
-                        <div class="d-block d-md-flex align-items-center mb-3">
                             <label class="d-flex mb-3">
-                                <p>顏色:</p><input type="text" name="" id="">
+                                <p>重量</p><input type="number" name="" id="goodsWeight" placeholder="單位:g">
                             </label>
+                            <div class="d-block d-md-flex align-items-center mb-3">
+                                <label class="d-flex">
+                                    <p>*分類:</p>
+                                    <select name="" id="goodsType" required></select>
+                                </label>
+                                <form class="d-flex align-items-center">
+                                    <label class="d-flex">
+                                        <p>新增:</p><input type="text" name="" id="newGoodsType" placeholder="請輸入新增分類">
+                                    </label>
+                                    <button type="button" class="newGoodsTypeBtn">新增</button>
+                                </form>
+                            </div>
+                            <label class="d-flex mb-3">
+                                <p>*單價:</p><input type="number" id="goodsPrice" class="goodsPrice" min="0" required>
+                            </label>
+                            <div class="d-block  align-items-center mb-3">
+                                <label class="d-flex">
+                                    <p>顏色:</p>
+                                    <table class="colorsTable">
+                                        <thead>
+                                            <tr>
+                                                <td>顏色</td>
+                                                <td>顏色碼</td>
+                                                <td>刪除</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="goodsColors"></tbody>
+                                    </table>
+                                </label>
+                                <form class="d-flex justify-content-end align-items-center">
+                                    <a href="https://www.toodoo.com/db/color.html" target="_blank"
+                                        class="me-3">顏色碼參考</a>
+                                    <label class="d-flex">
+                                        <p>新增:</p><input type="text" name="" id="newGoodsColor" placeholder="格式:顏色-顏色碼">
+                                    </label>
+                                    <button type="button" class="newColorBtn">新增</button>
+                                </form>
+                            </div>
+                            <div class="d-block d-md-flex mb-3">
+                                <p>*商品封面:</p>
+                                <img src="" alt="商品封面" class="goodsCover">
+                            </div>
                             <label class="d-flex">
-                                <p>顏色碼:</p><input type="text" name="" id="">
+                                <p>封面上傳:</p><input type="text" name="" id=""><button
+                                    class="button goodsCoverBtn">上傳</button>
                             </label>
                         </div>
-                        <div class="d-block d-md-flex mb-3">
-                            <p>*商品封面:</p>
-                            <img src="images/yarn3.jpg" alt="">
-                        </div>
-                        <label class="d-flex">
-                            <p>封面上傳:</p><input type="text" name="" id=""><button class="button">上傳</button>
-                        </label>
-                    </div>
+                    </form>
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-                        <button type="button" class="btn btn-primary">新增</button>
+                        <button type="button" class="btn btn-secondary cancel" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary addGoodsData">新增</button>
                     </div>
                 </div>
             </div>
@@ -109,7 +120,28 @@
         </table>
     </div>
     <div class="ordersManagement">
-        <p class="h2Size mb-3">待處理訂單</p>
+        <p class="h2Size mb-3">訂單詳情</p>
+        <div class="d-flex align-items-center mb-3">
+            <label for="orderId">訂單編號:<input type="text" name="orderId" id="orderId" placeholder="請輸入訂單編號..."></label>
+            <button type="button" class="ms-3 searchOrderId">查詢</button>
+        </div>
+        <table class="adminTable">
+            <thead>
+                <tr>
+                    <th>訂單編號</th>
+                    <th>購買商品</th>
+                    <th>所需材料</th>
+                </tr>
+            </thead>
+            <tbody class="searchOrderTable">
+                <tr>
+                    <td></td>
+                    <td>請輸入要查詢的訂單編號</td>
+                    <td class="text-start"></td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="h2Size my-3">待處理訂單<span class="primaryColor h5 ms-3">*審核完成後將無法更改</span></p>
         <table class="adminTable">
             <thead>
                 <tr>
@@ -121,40 +153,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <select name="" id="">
-                            <option value="待處理" selected>待處理</option>
-                            <option value="已出貨">已出貨</option>
-                        </select>
-                    </td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>
-                        <p>王曉明(0912345829)</p>
-                        <p>全家-某某門市</p>
-                    </td>
-                    <td><input type="text" value="待出貨要用focus"></td>
-                    <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>
-                        <select name="" id="">
-                            <option value="待處理" selected>待處理</option>
-                            <option value="已出貨">已出貨</option>
-                        </select>
-                    </td>
-                    <td><input type="checkbox" name="" id=""></td>
-                    <td>
-                        <p>王曉明(0912345829)</p>
-                        <p>全家-某某門市</p>
-                    </td>
-                    <td><input type="text" value="待出貨要用focus"></td>
-                    <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
-                </tr>
-            </tbody>
+            <tbody class="pendingOrders"></tbody>
         </table>
 
         <p class="h2Size my-3">已完成訂單</p>
@@ -169,7 +168,7 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="completedOrders">
                 <tr>
                     <td>1</td>
                     <td>已出貨</td>
@@ -178,7 +177,7 @@
                         <p>王曉明(0912345829)</p>
                         <p>全家-某某門市</p>
                     </td>
-                    <td><input type="text" disabled></td>
+                    <td><input type="text" value="1234dwe2131" disabled></td>
                     <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
                 </tr>
             </tbody>
@@ -301,4 +300,8 @@
         </table>
     </div>
 </main>
-<script src="js/admin.js"></script>
+<script src="js/admin-show.js"></script>
+<script src="js/admin-commodityManagement.js"></script>
+<script src="js/admin-ordersManagement.js"></script>
+<script src="js/admin-userSellAudit.js"></script>
+<script src="js/admin-withdrawalApplication.js"></script>

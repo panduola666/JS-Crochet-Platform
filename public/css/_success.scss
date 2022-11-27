@@ -20,10 +20,9 @@
         border-radius: 0;
         }
     }
-    ~h1{
-        color:rgb(33, 166, 33);
-        font-size: 3vw;
-    }
+}
+.success,.shoppingFinish{
+    color:rgb(33, 166, 33);
 }
 @keyframes rotateCircle {
     from{

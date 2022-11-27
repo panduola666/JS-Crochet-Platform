@@ -65,17 +65,37 @@
         border-top: 1px solid $darkColor;
     }
 }
-
+.searchOrderTable{
+    td:nth-child(3n),th:nth-child(3){
+        width: 40%;
+    }
+    td:nth-child(3n){
+        line-height: 1.5rem;
+    }
+}
+.colorsTable{
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    thead{
+        background-color: $secondaryColor;
+    }
+    td,th{
+        padding: .3rem 0;
+        text-align: center;
+        border:1px solid black;
+    }
+}
 
 .modal-dialog{
     max-width: 60vw;
     min-width: 18rem;
+    background-color: #fff;
     @media (max-width:768px) {
         max-width: 80vw;
     }
 }
 .modal-content{
-    overflow: auto;
     border: 3px solid $primaryColor;
 }
 .modal-body{
@@ -103,4 +123,12 @@
         max-width: 80%;
         min-width: 50%;
     }
+}
+#goodsName,#goodsType,.goodsPrice{
+    &:focus{
+        box-shadow: 1px 1px 5px rgb(50, 50, 50);
+    }
+}
+.goodsPrice{
+    width: 80%;
 }

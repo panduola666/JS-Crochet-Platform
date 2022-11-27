@@ -14,6 +14,7 @@
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="/js/config.js"></script>
     <title>
         <%- title %>
     </title>
@@ -24,11 +25,11 @@
     <header>
         <div class="container-sm">
             <div class="row justify-content-around flex-wrap">
-                <div class="col d-flex align-items-center justify-content-between">
-                    <a href="/"><img src="/images/logoPrimary.png" alt="鉤針手作平台"></a>
+                <div class="col d-flex align-items-center justify-content-between ">
+                    <a href="/"><img src="/images/logoPrimary.png" alt="鉤針手作平台" class="headerLogo"></a>
                     <div class="more">
-                        <img src="/images/hambergur.png" alt="更多選項" class="d-sm-none pointer moreBtn">
-                        <ul class="small moreHref">
+                        <img src="/images/hambergur.png" alt="更多選項" class="d-md-none pointer moreBtn">
+                        <ul class="small moreHref moreList">
                             <li class="pointer">後台管理</li>
                             <li class="pointer">作品列表</li>
                             <li class="pointer">技巧文章</li>
@@ -38,17 +39,17 @@
                         </ul>
                     </div>
                 </div>
-                <nav class="col col-lg-8 d-sm-flex d-none nav">
+                <nav class="col-12 col-md-8 d-flex headerNav">
                     <div>
-                        <ul class="d-flex mb-3">
-                            <li class="mr2 d-none d-md-block">
+                        <ul class="d-md-flex mb-3 d-none">
+                            <li class="mr2">
                                 <a href="">關於我們</a>
                             </li>
                             <li class="mr2">
                                 <a href="/worksList">作品列表</a>
                             </li>
                             <li class="mr2">
-                                <a href="/articleList">技巧文章</a>
+                                <a href="/articlesList">技巧文章</a>
                             </li>
                             <li class="mr2">
                                 <a href="/goodsList">購買商城</a>
@@ -66,12 +67,22 @@
                             </label>
                         </form>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-none d-md-flex">
                         <div class="shoppingCart me-3">
                             <img src="/images/shoppingcart.png" alt="購物車" class="pointer shoppingCarIcon">
-                            <span class="shoppingCartNum">9+</span>
+                            <span class="shoppingCartNum">0</span>
                         </div>
-                        <img src="/images/user.png" alt="用戶專區" class="pointer userIcon">
+                        <div class="userMore">
+                            <img src="/images/user.png" alt="用戶專區" class="pointer userIcon">
+                            <ul class="small moreList userMoreHref">
+                                <li class="pointer">材料包管理</li>
+                                <li class="pointer">我的訂單</li>
+                                <li class="pointer">我的文章</li>
+                                <li class="pointer">我的留言</li>
+                                <li class="pointer">我的收藏</li>
+                                <li><a href="javascript:;">會員登出</a></li>
+                            </ul>
+                        </div>
                     </div>
 
                 </nav>

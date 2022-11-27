@@ -16,39 +16,6 @@
         outline: none;
     }
 }
-.areaChoose{
-    input[type=button]{
-        width: 100%;
-        background-color: $secondaryColor;
-        border:none;
-        padding: .5rem;
-        text-align: center;
-        border-radius: 8px;
-        margin-bottom: .1rem;
-        &:hover{
-            background-color: $primaryColor;
-        }
-        &:disabled{
-        background-color:#E8E7E7;
-        +div{
-            display: none;
-        }
-        }
-    }
-    button{
-        background-color: #fff;
-        border: 1px solid $primaryColor;
-        padding: .5rem;
-        border-radius: 8px;
-        &:hover{
-            background-color: $primaryColor;
-        }
-        &.active{
-            background-color: $primaryColor;
-            color: #fff;
-        }
-    }
-}
 .payByCardNum{
     margin-left: 3rem;
     margin-top: .5rem;
@@ -63,6 +30,12 @@
                 border: none;
                 border-bottom: 1px solid $primaryColor;
                 margin-left: 1rem;
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+                }
+                -moz-appearance: textfield;
                 @media (max-width:576px) {
                     margin-left: 0;
                     width: 15vw;
@@ -87,6 +60,19 @@
             }
         }
         
+    }
+}
+#shopNumber{
+    width: 50vw;
+    padding: .5rem;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+    -moz-appearance: textfield;
+    @media (max-width:576px) {
+        width: 100%;
     }
 }
 .endPrice{

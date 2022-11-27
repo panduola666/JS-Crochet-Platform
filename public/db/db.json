@@ -8,9 +8,12 @@
       "isCreator": "false",
       "isAdmin": "true",
       "shoppingCar": [],
-      "saveArticles": [],
+      "saveArticles": {
+        "worksId": [],
+        "articlesId": []
+      },
       "boughtArticles": [
-        "可愛蛋糕水桶包(含圖解)"
+        1
       ],
       "phoneNumber": "09",
       "barcode": "",
@@ -23,20 +26,18 @@
     {
       "email": "panduola666@gmail.com",
       "password": "$2a$10$1hBqxUXZ.IIH3w9omu19TO6y9bUazanaR0/XTh7zvI5OxRVxLxAce",
-      "userName": "68891",
-      "isCreator": false,
+      "userName": "顧念",
+      "isCreator": true,
       "isAdmin": true,
-      "shoppingCar": [
-        {
-          "id": 3,
-          "price": 20,
-          "num": 2
-        }
-      ],
-      "saveArticles": [],
+      "shoppingCar": [],
+      "saveArticles": {
+        "worksId": [
+          2
+        ],
+        "articlesId": []
+      },
       "boughtArticles": [
-        1,
-        3
+        2
       ],
       "phoneNumber": "0972198312",
       "barcode": "/2edcdWQ",
@@ -54,11 +55,18 @@
       "isCreator": false,
       "isAdmin": false,
       "shoppingCar": [],
-      "boughtArticles": [],
-      "saveArticles": [
-        1,
-        2
+      "boughtArticles": [
+        1
       ],
+      "saveArticles": {
+        "worksId": [
+          1,
+          4
+        ],
+        "articlesId": [
+          2
+        ]
+      },
       "id": 3,
       "phoneNumber": "0979902713",
       "barcode": "/213DQWD",
@@ -75,10 +83,10 @@
       "title": "五股牛奶棉-50g",
       "price": "20",
       "isRecommend": true,
-      "colors": [
+      "styles": [
         {
           "name": "紅色",
-          "code": "red"
+          "code": "#FF0000"
         },
         {
           "name": "黑色",
@@ -99,13 +107,13 @@
       ],
       "type": "毛線",
       "sellNum": 0,
-      "cover":"https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn.webp"
+      "cover": "https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn.webp"
     },
     {
       "title": "四股牛奶棉-50g",
       "price": "18",
       "isRecommend": true,
-      "colors": [
+      "styles": [
         {
           "name": "黑色",
           "code": "#000"
@@ -127,15 +135,16 @@
           "code": "#FFDEAD"
         }
       ],
-      "id": 2,
       "type": "毛線",
-      "sellNum": 0
+      "sellNum": 0,
+      "cover": "https://raw.githubusercontent.com/panduola666/2022JS-/7e2333ddb46acd410356f0e5934baaa742ba064b/public/images/yarn3.jpg",
+      "id": 2
     },
     {
       "title": "三股牛奶棉-50g",
-      "price": "21",
+      "price": "12",
       "isRecommend": true,
-      "colors": [
+      "styles": [
         {
           "name": "黑色",
           "code": "#000"
@@ -143,30 +152,18 @@
         {
           "name": "天藍",
           "code": "#00BFFF"
-        },
-        {
-          "name": "深咖",
-          "code": "#800000"
-        },
-        {
-          "name": "白色",
-          "code": "#fff"
-        },
-        {
-          "name": "膚色",
-          "code": "#FFDEAD"
         }
       ],
       "id": 3,
       "type": "毛線",
       "sellNum": 0,
-      "cover":"https://github.com/panduola666/2022JS-/blob/main/public/images/yarn2.jpg?raw=true"
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/yarn2.jpg?raw=true"
     },
     {
       "title": "16股情人棉-200g",
       "price": "30",
-      "isRecommend": true,
-      "colors": [
+      "isRecommend": false,
+      "styles": [
         {
           "name": "黑色",
           "code": "#000"
@@ -188,216 +185,368 @@
           "code": "#FFDEAD"
         }
       ],
-      "id": 4,
       "type": "毛線",
       "sellNum": 0,
-      "cover":"https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn4.webp"
+      "cover": "https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/yarn4.webp",
+      "id": 4
     },
     {
       "title": "超值鉤針套裝",
       "price": "88",
-      "isRecommend": true,
-      "colors": [],
+      "isRecommend": false,
+      "styles": [],
       "type": "鉤針",
       "id": 5,
-      "sellNum": 0
+      "sellNum": 0,
+      "cover": "https://raw.githubusercontent.com/panduola666/2022JS-/main/public/images/crochet.webp"
     },
     {
       "title": "DIY手工玩偶填充棉",
       "price": "13",
       "isRecommend": false,
-      "colors": [],
+      "styles": [],
       "type": "配件",
-      "id": 6,
-      "sellNum": 0
+      "sellNum": 0,
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cotton.jpg?raw=true",
+      "id": 6
+    },
+    {
+      "title": "可愛蛋糕水桶包(含圖解)",
+      "price": "200",
+      "isRecommend": false,
+      "styles": [],
+      "type": "材料包",
+      "id": 7,
+      "sellNum": 0,
+      "cover": "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg",
+      "workId": 1,
+      "materials": [
+        [
+          "五股牛奶棉-50g",
+          "卡其",
+          "1"
+        ],
+        [
+          "五股牛奶棉-50g",
+          "深咖",
+          "2"
+        ],
+        [
+          "五股牛奶棉-50g",
+          "黑色",
+          "1"
+        ]
+      ],
+      "userId": 2
     }
   ],
   "articles": [
     {
-      "id": 1,
-      "tag": "材料選取",
-      "cover": "https://upload.cc/i1/2022/11/06/auU0xi.jpg",
-      "title": "鉤針選擇指南-給初學者的建議",
+      "saveNum": 0,
+      "scanNum": 1,
+      "img": [],
       "content": "<h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">選擇鉤針的方式：看針號或直徑(以mm表示)</span></h3><p style=\"text-align: start;\">在鉤針方面，直徑指的是鉤頭後面那段的直徑長度。鉤針直徑和針號可以互相對應，因此選購鉤針時不論看針號或直徑都可以。但是，不同國家有不一樣的規格，因此必須注意你所選購的鉤針是遵照哪一個國家規格，避免買錯尺寸。</p><p style=\"text-align: start;\">以舒適性來說建議買軟柄 &gt; 扁竹柄 &gt; 金屬柄。軟柄握起來最舒適較適合長時間使用，而竹柄較輕較省力。金屬柄最硬，我之前每天使用它造成右手食指側面長繭，因此建議如果你是長時間編織的人盡量選擇其他兩種使用。</p><p style=\"text-align: start;\">金屬柄雖然沒有其他兩種用起來舒服，但仍有其他優點存在。1. 有的金屬柄鉤針是雙頭設計，等於買一支抵兩支用，很經濟實惠 2. 金屬柄鉤針從頭到尾一體成型，因此不容易斷裂，非常堅固耐用。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">怎麼選鉤針針號</span></h3><p style=\"text-align: start;\">初學者的鉤針常用針號是<strong> 2.5~3.5mm</strong>，通常數字越大鉤針越粗喔。</p><p style=\"text-align: start;\">還沒習慣鉤針針法和拿毛線的方式時，初學者較常遇到短針大小不均、針目鉤太小很難穿過去等等問題，這是因為現在還不能熟練地控制毛線，力道時大時小。除了提醒自己不要把線拉過緊之外，當發現鉤不進去時，也可以用小一點的鉤針鉤起立針 (也就是第一針之前的鎖針) 和引拔針，再換回原本的鉤針繼續鉤，以此達到改善的效果。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">鉤針要買整組還是幾支就好?</span></h3><p>不論是網購或實體店面你可能會看到一整套的鉤針組，這可能令人很心動，但真實情況是「常用的鉤針只有那幾支」，畢竟你買的毛線通常也就固定幾種不是嗎？因此我建議初學者選購 1~2 支鉤針就好，這樣已經很夠用了。未來當你想挑戰更多作品，需要用到其他粗細的毛線時，再來買適合的鉤針更實在呢。</p>",
-      "img": [
-        "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
-      ],
-      "saveNum": "22",
-      "scanNum": 8,
-      "createDate": "2012-08-15 12:21:11",
-      "userId": 3
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
+      "userId": 3,
+      "createDate": 1345004471000,
+      "title": "鉤針選擇指南-給初學者的建議",
+      "tag": "材料選取",
+      "id": 1
     },
     {
-      "tag": "材料選取",
-      "cover": "https://upload.cc/i1/2022/11/06/auU0xi.jpg",
+      "saveNum": 0,
+      "scanNum": 0,
+      "img": [],
+      "content": "<p><span style=\"font-size: 15px;\">最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
+      "userId": 2,
+      "createDate": 1572582192000,
       "title": "毛線編織線材推薦",
-      "content": "<p><span style=\"color: rgb(51, 51, 51); font-size: 24px;\"><strong>最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</strong></span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
-      "img": [
-        "https://upload.cc/i1/2022/11/06/auU0xi.jpg"
-      ],
-      "saveNum": 10,
-      "scanNum": 105,
-      "createDate": "2020-10-15 02:21:11",
-      "id": 2,
-      "userId": 2
+      "tag": "材料選取",
+      "id": 2
     },
     {
       "tag": "針法介紹",
-      "cover": "https://upload.cc/i1/2022/11/06/4nbtyE.jpg",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
       "title": "鉤針的常見符號",
       "content": "<p><span style='font-size: 19px;'>鉤針常用符號:</span></p><table style='width: auto;'><tbody><tr><th colSpan='1' rowSpan='1' width='91'>符號</th><th colSpan='1' rowSpan='1' width='150'>說明</th></tr><tr><td colSpan='1' rowSpan='1' width='auto'>X</td><td colSpan='1' rowSpan='1' width='auto'>短針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>V</td><td colSpan='1' rowSpan='1' width='auto'>加針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>A</td><td colSpan='1' rowSpan='1' width='auto'>減針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>T</td><td colSpan='1' rowSpan='1' width='auto'>中長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>F</td><td colSpan='1' rowSpan='1' width='auto'>長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>E</td><td colSpan='1' rowSpan='1' width='auto'>長長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>W</td><td colSpan='1' rowSpan='1' width='auto'>一針鉤三針短針</td></tr></tbody></table><p>範例:</p><p>(X,V)6 : 一針短針一針加針,循環6次,總共18針</p><p>(2X,V)6 : 一針分別鉤2個短針,一針加針,循環6次,總共24針</p><p>以此類推...</p>",
       "img": [
-        "https://upload.cc/i1/2022/11/06/4nbtyE.jpg"
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true"
       ],
       "saveNum": 20,
       "scanNum": 604,
-      "createDate": "2009-08-11 10:21:11",
+      "createDate": 1249957271000,
       "id": 3,
       "userId": 1
     }
   ],
   "works": [
     {
-      "id": 1,
-      "tag": "包包",
-      "cover": "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg",
+      "saveNum": 110,
+      "scanNum": 33,
+      "img": [
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true"
+      ],
+      "content": "<p style=\"text-align: start;\">最近很火的一款鉤針蛋糕包,這次分享草莓款的,擺在桌上又是一個收納神器!這邊的範例是白奶油蛋糕上面做草莓裝飾，同時草莓可以做抽繩的推拉扣來控制包包的開啟與否。</p><p style=\"text-align: start;\">另外如果是第一次接觸鉤針的寶寶們，建議可以購買材料包，可以提供ＱＡ的問答服務，另外加碼提供視頻教學參考。</p><p style=\"text-align: start;\"><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" style=\"width: 50%;\"></p><p style=\"text-align: start;\"><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">配色方面可以自己選擇喜歡的口味，這裡示範的是巧克力蛋糕，如果家裡有其他的配飾可以在綁在抽繩末端做裝飾唷！</span></p>",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
+      "userId": 2,
+      "createDate": 1668922069000,
       "title": "可愛蛋糕水桶包(含圖解)",
-      "content": "<p style=\"text-align: start;\">最近很火的一款鉤針蛋糕包,這次分享草莓款的,擺在桌上又是一個收納神器!這邊的範例是白奶油蛋糕上面做草莓裝飾，同時草莓可以做抽繩的推拉扣來控制包包的開啟與否。</p><p style=\"text-align: start;\">另外如果是第一次接觸鉤針的寶寶們，建議可以購買材料包，可以提供ＱＡ的問答服務，另外加碼提供視頻教學參考。</p><p style=\"text-align: start;\"><img src=\"https://upload.cc/i1/2022/11/03/9ZQhvS.jpg\" alt=\"\" data-href=\"https://upload.cc/i1/2022/11/03/9ZQhvS.jpg\" style=\"width: 50%;\"></p><p style=\"text-align: start;\"><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">配色方面可以自己選擇喜歡的口味，這裡示範的是巧克力蛋糕，如果家裡有其他的配飾可以在綁在抽繩末端做裝飾唷！</span></p>",
+      "tag": "包包",
       "isSell": {
         "title": "可愛蛋糕水桶包(含圖解)",
-        "price": "200",
-        "material": [
-          {
-            "need": [
-              "五股牛奶棉-50g"
-            ],
-            "color": [
-              "卡其色",
-              "深咖啡色",
-              "淺咖啡色"
-            ],
-            "number": [
-              1,
-              1,
-              1
-            ]
-          }
+        "price": "150",
+        "materials": [
+          [
+            "五股牛奶棉-50g",
+            "卡其",
+            "1"
+          ],
+          [
+            "五股牛奶棉-50g",
+            "深咖",
+            "2"
+          ],
+          [
+            "五股牛奶棉-50g",
+            "黑色",
+            "1"
+          ]
         ],
-        "canSell": "通過",
-        "reason": "通過"
+        "canSell": "待審核",
+        "reason": "客服將在3~7個工作日審核完畢"
       },
-      "img": [
-        "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg",
-        "https://upload.cc/i1/2022/11/03/9ZQhvS.jpg"
-      ],
       "q&a": [
         {
+          "userId": 3,
           "Q": {
             "content": "請問蛋糕主體跟奶油是要分開鉤嗎?還是可以連在一起鉤",
-            "timer": "2022-12-31 12:23:14"
+            "timer": 1067221994000
           },
           "A": {
             "content": "跟著主體一路鉤上去就好了,到主體頂部的時候記得只鉤內半圈,不要變成短針跟著主體一路鉤上去就好了,到主體頂部的時候記得只鉤內半圈,不要變成短針",
-            "timer": "2023-02-01 18:03:14"
+            "timer": 1067680994000
+          }
+        },
+        {
+          "userId": 3,
+          "Q": {
+            "content": "請問蛋糕主體跟奶油是要分開鉤嗎?還是可以連在一起鉤",
+            "timer": 1672460594000
+          },
+          "A": {
+            "content": "",
+            "timer": "等待作者回覆"
           }
         }
       ],
-      "saveNum": 11,
-      "scanNum": 244,
-      "createDate": "2022-10-15 12:21:11",
-      "userId": 3
+      "id": 1
     },
     {
+      "saveNum": "1",
+      "scanNum": 4,
+      "img": [
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true"
+      ],
+      "content": "<p>下面給大家帶來一款可愛的小猴子布偶</p><p><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" style=\"width: 857.20px;height: 1142.93px;\"/></p>",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
+      "userId": 2,
+      "createDate": 1355508071000,
       "title": "桃心小猴玩偶",
       "tag": "玩偶",
-      "content": "11",
       "isSell": {
-        "title": "",
+        "title": "桃心小猴玩偶",
         "price": "",
-        "material": [
-          {}
-        ]
+        "materials": [],
+        "canSell": "待審核",
+        "reason": "客服將在3~7個工作日審核完畢"
       },
-      "img": [
-        "https://upload.cc/i1/2022/11/03/byu3aL.jpg"
-      ],
       "q&a": [
-        {}
+        {
+          "userId": 2,
+          "Q": {
+            "content": "猴子",
+            "timer": 1669538406644
+          },
+          "A": {
+            "content": "",
+            "timer": "等待作者回覆"
+          }
+        }
       ],
-      "id": 2,
-      "cover": "https://upload.cc/i1/2022/11/03/byu3aL.jpg",
-      "saveNum": 14,
-      "scanNum": 10,
-      "createDate": "2012-12-15 02:01:11",
-      "canSell": "通過",
-      "reason": "通過"
+      "id": 2
     },
     {
+      "saveNum": 0,
+      "scanNum": 2,
+      "img": [
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-1.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-1.jpg?raw=true",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/FmbrEacxXZPCmNgq7ikKoWhg5cza.jpg!730x0.jpg",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/FmbrEacxXZPCmNgq7ikKoWhg5cza.jpg!730x0.jpg",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/FloheVWzzqNTl1nMm7BEeSlS64u3.jpg!730x0.jpg",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/FloheVWzzqNTl1nMm7BEeSlS64u3.jpg!730x0.jpg",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/Fi-BnkQhpWgeR2AhPTFFTWYswN8f.jpg!730x0.jpg",
+        "https://img01.yzcdn.cn/upload_files/2017/12/08/Fi-BnkQhpWgeR2AhPTFFTWYswN8f.jpg!730x0.jpg"
+      ],
+      "content": "<p>這次給大家帶來的是兩用的圍脖製作方法,首先附上作品圖給大家參考:</p><p><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true\" style=\"width: 30%;\"/><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-1.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-1.jpg?raw=true\" style=\"width: 30%;\"/></p><p>圖解部分為主體做法,其他配件內容可以參考材料包唷,並且購買後還會附上教程視頻給大家參考</p><p><img src=\"https://img01.yzcdn.cn/upload_files/2017/12/08/FmbrEacxXZPCmNgq7ikKoWhg5cza.jpg!730x0.jpg\" alt=\"\" data-href=\"https://img01.yzcdn.cn/upload_files/2017/12/08/FmbrEacxXZPCmNgq7ikKoWhg5cza.jpg!730x0.jpg\" style=\"width: 100%;\"/><img src=\"https://img01.yzcdn.cn/upload_files/2017/12/08/FloheVWzzqNTl1nMm7BEeSlS64u3.jpg!730x0.jpg\" alt=\"\" data-href=\"https://img01.yzcdn.cn/upload_files/2017/12/08/FloheVWzzqNTl1nMm7BEeSlS64u3.jpg!730x0.jpg\" style=\"width: 100%;\"/></p><p><img src=\"https://img01.yzcdn.cn/upload_files/2017/12/08/Fi-BnkQhpWgeR2AhPTFFTWYswN8f.jpg!730x0.jpg\" alt=\"\" data-href=\"https://img01.yzcdn.cn/upload_files/2017/12/08/Fi-BnkQhpWgeR2AhPTFFTWYswN8f.jpg!730x0.jpg\" style=\"width: 100%;\"/></p><p><br></p><p><br></p>",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
+      "userId": 3,
+      "createDate": 1620757276000,
       "title": "兩用變形圍脖帽",
       "tag": "配件",
-      "content": "",
-      "isSell": {
-        "title": "",
-        "price": "",
-        "material": [
-          {}
-        ]
-      },
-      "img": [
-        "https://upload.cc/i1/2022/11/03/RvxOwz.jpg",
-        "https://upload.cc/i1/2022/11/03/hGNj78.jpg"
-      ],
-      "q&a": [
-        {}
-      ],
-      "id": 3,
-      "cover": "https://upload.cc/i1/2022/11/03/RvxOwz.jpg",
-      "saveNum": 32,
-      "scanNum": 24,
-      "createDate": "2022-12-30 11:21:11",
-      "userId": 3,
-      "canSell": "通過",
-      "reason": "通過"
+      "q&a": [],
+      "id": 3
     },
     {
+      "saveNum": 0,
+      "scanNum": 0,
+      "img": [
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
+        "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true"
+      ],
+      "content": "<p><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true\" style=\"width: 50%;\"/></p><p>今天分享12生肖裡面的一款小豬鉤針圖解</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">頭</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">眼睛14-15r,間隔13針</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">15ch倒2 &nbsp;v &nbsp;12x &nbsp;(4x) &nbsp;12x &nbsp;v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2v &nbsp;12x &nbsp;4v &nbsp;12x &nbsp;2v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">x &nbsp;v &nbsp;16x &nbsp;v &nbsp;2x &nbsp;v &nbsp;16x &nbsp;v &nbsp;x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">44</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">44x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">44</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2x &nbsp;v &nbsp;16x &nbsp;v &nbsp;4x &nbsp;v &nbsp;16x &nbsp;v &nbsp;2x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9x &nbsp;9x &nbsp;13x &nbsp;11x &nbsp;6x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(7xv)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(v &nbsp;6x)4 &nbsp; (v &nbsp;12x)2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">60</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">10</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">60x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">60</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">11</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(v &nbsp;7x)4 &nbsp; (v &nbsp;13x)2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">66</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">66x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">66</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">13</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(v &nbsp;8x)4 &nbsp; (v &nbsp;14x)2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">72</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">14</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">72x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">72</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">15</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(17xv)4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">76</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">76x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">76</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">17</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(18xv)4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">80</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18-19</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">80x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">80</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">20</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(8xA)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">72</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">21</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(10xA)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">66</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">22</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(9xA)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">60</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">23</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(8xA)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(7xA)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">25</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">BLO &nbsp;(2xA)12</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">26</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(4xA)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">30</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">豬耳朵x2</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(xv)3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(2xv)3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(3xv)3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">15</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(4xv)3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6-9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">10</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">捏扁9x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">豬鼻子</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">縫到頭14-17行</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4ch倒2 &nbsp;v &nbsp;x &nbsp;(4x) &nbsp;x &nbsp;v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">10 </td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2v &nbsp;x &nbsp;4v &nbsp;x &nbsp;2v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">BLO &nbsp;(2x &nbsp;A)4 &nbsp;2x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">14</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">腿X2</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(xv)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4-7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">從腿連接身體</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3ch倒連接2腿 &nbsp;18x &nbsp;3x &nbsp;18x &nbsp;3x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">42</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(6xv)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">10</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(7xv)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">11-18</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">19</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(7xA)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">20</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">21</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(6xA)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">42</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">22</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">42x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">42</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">23</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(5xA)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">25</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(4xA)6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">30</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">26</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">30x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">30</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">胳膊x2</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3-13</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr></tbody></table><p><br></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">包x2</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8x</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8v</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">(xv)8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">包帶</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40ch</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></td></tr></tbody></table><p><br></p>",
+      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
+      "userId": 2,
+      "createDate": 1015942876000,
       "title": "12生肖-豬寶寶布偶",
       "tag": "玩偶",
-      "content": "",
-      "isSell": {
-        "title": "",
-        "price": "",
-        "material": [
-          {}
-        ]
-      },
-      "img": [
-        "https://upload.cc/i1/2022/11/13/wzgqrS.jpg"
-      ],
-      "q&a": [
-        {}
-      ],
-      "id": 4,
-      "cover": "https://upload.cc/i1/2022/11/13/wzgqrS.jpg",
-      "saveNum": 14,
-      "scanNum": 6,
-      "createDate": "2020-10-15 12:21:11",
-      "userId": 2,
-      "canSell": "通過",
-      "reason": "通過"
+      "q&a": [],
+      "id": 4
     }
   ],
-  "order": [
+  "orders": [
     {
-      "id": 1,
-      "userId": 1,
+      "userId": 3,
+      "name": "小圈圈",
+      "tel": "0979902713",
+      "state": "已出貨",
+      "isTally": true,
+      "toShop": {
+        "type": "7-ELEVEN",
+        "shopNumber": "12312",
+        "sendNumber": "33333333"
+      },
+      "boughtGoods": [
+        {
+          "goodId": 2,
+          "num": 2,
+          "style": "隨機"
+        }
+      ],
+      "payMethod": "貨到付款",
+      "createTime": 1669347493619,
+      "tallyTime": 1669398872641,
+      "finishTime": 1669399992182,
+      "totalPrice": "96",
+      "id": 1
+    },
+    {
+      "userId": 2,
+      "name": "顧念",
+      "tel": "0972198312",
       "state": "待處理",
       "isTally": false,
       "toShop": {
-        "name": "登峰門市",
-        "type": "全家",
-        "address": "",
+        "type": "7-ELEVEN",
+        "shopNumber": "213123",
         "sendNumber": ""
-      }
+      },
+      "boughtGoods": [
+        {
+          "style": "天藍",
+          "goodId": 3,
+          "num": "2"
+        },
+        {
+          "style": "黑色",
+          "goodId": 3,
+          "num": "2"
+        }
+      ],
+      "payMethod": {
+        "cardNumber": "3112313123231",
+        "expiryDate": "01/12",
+        "securityCode": "125"
+      },
+      "createTime": 1669395563839,
+      "tallyTime": "",
+      "finishTime": "",
+      "totalPrice": "108",
+      "id": 2
+    },
+    {
+      "userId": 2,
+      "name": "顧念",
+      "tel": "0972198312",
+      "state": "待處理",
+      "isTally": false,
+      "toShop": {
+        "type": "全家便利商店",
+        "shopNumber": "2131231",
+        "sendNumber": ""
+      },
+      "boughtGoods": [
+        {
+          "goodId": 2,
+          "num": 2,
+          "style": "隨機"
+        },
+        {
+          "style": "黑色",
+          "goodId": 2,
+          "num": "1"
+        }
+      ],
+      "payMethod": "貨到付款",
+      "createTime": 1669477433888,
+      "tallyTime": "",
+      "finishTime": "",
+      "totalPrice": "114",
+      "id": 3
+    },
+    {
+      "userId": 2,
+      "name": "顧念",
+      "tel": "0972198312",
+      "state": "待處理",
+      "isTally": false,
+      "toShop": {
+        "type": "7-ELEVEN",
+        "shopNumber": "213",
+        "sendNumber": ""
+      },
+      "boughtGoods": [
+        {
+          "goodId": 2,
+          "num": "1",
+          "style": "隨機"
+        },
+        {
+          "goodId": 6,
+          "num": "3",
+          "style": "隨機"
+        },
+        {
+          "goodId": 7,
+          "num": "2",
+          "style": "隨機"
+        }
+      ],
+      "payMethod": {
+        "cardNumber": "3112313123231",
+        "expiryDate": "01/12",
+        "securityCode": "125"
+      },
+      "createTime": 1669477899971,
+      "tallyTime": "",
+      "finishTime": "",
+      "totalPrice": "517",
+      "id": 4
     }
   ]
 }

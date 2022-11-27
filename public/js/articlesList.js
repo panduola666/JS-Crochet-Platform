@@ -9,54 +9,38 @@ const pageList = document.querySelector('.pageList');
 const articles = document.querySelector('.articles');
 const nowHref = location.href.split('=');
 let data;
- //發布按鈕
-if (localStorage.getItem('userId') ){
+if( localStorage.getItem('userId') ){
     addArticleBTN.style.display = 'flex';
-    addArticleBTN.addEventListener('click',() => { 
+    addArticleBTN.addEventListener('click',() => {
         localStorage.removeItem('works');
         localStorage.removeItem('articles');
-        window.location.href = '/addArticle';
+        window.location.href='/addArticle';
     });
 }else{
     addArticleBTN.style.display = 'none';
 };
-axios.get(`${baseUrl}/works`)
+axios.get(`${baseUrl}/articles`)
 .then(res => {
     searchContent.value = localStorage.getItem('search');
     localStorage.removeItem('search');
     data = res.data;
-    let page = 1;//頁數
-    let limit = 5;//一頁幾個
-    let start = 0;
     if( nowHref.length > 1 ){
         data =  data.filter(work => work.title.includes( decodeURIComponent(nowHref[nowHref.length-1]) ));
     };
+    let page = 1;//頁數
+    const limit = 5;//一頁幾個
+    let start = 0;
     articleInit(page, limit, start);
     filterArticles(page, limit, start);
-    typeArticles(res.data, page, limit, start);
-    //分頁
-    pagination(page, limit, start);
+    typeArticles(data, page, limit, start);
+    //點擊文章跳轉
     
-});
-function pagination(page, limit, start){
-    pageList.children[0].addEventListener('click',()=>{
-        if(page > 1){
-            page--;
-            start -= limit;
-            articleInit(page, limit, start);
-            pageList.children[1].textContent = `第${ page }/${ Math.ceil(data.length / limit) }頁`;
-        }
-    });
-    pageList.children[2].addEventListener('click',()=>{
-        if( page < Math.ceil(data.length / limit) ){
-            page++;
-            start += limit;
-            articleInit(page, limit, start);
-            pageList.children[1].textContent = `第${ page }/${ Math.ceil(data.length / limit) }頁`;
-        };
-    });
-    pageList.children[1].textContent = `第${ page }/${ Math.ceil(data.length / limit) }頁`;
-};
+})
+.catch(err=>{
+    console.log(err);
+})
+
+//文章列表畫面
 function articleInit(page, limit, start){
     let str = '';
     const newData = data.slice(start, limit*page);
@@ -73,20 +57,21 @@ function articleInit(page, limit, start){
                     ${ item.content }
                 </div>
             </div>
-            <img src="${ item.cover }" alt="" class="articleImg col col-md-3 d-none d-md-block">
+            <img src="${ item.cover }" alt="${ item.title }" class="articleImg col col-md-3 d-none d-md-block">
         </article>
     </div>`
     });
     articles.innerHTML = str;
     pagination(page, limit, start);
+    //點擊跳轉頁面
     const article = document.querySelectorAll('.article');
     article.forEach(item => {
         item.addEventListener('click',()=>{
-            location.href = `/article/works/${ item.dataset.id }`;
+            location.href = `/article/articles/${ item.dataset.id }`;
             data.forEach(work=>{
                 if(work.id === Number(item.dataset.id) ){
                     work.scanNum++;
-                    axios.patch(`${baseUrl}/works/${ item.dataset.id }`,{
+                    axios.patch(`${baseUrl}/articles/${ item.dataset.id }`,{
                         scanNum : work.scanNum
                     });
                 };
@@ -99,19 +84,19 @@ function filterArticles(page, limit, start){
     sortBTN.forEach(btn => {
         btn.addEventListener('click',(e) => {
             if(e.target.textContent === '綜合'){
-                sortBTN.forEach(item => item.classList.remove('active'));
+                sortBTN.forEach(item => item.classList.remove('active') );
                 e.target.classList.add('active');
-                data = data.sort((a, b)=> a.id - b.id );
+                data = data.sort((a,b) => a.id - b.id );
                 articleInit(page, limit, start);
             }else if(e.target.textContent === '最新'){
-                sortBTN.forEach(item => item.classList.remove('active'));
+                sortBTN.forEach(item => item.classList.remove('active') );
                 e.target.classList.add('active');
-                data = data.sort((a, b)=> new Date(b.createDate) - new Date(a.createDate) );
+                data = data.sort((a,b) => new Date(b.createDate) - new Date(a.createDate) );
                 articleInit(page, limit, start);
             }else if(e.target.textContent === '最熱'){
-                sortBTN.forEach(item => item.classList.remove('active'));
+                sortBTN.forEach(item => item.classList.remove('active') );
                 e.target.classList.add('active');
-                data = data.sort((a, b) => b.scanNum - a.scanNum);
+                data = data.sort((a,b) => b.scanNum - a.scanNum );
                 articleInit(page, limit, start);
             };
         });
@@ -122,16 +107,36 @@ function typeArticles(total, page, limit, start){
     tagList.forEach(li => {
         li.addEventListener('click',(e) => {
             if(e.target.textContent === '全部分類'){
-                tagList.forEach(item => item.classList.remove('active'));
+                tagList.forEach(item => item.classList.remove('active') );
                 e.target.classList.add('active');
                 data = total.filter(item => item);
                 articleInit(page, limit, start);
             }else if (e.target.textContent){
-                tagList.forEach(item => item.classList.remove('active'));
+                tagList.forEach(item => item.classList.remove('active') );
                 e.target.classList.add('active');
-                data = total.filter(item => item.tag === e.target.textContent);
+                data = total.filter(item => item.tag === e.target.textContent );
                 articleInit(page, limit, start);
             };
         });
     });
+};
+//分頁
+function pagination(page, limit, start){
+    pageList.children[0].addEventListener('click',()=>{
+        if(page > 1){
+            page--;
+            start -= limit;
+            articleInit(page, limit, start);
+            pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
+        }
+    });
+    pageList.children[2].addEventListener('click',()=>{
+        if(page < Math.ceil(data.length / limit)){
+            page++;
+            start += limit;
+            articleInit(page, limit, start);
+            pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
+        };
+    });
+    pageList.children[1].textContent = `第${ page }/${Math.ceil(data.length / limit)}頁`;
 };

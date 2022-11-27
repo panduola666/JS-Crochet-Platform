@@ -27,6 +27,10 @@
         border-bottom: 1px solid $primaryColor;
         outline:none;
         line-height: 2.5rem;
+        &:focus{
+            border: 1px solid $primaryColor
+            
+        }
     }
 }
 .choose{
@@ -36,28 +40,13 @@
         margin-right: .5rem;
     }
 }
-.contentImg{
+img.contentImg{
     min-height: 10rem;
-    overflow: hidden;
-    height: 80%;
-    background-image: url(../images/cover.webp);
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    input{
-        opacity: 0;
-    }
+    max-height: 15rem;
+    object-fit: cover;
     @media (max-width:768px) {
-        height: 60%;
+        max-height: 10rem;
         margin-top: 20px;
-    }
-}
-.coverBTN{
-    text-align: center;
-    margin-top: 1rem;
-    cursor: pointer;
-    &:hover{
-        color: $primaryColor;
     }
 }
 .addMaterial{
@@ -94,6 +83,9 @@
     margin: 20px auto;
     border-collapse: separate;
     text-align: center;
+    thead{
+        background-color: $secondaryColor;
+    }
     th,td{
         padding:.5rem;
         vertical-align: middle;
@@ -180,10 +172,14 @@
     }
 }
 button.postArticle{
+    opacity: .8;
     background-color: $primaryColor;
     color: #fff;
     padding: 1rem 3rem;
     &:hover{
-        font-weight: 600;
+        opacity: 1;
+    }
+    &:disabled{
+        background-color: #E8E7E7;
     }
 }

@@ -1,62 +1,26 @@
 <main class="container-sm my3">
     <div class="chooseBTN">
         <a href="/worksList" class="h2Size">作品列表</a>
-        <a href="/articleList" class="h2Size">技巧文章</a>
+        <a href="/articlesList" class="h2Size">技巧文章</a>
         <a href="/goodsList" class="h2Size active">購買商城</a>
     </div>
     <div class="mt2 row">
         <ul class="tagList col-12 col-md js-tagChange">
             <li>分類 ></li>
-            <li class="active">毛線</li>
+            <li class="active">全部分類</li>
+            <li>毛線</li>
             <li>鉤針</li>
             <li>配件</li>
             <li>材料包</li>
             <li>收納袋</li>
         </ul>
         <div class="col-lg-10 col-md-9 col">
-            <div class="sortBTN js-sortArticle">
+            <div class="sortBTN">
                 <button type="button" class="active">綜合</button>
-                <button type="button">最新</button>
-                <button type="button">最熱</button>
+                <button type="button">推薦</button>
+                <button type="button">熱門</button>
             </div>
-            <ul class="row mt1 text-center">
-                <li class="card col-4">
-                    <img src="../images/yarn.webp" class="card-img-top" alt="五股牛奶棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">五股牛奶棉-50g</h1>
-                    </div>
-                </li>
-                <li class="card col-4">
-                    <img src="../images/yarn3.jpg" class="card-img-top" alt="四股牛奶棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">四股牛奶棉-50g</h1>
-                    </div>
-                </li>
-                <li class="card col-4">
-                    <img src="../images/yarn2.jpg" class="card-img-top" alt="三股牛奶棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">三股牛奶棉-50g</h1>
-                    </div>
-                </li>
-                <li class="card col-4">
-                    <img src="../images/yarn4.webp" class="card-img-top" alt="16股情人棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">16股情人棉-200g</h1>
-                    </div>
-                </li>
-                <li class="card col-4">
-                    <img src="../images/yarn5.jpg" class="card-img-top" alt="五股牛奶棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">段染布條線-100g</h1>
-                    </div>
-                </li>
-                <li class="card col-4">
-                    <img src="../images/yarn6.webp" class="card-img-top" alt="五股牛奶棉-50g">
-                    <div class="card-body">
-                        <h1 class="textHidden-2">蕾絲線-50g</h1>
-                    </div>
-                </li>
-            </ul>
+            <ul class="row mt1 text-center goods"></ul>
             <nav class="pageList">
                 <a href="javascript:;">上一頁</a>
                 <div class="page">第1/4頁</div>
@@ -66,4 +30,4 @@
     </div>
 
 </main>
-<script type="module" src="js/godsList.js"></script>
+<script src="js/godsList.js"></script>
