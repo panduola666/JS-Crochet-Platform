@@ -1,31 +1,36 @@
 {
   "users": [
     {
-      "email": "adddmin@gmail.com",
-      "password": "$2a$10$HIOl1rrsNtZ3e52CykOwvOsEvvGqUItczo.iLb2JWKCnajGPDDZh6",
-      "id": 1,
-      "userName": "圈圈",
-      "isCreator": "false",
-      "isAdmin": "true",
+      "email": "admin@gmail.com",
+      "password": "$2a$10$ko.jlHu4MNB6tpT34T14lO8ckKJWwCG2k5MrETCiB4XIqowcB4W/O",
+      "userName": "admin",
+      "isCreator": false,
+      "isAdmin": true,
       "shoppingCar": [],
       "saveArticles": {
-        "worksId": [],
-        "articlesId": []
+        "worksId": [
+          2,
+          1
+        ],
+        "articlesId": [
+          1
+        ]
       },
       "boughtArticles": [
         1
       ],
-      "phoneNumber": "09",
-      "barcode": "",
+      "phoneNumber": "0913221312",
+      "barcode": "/123dwsd",
       "creditCard": {
         "cardNumber": "",
         "expiryDate": "/",
         "securityCode": ""
-      }
+      },
+      "id": 1
     },
     {
       "email": "panduola666@gmail.com",
-      "password": "$2a$10$1hBqxUXZ.IIH3w9omu19TO6y9bUazanaR0/XTh7zvI5OxRVxLxAce",
+      "password": "$2a$10$uzeQsAomIj1GquDJg4pvtuMQdZ6xW2lkfU9yr4UzfC.m1KO0lN02e",
       "userName": "顧念",
       "isCreator": true,
       "isAdmin": true,
@@ -57,7 +62,7 @@
     },
     {
       "email": "panduola666@yahoo.com",
-      "password": "$2a$10$oJEaFgm9vJ3tmL.w5wzJ9.eEBIJuubmTpEbTviLO9BV9gyqRhf4lm",
+      "password": "$2a$10$/NfPWQsqyGH2xevk30qcqO/iGcRRbpSzgqM.ZrXD9fAHLfrDGOzKi",
       "userName": "普通會員",
       "isCreator": false,
       "isAdmin": false,
@@ -82,39 +87,12 @@
         "expiryDate": "/",
         "securityCode": ""
       }
-    },
-    {
-      "email": "admin@gmail.com",
-      "password": "$2a$10$OFQXNW7wRV0hGhJ0NL/2seVLSLeE6K4UnRqzFJfD/mmRwMv.LuphS",
-      "userName": "admin",
-      "isCreator": false,
-      "isAdmin": true,
-      "shoppingCar": [],
-      "saveArticles": {
-        "worksId": [
-          2,
-          1
-        ],
-        "articlesId": [
-          1
-        ]
-      },
-      "boughtArticles": [
-        1
-      ],
-      "phoneNumber": "0913221312",
-      "barcode": "/123dwsd",
-      "creditCard": {
-        "cardNumber": "",
-        "expiryDate": "/",
-        "securityCode": ""
-      },
-      "id": 4
     }
   ],
   "goods": [
     {
       "id": 1,
+      "isClose": false,
       "title": "五股牛奶棉-50g",
       "price": "20",
       "isRecommend": true,
@@ -147,6 +125,7 @@
     {
       "title": "四股牛奶棉-50g",
       "price": "18",
+      "isClose": false,
       "isRecommend": true,
       "styles": [
         {
@@ -178,6 +157,7 @@
     {
       "title": "三股牛奶棉-50g",
       "price": "12",
+      "isClose": false,
       "isRecommend": false,
       "styles": [
         {
@@ -197,6 +177,7 @@
     {
       "title": "16股情人棉-200g",
       "price": "30",
+      "isClose": false,
       "isRecommend": true,
       "styles": [
         {
@@ -228,6 +209,7 @@
     {
       "title": "超值鉤針套裝",
       "price": "88",
+      "isClose": false,
       "isRecommend": false,
       "styles": [],
       "type": "鉤針",
@@ -238,6 +220,7 @@
     {
       "title": "DIY手工玩偶填充棉",
       "price": "13",
+      "isClose": false,
       "isRecommend": false,
       "styles": [],
       "type": "配件",
@@ -309,7 +292,7 @@
         ]
       ],
       "userId": 2,
-      "isClose": false,
+      "isClose": true,
       "id": 8
     },
     {
@@ -335,7 +318,7 @@
         ]
       ],
       "userId": 2,
-      "isClose": false,
+      "isClose": true,
       "id": 9
     }
   ],
@@ -382,7 +365,7 @@
   "works": [
     {
       "saveNum": 113,
-      "scanNum": 42,
+      "scanNum": 43,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true"

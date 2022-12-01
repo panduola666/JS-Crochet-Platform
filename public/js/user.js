@@ -1,4 +1,4 @@
-// 缺修改密碼未完成 - 解碼?
+// 完成
 const avatar = document.querySelector('.avatar');
 const application = document.querySelector('.application');
 const baseDBList = document.querySelectorAll('.baseDBList li');
@@ -144,6 +144,7 @@ baseDBList.forEach(li => {
 passwordChange.addEventListener('click', () => {
   const passwordRegex = /[a-zA-Z0-9]{6,}/;
   if (passwordChange.textContent === '編輯') {
+    // 編輯
     passwordChange.textContent = '確認';
     pwInput.forEach(input => {
       input.disabled = false;
@@ -155,16 +156,45 @@ passwordChange.addEventListener('click', () => {
       pwInput[2].addEventListener('keyup', () => pwInput[2].style.borderBottomColor = pwInput[2].value == pwInput[1].value ? '#1F0707' : 'red');
     });
   } else {
-    if (pwInput[0].style.borderBottomColor === 'red' || pwInput[1].style.borderBottomColor === 'red' || pwInput[2].value !== pwInput[1].value) {
-      // 驗證失敗
-      return;
-    }
-    // 驗證成功
-    pwInput.forEach(input => {
-      input.disabled = true;
-      input.style.borderBottomColor = 'none';
-      input.value = '';
-    });
-    passwordChange.textContent = '編輯';
+    // 確認資料
+    axios.post(`${baseUrl}/login`, {
+      email: userDb.email,
+      password: pwInput[0].value
+    })
+      .then(async (res) => {
+      // 密碼正確
+        if (pwInput[0].style.borderBottomColor === 'red' || pwInput[1].style.borderBottomColor === 'red' || pwInput[2].value !== pwInput[1].value) {
+          alert('新密碼錯誤');
+          return
+        };
+        try {
+          await axios.patch(`${baseUrl}/600/users/${userDb.id}`, {
+            password: pwInput[1].value
+          }, headers);
+          // 驗證成功
+          pwInput.forEach(input => {
+            input.disabled = true;
+            input.style.borderBottomColor = 'none';
+            input.value = '';
+          });
+          passwordChange.textContent = '編輯';
+          localStorage.clear();
+          Swal.fire({
+            icon: 'success',
+            title: '修改密碼成功',
+            text: '請重新登入'
+          });
+          setTimeout(() => {
+            document.location.href = '/login';
+          }, 2000);
+        } catch {
+          clearLogin();
+        };
+      })
+      .catch(err => {
+        // 密碼錯誤
+        console.log(err);
+        alert('原密碼錯誤');
+      })
   };
 });

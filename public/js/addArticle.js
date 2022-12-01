@@ -64,8 +64,8 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
                 isSellInfo.materials.push([item[0], item[1], item[2]]);
               });
               materialTable.children[1].innerHTML = text.join('');
-            };
-          };
+            }
+          }
         })
         .catch(err => console.log(err));
     } else if (localStorage.getItem('articles')) {
@@ -113,7 +113,8 @@ function chooseConfig () {
       });
       for (let i = tagTypeInput.length - 1; i >= tagTypeInput.length - 3; i--) {
         tagTypeInput[i].disabled = true;
-      };
+      }
+
       needSell.disabled = false;
     } else if (e.target.value === 'articles') {
       tagTypeInput.forEach(input => {
@@ -121,9 +122,9 @@ function chooseConfig () {
       });
       for (let i = 0; i < 6; i++) {
         tagTypeInput[i].disabled = true;
-      };
+      }
       needSell.disabled = true;
-    };
+    }
   });
   // 標籤
   tagType.addEventListener('click', (e) => {
@@ -131,26 +132,29 @@ function chooseConfig () {
       tagType.previousElementSibling.style.color = '#1F0707';
       if (e.target.value === undefined) {
         return;
-      };
+      }
+      
       localStorage.setItem('tagType', e.target.value);
-    };
+    }
   });
   // 販售選擇
   isSell.addEventListener('click', (e) => {
     if (e.target.nodeName !== 'DIV') {
       if (e.target.value === undefined) {
         return;
-      };
+      }
+
       isSell.previousElementSibling.style.color = '#1F0707';
       localStorage.setItem('isSell', e.target.value);
-    };
+    }
     if (e.target.value === '是,我要販售材料包:') {
       const sellByInput = document.querySelectorAll('.sellBy input[type=radio]');
       sellByInput.forEach(input => input.checked = false );
       addContent.style.display = 'block';
+
     } else {
       addContent.style.display = 'none';
-    };
+    }
     if (e.target.value === '否') localStorage.removeItem('sellMethod');
   });
   addContent.addEventListener('click', (e) => {
@@ -165,7 +169,7 @@ function chooseConfig () {
     if (label.children[0].value === localStorage.getItem('isSell')) label.children[0].click();
     if (label.children[0].value === localStorage.getItem('sellMethod')) label.children[0].click();
   });
-};
+}
 
 function workSell () {
   axios.get(`${baseUrl}/goods`)
@@ -174,7 +178,7 @@ function workSell () {
       // 材料選項渲染
       renderOption();
     });
-};
+}
 
 function renderOption () {
   const materialStr = ['<option value="" selected hidden disabled>請選擇材料</option>'];
@@ -188,12 +192,12 @@ function renderOption () {
         item.styles.forEach(color => {
           materialColorStr.push(`<option value="${color.name}">${color.name}</option>`);
         });
-      };
+      }
     });
     materialColor.innerHTML = materialColorStr.join('');
   });
   material.innerHTML = materialStr.join('');
-};
+}
 
 // 未完成-編輯文章
 postArticleBtn.addEventListener('click', () => {
@@ -206,7 +210,7 @@ postArticleBtn.addEventListener('click', () => {
       text: '標題不可為空'
     });
     return;
-  };
+  }
   if (!localStorage.getItem('articleType')) {
     worksList.focus();
     articleType.previousElementSibling.style.color = 'red';
@@ -216,7 +220,7 @@ postArticleBtn.addEventListener('click', () => {
       text: '請選擇分類'
     });
     return;
-  };
+  }
   if (!localStorage.getItem('tagType')) {
     tagType.previousElementSibling.style.color = 'red';
     worksList.focus();
@@ -243,33 +247,37 @@ postArticleBtn.addEventListener('click', () => {
       title: '內容不得為空'
     });
     return;
-  };
+  }
 
   // 作品額外細項
   if (localStorage.getItem('articleType') === 'works') {
-    newArticle['q&a'] = [];
+    newArticle['q&a'] = newArticle['q&a'] ? newArticle['q&a'] : [];
     if (localStorage.getItem('sellMethod') === '我有自己的販售平台:') {
       newArticle.isSell = sellSelfUrl.value;
+
     } else if (localStorage.getItem('sellMethod') === '我需要委託該平台販售:') {
       isSellInfo.title = contentTitle.value;
       isSellInfo.price = sellPrice.value;
       newArticle.isSell = isSellInfo;
-    };
-  };
+    }
+  }
+
   if (typeof newArticle.isSell === 'string' && newArticle.isSell === '') {
     Swal.fire({
       icon: 'info',
       title: '請添加販賣網址'
     });
     return;
-  };
+  }
+
   if (typeof newArticle.isSell === 'object' && newArticle.isSell.materials.length === 0) {
     Swal.fire({
       icon: 'info',
       title: '請添加所需材料'
     });
     return;
-  };
+  }
+
   if (localStorage.getItem('sellMethod') === '我需要委託該平台販售:' && (isSellInfo.price === '' || isSellInfo.price === '0')) {
     Swal.fire({
       icon: 'info',
@@ -322,7 +330,7 @@ postArticleBtn.addEventListener('click', () => {
         });
     }, 500);
     return;
-  };
+  }
 });
 
 function tableOperate () {
@@ -345,9 +353,9 @@ function tableOperate () {
     if (e.target.className === 'delete') {
       e.target.parentElement.remove();
       isSellInfo.materials.splice(e.target.dataset.index, 1);
-    };
+    }
   });
-};
+}
 
 // 富文本配置
 // https://www.wangeditor.com/v5/getting-started.html 文黨
@@ -366,7 +374,7 @@ const editorConfig = {
     } else {
       newArticle.cover = 'https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true';
       contentImg.setAttribute('src', 'https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true');
-    };
+    }
   }
 };
 const editor = createEditor({

@@ -52,14 +52,12 @@ function init () {
 // 分類商品
 function filterChange () {
   filterGoods.addEventListener('change', () => {
-    let filterData;
     if (filterGoods.value === '全部分類') {
-      filterData = GoodsData;
+      renderIInit(GoodsData);
     } else {
-      filterData = GoodsData.filter(item => item.type === filterGoods.value);
+      let filterData = filterData = GoodsData.filter(item => item.type === filterGoods.value);
+      renderIInit(filterData)
     };
-    renderIInit(filterData)
-    console.log(filterData);
   });
 }
 
@@ -69,7 +67,7 @@ function renderIInit (data) {
   const goodsNameStr = ['<option value="" selected disabled hidden>商品種類</option>'];
   const goodsTypeStr = ['<option value="" selected disabled hidden>請選擇分類</option>'];
   data.forEach(item => {
-    if(item.type ==='材料包' && item.isClose) return
+    if(item.isClose) return
     goodsTableStr.push(
         `<tr>
             <td>${item.title.split('-')[0]}</td>
@@ -158,13 +156,15 @@ function goodOperation () {
   goodsTable.addEventListener('click',(e)=>{
     // 刪除商品
     if (e.target.classList.contains('deleteGoods')) {
-      axios.delete(`${baseUrl}/goods/${e.target.dataset.id}`)
+      axios.patch(`${baseUrl}/goods/${e.target.dataset.id}`,{
+        isClose: true,
+      })
         .then(res => {
           return axios.get(`${baseUrl}/goods`);
         })
         .then(res => {
           GoodsData = res.data;
-          renderIInit();
+          renderIInit(GoodsData);
         })
         .catch(err => {
           console.log(err);

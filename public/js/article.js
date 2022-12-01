@@ -23,21 +23,16 @@ if (localStorage.getItem('userId')) {
   saveIcons.parentElement.style.display = 'flex';
   axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
     .then(res => {
-      console.log(res.data);
       if (nowHref[nowHref.length - 2] === 'works') {
         if (res.data.saveArticles.worksId.includes(Number(nowHref[nowHref.length - 1]))) {
-          console.log('作品有收藏');
           saveIcons.children[0].setAttribute('d',like);
         } else {
-          console.log('作品沒有收藏');
           saveIcons.children[0].setAttribute('d',normal);
         };
       } else if (nowHref[nowHref.length - 2] === 'articles') {
         if (res.data.saveArticles.articlesId.includes(Number(nowHref[nowHref.length - 1]))) {
-          console.log('有收藏');
           saveIcons.children[0].setAttribute('d', like);
         } else {
-          console.log('沒有');
           saveIcons.children[0].setAttribute('d', normal);
         };
       };
@@ -167,17 +162,16 @@ function optionSave (which) {
       axios.patch(`${baseUrl}/${which}/${data.id}`, {
         saveNum: savedNum.textContent
       })
-      .then(() => {
-        Swal.fire({
-          icon: 'success',
-          title: '添加收藏成功'
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: '添加收藏成功'
+          });
         });
-      });
 
       saved.textContent = `收藏: ${savedNum.textContent}`;
       axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
         .then(res => {
-          console.log(res.data);
           const newSaveArticle = res.data.saveArticles;
           if (nowHref[nowHref.length - 2] === 'works') {
             newSaveArticle.worksId.includes(data.id) ? newSaveArticle.worksId : newSaveArticle.worksId.push(data.id);
@@ -187,7 +181,7 @@ function optionSave (which) {
           axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
             saveArticles: newSaveArticle
           }, headers)
-          .then(res=>console.log(res))
+            .then(res => console.log(res))
             .catch(() => clearLogin());
         });
     } else {
@@ -196,12 +190,12 @@ function optionSave (which) {
       axios.patch(`${baseUrl}/${which}/${data.id}`, {
         saveNum: savedNum.textContent
       })
-      .then(() => {
-        Swal.fire({
-          icon: 'success',
-          title: '已取消收藏'
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: '已取消收藏'
+          });
         });
-      });
 
       saved.textContent = `收藏: ${savedNum.textContent}`;
       axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
@@ -232,7 +226,7 @@ function showDb () {
   saved.textContent = `收藏: ${data.saveNum}`;
   saved.nextElementSibling.textContent = `人氣: ${data.scanNum}`;
   savedNum.textContent = data.saveNum;
-  articleCreate.textContent = data.createDate;
+  articleCreate.textContent = timer(data.createDate);
   articleBody.innerHTML = data.content;
 }
 // 登入超過1小時

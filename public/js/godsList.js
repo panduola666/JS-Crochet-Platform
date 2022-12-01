@@ -35,16 +35,16 @@ function pagination (page, limit, start) {
       start += limit;
       articleInit(page, limit, start);
       pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
-    };
+    }
   });
   pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
-};
+}
 
 function articleInit (page, limit, start) {
   const str = [];
   const newData = data.slice(start, limit * page);
   newData.forEach(item => {
-    if(item.type === '材料包' && item.isClose) return
+    if (item.type === '材料包' && item.isClose) return
     str.push(` <li class="card col-4" data-id="${item.id}">
     <img src="${item.cover}" class="card-img-top pointer" alt="${item.title}">
     <div class="card-body">
@@ -61,31 +61,35 @@ function articleInit (page, limit, start) {
       location.href = `/commodity/${li.dataset.id}`;
     });
   });
-};
+}
 
 // 篩選
 function filterArticles (page, limit, start) {
   sortBTN.forEach(btn => {
     btn.addEventListener('click', (e) => {
+      
       if (e.target.textContent === '綜合') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => a.id - b.id);
         articleInit(page, limit, start);
+
       } else if (e.target.textContent === '推薦') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => b.isRecommend - a.isRecommend);
         articleInit(page, limit, start);
+
       } else if (e.target.textContent === '熱門') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => b.sellNum - a.sellNum);
         articleInit(page, limit, start);
-      };
+
+      }
     });
   });
-};
+}
 
 // 文章分類
 function typeArticles (total, page, limit, start) {
@@ -96,12 +100,14 @@ function typeArticles (total, page, limit, start) {
         e.target.classList.add('active');
         data = total.filter(item => item);
         articleInit(page, limit, start);
+        
       } else if (e.target.textContent) {
         tagList.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = total.filter(item => item.type === e.target.textContent);
         articleInit(page, limit, start);
-      };
+
+      }
     });
   });
-};
+}

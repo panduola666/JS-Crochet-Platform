@@ -88,9 +88,9 @@ function articleInit (page, limit, start) {
           axios.patch(`${baseUrl}/works/${item.dataset.id}`, {
             scanNum: work.scanNum
           })
-          .then(() => {
-            location.href = `/article/works/${item.dataset.id}`;
-          });
+            .then(() => {
+              location.href = `/article/works/${item.dataset.id}`;
+            });
         };
       });
     });
@@ -104,7 +104,7 @@ function filterArticles (page, limit, start) {
       if (e.target.textContent === '綜合') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
-        data = data.sort((a, b)=> a.id - b.id);
+        data = data.sort((a, b) => a.id - b.id);
         articleInit(page, limit, start);
       } else if (e.target.textContent === '最新') {
         sortBTN.forEach(item => item.classList.remove('active'));

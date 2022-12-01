@@ -16,16 +16,6 @@ let recommendGoods;
 let worksChangeLis;
 let worksImg;
 let count = 0;
-/**
- * 全部重寫
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- */
 axios.get(`${baseUrl}/works`)
   .then(res => {
     top4WorksData = res.data.sort((a, b) => b.saveNum - a.saveNum).slice(0, 4);
@@ -209,15 +199,15 @@ function saveIconClick () {
                 axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
                   saveArticles: newSaveArticle
                 }, headers)
-                // .then(res=>{
-                //   Swal.fire({
-                //     icon: 'success',
-                //     title: '添加收藏成功'
-                //   });
-                // })
+                  .then(() => {
+                    Swal.fire({
+                      icon: 'success',
+                      title: '添加收藏成功'
+                    });
+                  })
                   .catch((err) => {
                     console.log(err);
-                    clearLogin()
+                    clearLogin();
                   });
               };
             });
@@ -231,7 +221,7 @@ function saveIconClick () {
                 axios.patch(`${baseUrl}/works/${item.id}`, {
                   saveNum: item.saveNum
                 });
-                
+
                 // 用戶收藏更新
                 const newSaveArticle = res.data.saveArticles;
                 const deleteIndex = newSaveArticle.worksId.indexOf(item.id);
@@ -239,15 +229,15 @@ function saveIconClick () {
                 axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
                   saveArticles: newSaveArticle
                 }, headers)
-                // .then(()=>{
-                //   Swal.fire({
-                //     icon: 'success',
-                //     title: '已取消收藏'
-                //   });
-                // })
-                  .catch(() => {
+                  .then(() => {
+                    Swal.fire({
+                      icon: 'success',
+                      title: '已取消收藏'
+                    });
+                  })
+                  .catch((err) => {
                     console.log(err);
-                    clearLogin()
+                    clearLogin();
                   });
               };
             });
@@ -255,7 +245,7 @@ function saveIconClick () {
         })
         .catch((err) => {
           console.log(err);
-          // clearLogin()
+          clearLogin();
         });
     };
   });

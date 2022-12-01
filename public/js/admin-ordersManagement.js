@@ -222,12 +222,9 @@ async function orderFinish (state, thisInput, thisBuyerInfo, finishTime) {
   }, {});
   for (const key in thisSellNum) {
     axios.get(`${baseUrl}/goods/${key}`)
-      .then(res => {
+      .then(async res => {
         const sellNum = res.data.sellNum + thisSellNum[key];
-        return axios.patch(`${baseUrl}/goods/${key}`,{sellNum})
-      })
-      .then(res => {
-        console.log(res.data);
+        await axios.patch(`${baseUrl}/goods/${key}`,{sellNum})
       })
       .catch(err => {
         console.log(err);

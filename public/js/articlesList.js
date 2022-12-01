@@ -68,12 +68,12 @@ function articleInit (page, limit, start) {
       data.forEach(work => {
         if (work.id === Number(item.dataset.id)) {
           work.scanNum++;
-          axios.patch(`${baseUrl}/articles/${ item.dataset.id }`,{
+          axios.patch(`${baseUrl}/articles/${item.dataset.id}`, {
             scanNum: work.scanNum
           })
-          .then(() =>{
-            location.href = `/article/articles/${item.dataset.id}`;
-          });
+            .then(() => {
+              location.href = `/article/articles/${item.dataset.id}`;
+            });
         };
       });
     });

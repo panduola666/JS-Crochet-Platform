@@ -39,7 +39,6 @@ function mySaveInit () {
           </div>`);
           };
         });
-
       });
       return axios.get(`${baseUrl}/articles`);
     })
