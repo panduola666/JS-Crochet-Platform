@@ -70,6 +70,16 @@ table {
 
 .small {
   font-size: 0.75rem;
+  word-wrap: break-word;
+}
+
+.lhMore {
+  line-height: 1.25rem;
+  word-wrap: break-word;
+}
+
+.lhBigger {
+  line-height: 1.5rem;
 }
 
 a {
@@ -2181,6 +2191,11 @@ button.postArticle:disabled {
   width: 30%;
 }
 
+.commodityTable {
+  height: 20rem;
+  overflow: auto;
+}
+
 .adminTable {
   width: 100%;
   border: 1px solid #1F0707;
@@ -2188,6 +2203,7 @@ button.postArticle:disabled {
   border-collapse: separate;
   text-align: center;
   background-color: #fff;
+  overflow: auto;
 }
 .adminTable input[type=checkbox] {
   transform: scale(1.5);
@@ -2207,6 +2223,11 @@ button.postArticle:disabled {
 .adminTable th, .adminTable td {
   padding: 1rem 0.5rem;
   vertical-align: middle;
+}
+@media (max-width: 576px) {
+  .adminTable th, .adminTable td {
+    padding: 0.5rem 0.3rem;
+  }
 }
 .adminTable td {
   max-width: 15rem;
@@ -2284,6 +2305,21 @@ button.postArticle:disabled {
 
 .goodsPrice {
   width: 80%;
+}
+
+@media (max-width: 768px) {
+  .buyerInfo {
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 576px) {
+  .buyerInfo {
+    font-size: 3vw;
+  }
+}
+
+.orderState {
+  width: 10vw;
 }
 
 .goodImg {

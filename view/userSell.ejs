@@ -1,50 +1,7 @@
 <main class="container-sm my3">
     <a href="javascript:history.back()">回上頁 ></a>
-    <p class="h1Size mt1">材料包詳情</p>
-    <div class="mySell">
-        <button type="button" class="mySellBTN" data-bs-toggle="collapse" data-bs-target="#collapseExample1"
-            aria-expanded="false" aria-controls="collapseExample1">
-            <div class="mySellGoods">
-                <h1 class="h2Size textHidden">可愛蛋糕水桶包(含圖解)</h1>
-                <span class="h3Size">成功</span>
-            </div>
-        </button>
-        <div class="collapse" id="collapseExample1">
-            <div class="mySellContent">
-                <p>審查狀態:<span>成功</span></p>
-                <p>原因:<span></span></p>
-                <a href="" class="small">審查規則</a>
-            </div>
-        </div>
-        <button type="button" class="mySellBTN" data-bs-toggle="collapse" data-bs-target="#collapseExample2"
-            aria-expanded="false" aria-controls="collapseExample2">
-            <div class="mySellGoods">
-                <h1 class="h2Size textHidden">桃心小猴玩偶</h1>
-                <span class="h3Size">待審查</span>
-            </div>
-        </button>
-        <div class="collapse" id="collapseExample2">
-            <div class="mySellContent">
-                <p>審查狀態:<span>待審查</span></p>
-                <p>原因:<span>客服人員將在3-7個工作天內審查完畢</span></p>
-                <a href="" class="small">審查規則</a>
-            </div>
-        </div>
-        <button type="button" class="mySellBTN" data-bs-toggle="collapse" data-bs-target="#collapseExample3"
-            aria-expanded="false" aria-controls="collapseExample3">
-            <div class="mySellGoods">
-                <h1 class="h2Size textHidden">兩用變形圍脖帽</h1>
-                <span class="h3Size">失敗</span>
-            </div>
-        </button>
-        <div class="collapse" id="collapseExample3">
-            <div class="mySellContent">
-                <p>審查狀態:<span>失敗</span></p>
-                <p>原因:<span>和其他原創相似度過高</span></p>
-                <a href="" class="small">審查規則</a>
-            </div>
-        </div>
-    </div>
+    <p class="h1Size mt1">最新審核結果</p>
+    <div class="mySell"></div>
     <p class="h1Size mt1">我的收益</p>
     <table class="myGoods">
         <thead>
@@ -55,34 +12,14 @@
                 <th>我的獲益</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>可愛蛋糕水桶包(含圖解)</td>
-                <td>$300</td>
-                <td>2</td>
-                <td>$30</td>
-            </tr>
-            <tr>
-                <td>桃心小猴玩偶</td>
-                <td>$3000</td>
-                <td>6</td>
-                <td>$300</td>
-            </tr>
-            <tr>
-                <td>桃心小猴玩偶</td>
-                <td>$3000</td>
-                <td>6</td>
-                <td>$300</td>
-            </tr>
-        </tbody>
+        <tbody class="myGoodsBody"></tbody>
     </table>
-    <div class="d-flex justify-content-end mt1">
+    <div class="d-block d-md-flex text-end justify-content-end mt1 align-items-center">
+        <p class="h2Size mb-3 mb-md-0 me-md-3 totalRevenue">總計:$123</p>
         <button class="myGoodsBTN h3Size">提取</button>
     </div>
-    <p class="h1Size mt1">銷售分析</p>
-    <div class="salesAnalysis mt1">
-        <canvas id="myChart" width="400" height="400"></canvas>
-    </div>
+    <p class="h1Size my1">銷售分析</p>
+    <div id="userSellNum"></div>
+
 </main>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- <script src="js/userSell.js"></script> -->
+<script src="/js/userSell.js"></script>

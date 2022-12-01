@@ -34,6 +34,10 @@
 .filterGoods{
     width: 30%;
 }
+.commodityTable{
+    height: 20rem;
+    overflow: auto;
+}
 .adminTable{
     width: 100%;
     border: 1px solid $darkColor;
@@ -41,6 +45,7 @@
     border-collapse: separate;
     text-align: center;
     background-color: #fff;
+    overflow: auto;
     input[type=checkbox]{
         transform: scale(1.5);
     }
@@ -59,12 +64,16 @@
     th,td{
         padding: 1rem .5rem;
         vertical-align: middle;
+        @media (max-width:576px) {
+            padding: .5rem .3rem;
+        }
     }
     td{
         max-width: 15rem;
         border-top: 1px solid $darkColor;
     }
 }
+  
 .searchOrderTable{
     td:nth-child(3n),th:nth-child(3){
         width: 40%;
@@ -131,4 +140,15 @@
 }
 .goodsPrice{
     width: 80%;
+}
+.buyerInfo{
+    @media (max-width:768px) {
+        font-size: .5rem;
+    }
+    @media (max-width:576px) {
+        font-size: 3vw;
+    }
+} 
+.orderState{
+    width: 10vw;
 }

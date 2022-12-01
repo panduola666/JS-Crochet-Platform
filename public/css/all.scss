@@ -62,6 +62,14 @@ $darkColor:#1F0707;
 }
 .small{
 	font-size: 0.75rem;
+	word-wrap: break-word;
+}
+.lhMore{
+	line-height: 1.25rem;
+	word-wrap: break-word;
+}
+.lhBigger{
+	line-height: 1.5rem;
 }
 a{
 	text-decoration: none;

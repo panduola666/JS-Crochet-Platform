@@ -103,21 +103,25 @@
                 </div>
             </div>
         </div>
-        <table class="adminTable">
-            <thead>
-                <tr>
-                    <th>*名稱</th>
-                    <th>重量</th>
-                    <th>*分類</th>
-                    <th>*單價</th>
-                    <th>顏色</th>
-                    <th>推薦</th>
-                    <th>修改</th>
-                    <th>刪除</th>
-                </tr>
-            </thead>
-            <tbody class="goodsTable"></tbody>
-        </table>
+        <div class="commodityTable mb-3">
+            <table class="adminTable">
+                <thead>
+                    <tr>
+                        <th>*名稱</th>
+                        <th>重量</th>
+                        <th>*分類</th>
+                        <th>*單價</th>
+                        <th>顏色</th>
+                        <th>推薦</th>
+                        <th>修改</th>
+                        <th>刪除</th>
+                    </tr>
+                </thead>
+                <tbody class="goodsTable"></tbody>
+            </table>
+        </div>
+        <!-- C3圖表 -->
+        <div id="commodityChart"></div>
     </div>
     <div class="ordersManagement">
         <p class="h2Size mb-3">訂單詳情</p>
@@ -141,7 +145,7 @@
                 </tr>
             </tbody>
         </table>
-        <p class="h2Size my-3">待處理訂單<span class="primaryColor h5 ms-3">*審核完成後將無法更改</span></p>
+        <p class="h2Size my-3">待處理訂單<span class="primaryColor h5 ms-3">*審核完成後將無法更改,請謹慎操作</span></p>
         <table class="adminTable">
             <thead>
                 <tr>
@@ -184,7 +188,7 @@
         </table>
     </div>
     <div class="userSellAudit">
-        <p class="h2Size mb-3">待審額</p>
+        <p class="h2Size mb-3">待審額<span class="primaryColor h5 ms-3">*審核完成後將無法更改,請謹慎操作</span></p>
         <table class="adminTable">
             <thead>
                 <tr>
@@ -195,24 +199,7 @@
                     <th>原因</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>12生肖-豬玩偶</td>
-                    <td>200</td>
-                    <td class="small">五股牛奶棉-紅色*2、五股牛奶棉-黑色*2</td>
-                    <td>
-                        <select name="" id="">
-                            <option value="待審核" selected disabled hidden>待審核</option>
-                            <option value="通過">通過</option>
-                            <option value="失敗">失敗</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" value="客服將在3~7天內完成審核" disabled>
-                        <img src="/images/Vector.png" alt="" class="pointer">
-                    </td>
-                </tr>
-            </tbody>
+            <tbody class="needReviewedTable"></tbody>
         </table>
         <p class="h2Size my-3">審核完畢</p>
         <table class="adminTable">
@@ -225,52 +212,24 @@
                     <th>原因</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>12生肖-豬玩偶</td>
-                    <td>200</td>
-                    <td class="small">五股牛奶棉-紅色*2、五股牛奶棉-黑色*2</td>
-                    <td>
-                        <select name="" id="" disabled>
-                            <option value="待審核" selected disabled hidden>待審核</option>
-                            <option value="通過">通過</option>
-                            <option value="失敗">失敗</option>
-                        </select>
-                    </td>
-                    <td>
-                        <input type="text" value="客服將在3~7天內完成審核" disabled>
-                        <img src="/images/Vector.png" alt="" class="pointer">
-                    </td>
-                </tr>
-            </tbody>
+            <tbody class="finishReviewedTable"></tbody>
         </table>
     </div>
     <div class="withdrawalApplication">
-        <p class="h2Size mb-3">待審額</p>
+        <p class="h2Size mb-3">待審額<span class="primaryColor h5 ms-3">*審核完成後將無法更改,請謹慎操作</span></p>
         <table class="adminTable">
             <thead>
                 <tr>
-                    <th>材料包名稱</th>
-                    <th>售價</th>
-                    <th>所需材料</th>
-                    <th>審核結果</th>
-                    <th>原因</th>
+                <tr>
+                    <th>提領人</th>
+                    <th>帳戶</th>
+                    <th>銀行代碼</th>
+                    <th>提領金額</th>
+                    <th>進度</th>
+                </tr>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>圈圈</td>
-                    <td>123114251123</td>
-                    <td>800</td>
-                    <td>20</td>
-                    <td>
-                        <select name="" id="">
-                            <option value="待處理" selected>待處理</option>
-                            <option value="已轉帳">已轉帳</option>
-                        </select>
-                    </td>
-                </tr>
-            </tbody>
+            <tbody class="pendingTransfer"></tbody>
         </table>
         <p class="h2Size my-3">審核完畢</p>
         <table class="adminTable">
@@ -284,7 +243,7 @@
                     <th>撥款日期</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="finishTransfer">
                 <tr>
                     <td>圈圈</td>
                     <td>123114251123</td>

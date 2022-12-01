@@ -13,265 +13,287 @@ const normal =
 let top4WorksData;
 let articlesData;
 let recommendGoods;
-let worksChange_lis;
+let worksChangeLis;
 let worksImg;
 let count = 0;
-
+/**
+ * 全部重寫
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 axios.get(`${baseUrl}/works`)
-    .then(res=>{
-        top4WorksData = res.data.sort((a, b) => b.saveNum - a.saveNum).slice(0, 4);
-        worksInit();
-        renderWorksImg();
-        carousel();
-        saveIconClick();
-        changeHrefClick();
-    })
+  .then(res => {
+    top4WorksData = res.data.sort((a, b) => b.saveNum - a.saveNum).slice(0, 4);
+    worksInit();
+    renderWorksImg();
+    carousel();
+    saveIconClick();
+    changeHrefClick();
+  });
+
 axios.get(`${baseUrl}/articles`)
-    .then(res=>{
-        articlesData = res.data;
-        //最新最熱切換+畫面渲染
-        articlesTitle.forEach(title => {
-            readerArticles(title);
-            title.addEventListener('click', () => {
-            articlesTitle.forEach( p => p.classList.remove('active'));
-            title.classList.add('active');
-            readerArticles(title);
+  .then(res => {
+    articlesData = res.data;
+    // 最新最熱切換+畫面渲染
+    articlesTitle.forEach(title => {
+      readerArticles(title);
+      title.addEventListener('click', () => {
+        articlesTitle.forEach(p => p.classList.remove('active'));
+        title.classList.add('active');
+        readerArticles(title);
+      });
+    });
+    // 點擊數增加
+    articlesList.forEach(article => {
+      article.addEventListener('click',(e)=>{
+        articlesData.forEach(item=>{
+          if (item.title === article.children[1].children[0].textContent.trim()) {
+            item.scanNum++;
+            axios.patch(`${baseUrl}/articles/${item.id}`, {
+              scanNum: item.scanNum
             });
+            window.location.href = `article/articles/${item.id}`;
+          };
         });
-        //點擊數增加
-        articlesList.forEach(article => {
-            article.addEventListener('click',(e)=>{
-                articlesData.forEach(item=>{
-                    if(item.title == article.children[1].children[0].textContent.trim()){
-                        item.scanNum++;
-                        axios.patch(`${baseUrl}/articles/${item.id}`,{
-                            scanNum:item.scanNum
-                        });
-                        window.location.href=`article/articles/${item.id}`;
-                    };
-                });
-            });
-        });
-    })
+      });
+    });
+  });
+
 axios.get(`${baseUrl}/goods`)
-    .then(res=>{
-        recommendGoods = res.data.filter(item=>item.isRecommend);
-        goodsInit();
-        //推薦商品-左右切換
-        const goodsRecommend_li = goodsRecommend.querySelectorAll('li');
-        goodsRecommend_li.forEach(li=>{
-            li.addEventListener('click',()=>{
-                location.href = `/commodity/${li.dataset.id}`;
-            });
-        });
-        goodsChangeLeft.addEventListener('click',()=>{
-            const first = recommendGoods.shift();
-            recommendGoods.push(first);
-            goodsInit();
-        });
-        goodsChangeRight.addEventListener('click',()=>{
-            const last = recommendGoods.pop();
-            recommendGoods.unshift(last);
-            goodsInit();
-        });
+  .then(res => {
+    recommendGoods = res.data.filter(item => item.isRecommend);
+    goodsInit();
+    // 推薦商品-左右切換
+    const goodsRecommendLi = goodsRecommend.querySelectorAll('li');
+    goodsRecommendLi.forEach(li => {
+      li.addEventListener('click', () => {
+        location.href = `/commodity/${li.dataset.id}`;
+      });
     });
-    
-//熱門作品-左側渲染
-function worksInit(){
-    let workStr = '';
-    top4WorksData.forEach((item) => {
-        workStr += `<li class="textHidden pointer" data-id="${item.id}">
-                    <h3>${item.title}</h3>`;
-        });
-    worksChange.innerHTML = workStr;
-    worksChange_lis = worksChange.querySelectorAll('li');
-    worksImg = document.querySelector('.worksImg');
+    goodsChangeLeft.addEventListener('click', () => {
+      const first = recommendGoods.shift();
+      recommendGoods.push(first);
+      goodsInit();
+    });
+    goodsChangeRight.addEventListener('click', () => {
+      const last = recommendGoods.pop();
+      recommendGoods.unshift(last);
+      goodsInit();
+    });
+  });
+
+// 熱門作品-左側渲染
+function worksInit () {
+  const workStr = [];
+  top4WorksData.forEach((item) => {
+    workStr.push(`<li class="textHidden pointer" data-id="${item.id}">
+    <h3>${item.title}</h3>`);
+  });
+  worksChange.innerHTML = workStr.join('');
+  worksChangeLis = worksChange.querySelectorAll('li');
+  worksImg = document.querySelector('.worksImg');
 };
 
-//熱門作品-畫面完整渲染
-function renderWorksImg(){
-    //左側切換
-    worksChange_lis.forEach(li=>li.classList.remove('active'))
-    worksChange_lis[count%4].classList.add('active');
-    //右側圖片
-    worksChange_lis.forEach(li=>{
-        if(li.classList.contains('active')){
-            top4WorksData.forEach(data=>{
-                if(data.id === Number(li.dataset.id)){
-                    //圖片+標題切換
-                    worksImgUrl.src = data.cover;
-                    worksImgUrl.nextElementSibling.children[0].textContent = data.title;
-                    //icon渲染
-                    if(localStorage.getItem('userId')){
-                        axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
-                        .then(res=>{
-                            saveIcon.style.display = 'block';
-                            const userSave = res.data.saveArticles.worksId;
-                            if(userSave.includes(data.id)){
-                                saveIcon.children[0].setAttribute('d', like);
-                            }else{
-                                saveIcon.children[0].setAttribute('d', normal);
-                            };
-                        })
-                        .catch(err=>{
-                            saveIcon.style.display = 'none';
-                            localStorage.clear();
-                        });
-                    };
+// 熱門作品-畫面完整渲染
+function renderWorksImg () {
+  // 左側切換
+  worksChangeLis.forEach(li => li.classList.remove('active'));
+  worksChangeLis[count % 4].classList.add('active');
+  // 右側圖片
+  worksChangeLis.forEach(li => {
+    if (li.classList.contains('active')) {
+      top4WorksData.forEach(data => {
+        if (data.id === Number(li.dataset.id)) {
+          // 圖片+標題切換
+          worksImgUrl.src = data.cover;
+          worksImgUrl.nextElementSibling.children[0].textContent = data.title;
+          // icon渲染
+          if (localStorage.getItem('userId')) {
+            axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
+              .then(res => {
+                saveIcon.style.display = 'block';
+                const userSave = res.data.saveArticles.worksId;
+                if (userSave.includes(data.id)) {
+                  saveIcon.children[0].setAttribute('d', like);
+                } else {
+                  saveIcon.children[0].setAttribute('d', normal);
                 };
-            });
+              })
+              .catch((err) => {
+                console.log(err);
+                saveIcon.style.display = 'none';
+                localStorage.clear();
+              });
+          };
         };
-    });
-    count++;
-};
-
-//熱門作品-輪播邏輯
-function carousel(){
-    let worksCarousel = setInterval(renderWorksImg, 1500);
-    let renderWork;
-    worksChange_lis.forEach((li,index)=>{
-        li.addEventListener('mouseenter',()=>{
-            clearInterval(worksCarousel);
-            clearTimeout(renderWork);
-            renderWork = setTimeout(()=>{
-                worksChange_lis.forEach(item=>item.classList.remove('active'));
-                li.classList.add('active');
-                count=index;
-                renderWorksImg();
-            }, 300);
-        })
-        li.addEventListener('mouseleave',()=>{
-            worksCarousel = setInterval(renderWorksImg, 1500);
-        })
-    })
-    worksImg.addEventListener('mouseenter',()=>clearInterval(worksCarousel));
-    worksImg.addEventListener('mouseleave',()=>worksCarousel = setInterval(renderWorksImg, 1500));
-};
-//熱門作品-點擊跳轉
-function changeHrefClick(){
-    worksChange_lis.forEach(li=>{
-        li.addEventListener('click',(e)=>{
-            top4WorksData.forEach(data=>{
-                if(data.id === Number(li.dataset.id)){
-                    data.scanNum++;
-                    axios.patch(`${baseUrl}/works/${data.id}`,{
-                        scanNum : data.scanNum
-                    });
-                    window.location.href=`http://127.0.0.1:333/article/works/${data.id}`;
-                };
-            });
-        });
-    });
-    worksImg.addEventListener('click',(e)=>{
-        top4WorksData.forEach(item=>{
-            if(item.title===worksImg.children[1].children[0].textContent.trim() && e.target.nodeName!=='path' && e.target.nodeName!=='svg' && e.target.nodeName!=='rect'){
-                item.scanNum++
-                axios.patch(`${baseUrl}/works/${item.id}`,{
-                    scanNum : item.scanNum
-                })
-                window.location.href=`http://127.0.0.1:333/article/works/${item.id}`;
-            };
-        });
-    });
-};
-
-//熱門作品-收藏數據變更
-function saveIconClick(){
-    worksImg.addEventListener('click',(e)=>{
-        console.log(e.target.nodeName);
-        if(e.target.nodeName == 'svg' || e.target.nodeName == 'path' || e.target.nodeName == 'rect'){
-            axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,headers)
-            .then(res=>{
-                if (saveIcon.children[0].getAttribute('d') == normal) {
-                    //收藏
-                    saveIcon.children[0].setAttribute('d', like);
-                    //文章收藏數
-                    top4WorksData.forEach(item=>{
-                        if(item.title==worksImg.children[1].children[0].textContent){
-                            item.saveNum++;
-                            axios.patch(`${baseUrl}/works/${item.id}`,{
-                                saveNum : item.saveNum
-                            });
-                            //用戶收藏更新
-                            const newSaveArticle = res.data.saveArticles;
-                            newSaveArticle.worksId.includes(item.id) ? newSaveArticle.worksId : newSaveArticle.worksId.push(item.id);
-                            axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
-                                saveArticles : newSaveArticle
-                            }, headers)
-                            .catch(err=>clearLogin);
-                        };
-                    });
-                }else{
-                    //取消收藏
-                    saveIcon.children[0].setAttribute('d', normal);
-                    //文章收藏數
-                    top4WorksData.forEach(item=>{
-                        if(item.title==worksImg.children[1].children[0].textContent){
-                            item.saveNum--;
-                            axios.patch(`${baseUrl}/works/${item.id}`,{
-                                saveNum : item.saveNum
-                            });
-                            //用戶收藏更新
-                            const newSaveArticle = res.data.saveArticles;
-                            const deleteIndex = newSaveArticle.worksId.indexOf(item.id);
-                            newSaveArticle.worksId.splice(deleteIndex, 1);
-                            axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
-                                saveArticles:newSaveArticle
-                            }, headers)
-                            .catch(err=>clearLogin);
-                        };
-                    });
-                };
-            })
-            .catch(err=>clearLogin);
-        };
-    });
-};
-
-//文章-畫面渲染
-function readerArticles(item){
-    const top3Article = articlesData.sort((a,b)=>b.saveNum-a.saveNum).slice(0,3);
-    const new3Article = articlesData.sort((a,b)=>new Date (b.createDate) - new Date (a.createDate) ).slice(0,3);
-    if(item.classList.contains('active')){
-        if(item.textContent=='最新文章'){
-            for (let i = 0, j = 0; i < new3Article.length, j < articlesList.length; i++, j++) {
-                articlesList[j].children[0].children[1].children[0].textContent = new3Article[i].title;
-                articlesList[j].children[1].children[0].textContent = new3Article[i].title;
-                articlesList[j].children[0].children[0].setAttribute('src', new3Article[i].cover);
-                articlesList[j].children[1].children[1].innerHTML = new3Article[i].content;
-            };
-        }else if(item.textContent=='熱門文章'){
-            for (let i = 0, j = 0; i < top3Article.length, j < articlesList.length; i++, j++) {
-                articlesList[j].children[0].children[1].children[0].textContent = top3Article[i].title;
-                articlesList[j].children[1].children[0].textContent = top3Article[i].title;
-                articlesList[j].children[0].children[0].setAttribute('src', top3Article[i].cover);
-                articlesList[j].children[1].children[1].innerHTML = top3Article[i].content;
-            };
-        };
+      });
     };
+  });
+  count++;
 };
 
-//推薦商品-畫面渲染
-function goodsInit(){
-    let str = '';
-    recommendGoods.forEach(item=>{
-        str += `<li data-id="${item.id}">
-        <img src="${item.cover}" alt="${item.title}">
-        <h3 class="h3Size">${item.title}</h3>
-        </li>`
+// 熱門作品-輪播邏輯
+function carousel () {
+  let worksCarousel = setInterval(renderWorksImg, 1500);
+  // let renderWork;
+  worksChangeLis.forEach((li, index) => {
+    li.addEventListener('mouseenter', () => {
+      clearInterval(worksCarousel);
+        worksChangeLis.forEach(item => item.classList.remove('active'));
+        li.classList.add('active');
+        count = index;
+        renderWorksImg();
     });
-    goodsRecommend.innerHTML = str;
+    li.addEventListener('mouseleave', () => {
+      worksCarousel = setInterval(renderWorksImg, 1500);
+    });
+  });
+  worksImg.addEventListener('mouseenter', () => clearInterval(worksCarousel));
+  worksImg.addEventListener('mouseleave', () => {
+    worksCarousel = setInterval(renderWorksImg, 1500);
+  });
+};
+// 熱門作品-點擊跳轉
+function changeHrefClick () {
+  worksChangeLis.forEach(li => {
+    li.addEventListener('click', (e) => {
+      top4WorksData.forEach(data => {
+        if (data.id === Number(li.dataset.id)) {
+          data.scanNum++;
+          axios.patch(`${baseUrl}/works/${data.id}`, {
+            scanNum: data.scanNum
+          });
+          window.location.href = `http://127.0.0.1:333/article/works/${data.id}`;
+        };
+      });
+    });
+  });
+  worksImg.addEventListener('click', (e) => {
+    top4WorksData.forEach(item => {
+      if (item.title === worksImg.children[1].children[0].textContent.trim() && e.target.nodeName !== 'path' && e.target.nodeName !== 'svg' && e.target.nodeName !== 'rect') {
+        item.scanNum++;
+        axios.patch(`${baseUrl}/works/${item.id}`,{
+          scanNum: item.scanNum
+        });
+        window.location.href = `http://127.0.0.1:333/article/works/${item.id}`;
+      };
+    });
+  });
 };
 
-//用戶登入超過1小時
-function clearLogin(){
-    localStorage.clear();
-    Swal.fire({
-        icon: 'error',
-        title: '登入過期!',
-        text: '請重新登入'
-    });
-    setTimeout(() => {
-        document.location.href = '/login';
-    }, 2000);
+// 熱門作品-收藏數據變更
+// 這邊很容易服務器崩潰
+function saveIconClick () {
+  worksImg.addEventListener('click', (e) => {
+    if (e.target.nodeName === 'svg' || e.target.nodeName === 'path' || e.target.nodeName === 'rect') {
+      axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
+        .then(res => {
+          if (saveIcon.children[0].getAttribute('d') == normal) {
+            // 收藏
+            saveIcon.children[0].setAttribute('d', like);
+            // 文章收藏數
+            top4WorksData.forEach(item => {
+              if (item.title === worksImg.children[1].children[0].textContent) {
+                item.saveNum++;
+                axios.patch(`${baseUrl}/works/${item.id}`, {
+                  saveNum: item.saveNum
+                });
+                // 用戶收藏更新
+                const newSaveArticle = res.data.saveArticles;
+                newSaveArticle.worksId.includes(item.id) ? newSaveArticle.worksId : newSaveArticle.worksId.push(item.id);
+                axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
+                  saveArticles: newSaveArticle
+                }, headers)
+                // .then(res=>{
+                //   Swal.fire({
+                //     icon: 'success',
+                //     title: '添加收藏成功'
+                //   });
+                // })
+                  .catch((err) => {
+                    console.log(err);
+                    clearLogin()
+                  });
+              };
+            });
+          } else {
+          // 取消收藏
+            saveIcon.children[0].setAttribute('d', normal);
+            // 文章收藏數
+            top4WorksData.forEach(item => {
+              if (item.title === worksImg.children[1].children[0].textContent) {
+                item.saveNum--;
+                axios.patch(`${baseUrl}/works/${item.id}`, {
+                  saveNum: item.saveNum
+                });
+                
+                // 用戶收藏更新
+                const newSaveArticle = res.data.saveArticles;
+                const deleteIndex = newSaveArticle.worksId.indexOf(item.id);
+                newSaveArticle.worksId.splice(deleteIndex, 1);
+                axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
+                  saveArticles: newSaveArticle
+                }, headers)
+                // .then(()=>{
+                //   Swal.fire({
+                //     icon: 'success',
+                //     title: '已取消收藏'
+                //   });
+                // })
+                  .catch(() => {
+                    console.log(err);
+                    clearLogin()
+                  });
+              };
+            });
+          };
+        })
+        .catch((err) => {
+          console.log(err);
+          // clearLogin()
+        });
+    };
+  });
 };
+
+// 文章-畫面渲染
+function readerArticles (item) {
+  const top3Article = articlesData.sort((a, b) => b.saveNum - a.saveNum).slice(0, 3);
+  const new3Article = articlesData.sort((a, b) => new Date(b.createDate) - new Date(a.createDate)).slice(0, 3);
+  if (item.classList.contains('active')) {
+    if (item.textContent === '最新文章') {
+      for (let i = 0, j = 0; i < new3Article.length, j < articlesList.length; i++, j++) {
+        articlesList[j].children[0].children[1].children[0].textContent = new3Article[i].title;
+        articlesList[j].children[1].children[0].textContent = new3Article[i].title;
+        articlesList[j].children[0].children[0].setAttribute('src', new3Article[i].cover);
+        articlesList[j].children[1].children[1].innerHTML = new3Article[i].content;
+      };
+    } else if (item.textContent === '熱門文章') {
+      for (let i = 0, j = 0; i < top3Article.length, j < articlesList.length; i++, j++) {
+        articlesList[j].children[0].children[1].children[0].textContent = top3Article[i].title;
+        articlesList[j].children[1].children[0].textContent = top3Article[i].title;
+        articlesList[j].children[0].children[0].setAttribute('src', top3Article[i].cover);
+        articlesList[j].children[1].children[1].innerHTML = top3Article[i].content;
+      };
+    };
+  };
+};
+
+// 推薦商品-畫面渲染
+function goodsInit () {
+  const str = [];
+  recommendGoods.forEach(item => {
+    str.push(`<li data-id="${item.id}">
+    <img src="${item.cover}" alt="${item.title}">
+    <h3 class="h3Size">${item.title}</h3>
+    </li>`);
+  });
+  goodsRecommend.innerHTML = str.join('');
+};
+
+

@@ -71,4 +71,4 @@ app.get('/admin', function (req, res) {
 });
 
 app.listen(333);
-console.log( `點擊這裡開始:http://localhost:333`);
+console.log( `點擊這裡開始:http://127.0.0.1:333`);
