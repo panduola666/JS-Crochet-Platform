@@ -126,7 +126,7 @@
       "title": "四股牛奶棉-50g",
       "price": "18",
       "isClose": false,
-      "isRecommend": true,
+      "isRecommend": false,
       "styles": [
         {
           "name": "黑色",
@@ -210,7 +210,7 @@
       "title": "超值鉤針套裝",
       "price": "88",
       "isClose": false,
-      "isRecommend": false,
+      "isRecommend": true,
       "styles": [],
       "type": "鉤針",
       "id": 5,

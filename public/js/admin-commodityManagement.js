@@ -158,6 +158,7 @@ function goodOperation () {
     if (e.target.classList.contains('deleteGoods')) {
       axios.patch(`${baseUrl}/goods/${e.target.dataset.id}`,{
         isClose: true,
+        isRecommend: false
       })
         .then(res => {
           return axios.get(`${baseUrl}/goods`);

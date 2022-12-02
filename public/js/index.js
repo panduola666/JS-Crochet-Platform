@@ -283,7 +283,8 @@ function goodsInit () {
     <h3 class="h3Size">${item.title}</h3>
     </li>`);
   });
+  str.push(`<li class="d-flex align-items-center text-start">
+  <p class="h3Size">現在還沒有其他商品<br><a href="/goodsList">來去逛逛 ></a></p>
+  </li>`)
   goodsRecommend.innerHTML = str.join('');
 };
-
-
