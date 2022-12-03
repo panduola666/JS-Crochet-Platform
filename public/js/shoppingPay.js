@@ -44,7 +44,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
       };
     });
 
-    goodsData(userData.shoppingCar)
+    getGoodsData(userData.shoppingCar)
       .then(res => {
         goodsPrice.textContent = `$${res}`;
         endPrice.textContent = `$${Number(res) + 60}`;
@@ -135,10 +135,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
           totalPrice: endPrice.textContent.split('$')[1]
         })
           .then(res => {
-            axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
-              shoppingCar: []
-            }, headers);
-            location.href = `/shoppingFinish/${localStorage.getItem('userId')}`;
+            patchUser(res.data.boughtGoods);
           });
       }
     });
@@ -151,7 +148,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
     };
   });
 
-async function goodsData (shoppingCar) {
+async function getGoodsData (shoppingCar) {
   const res = await axios.get(`${baseUrl}/goods`);
   let total = 0;
   shoppingCar.forEach(item => {
@@ -163,3 +160,19 @@ async function goodsData (shoppingCar) {
   });
   return total;
 };
+
+async function patchUser (shoppingCar) {
+  const user = await axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers);
+  const boughtArticles = user.data.boughtArticles;
+  shoppingCar.forEach(async item =>{
+    const good = await axios.get(`${baseUrl}/goods/${item.goodId}`);
+    if(good.data.type === '材料包') {
+      boughtArticles.push(good.data.workId)
+      await axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
+        boughtArticles,
+        shoppingCar:[]
+      }, headers);
+      location.href = `/shoppingFinish/${localStorage.getItem('userId')}`
+    }
+  })
+}

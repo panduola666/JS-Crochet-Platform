@@ -163,7 +163,7 @@ function articlesInit (articles) {
         </div>
         <article class="row justify-content-around py-3">
             <div class="col col-md-8 ">
-                <div class="articleFont">
+                <div class="articleFont px-3 px-md-2">
                     ${article.content}
                 </div>
             </div>

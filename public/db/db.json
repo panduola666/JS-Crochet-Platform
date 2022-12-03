@@ -36,7 +36,7 @@
       "isAdmin": true,
       "shoppingCar": [
         {
-          "goodId": 2,
+          "goodId": 8,
           "num": "1",
           "style": "隨機"
         }
@@ -48,9 +48,7 @@
         ],
         "articlesId": []
       },
-      "boughtArticles": [
-        2
-      ],
+      "boughtArticles": [],
       "phoneNumber": "0972198312",
       "barcode": "/2edcdWQ",
       "creditCard": {
@@ -67,9 +65,7 @@
       "isCreator": false,
       "isAdmin": false,
       "shoppingCar": [],
-      "boughtArticles": [
-        1
-      ],
+      "boughtArticles": [],
       "saveArticles": {
         "worksId": [
           4,
@@ -369,12 +365,12 @@
   "works": [
     {
       "saveNum": 113,
-      "scanNum": 44,
+      "scanNum": 47,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true"
       ],
-      "content": "<p style=\"text-align: start;\">最近很火的一款鉤針蛋糕包,這次分享草莓款的,擺在桌上又是一個收納神器!這邊的範例是白奶油蛋糕上面做草莓裝飾，同時草莓可以做抽繩的推拉扣來控制包包的開啟與否。</p><p style=\"text-align: start;\">另外如果是第一次接觸鉤針的寶寶們，建議可以購買材料包，可以提供ＱＡ的問答服務，另外加碼提供視頻教學參考。</p><p style=\"text-align: start;\"><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" style=\"width: 50%;\"></p><p style=\"text-align: start;\"><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">配色方面可以自己選擇喜歡的口味，這裡示範的是巧克力蛋糕，如果家裡有其他的配飾可以在綁在抽繩末端做裝飾唷！</span></p>",
+      "content": "<p style=\"text-align: start;\">最近很火的一款鉤針蛋糕包,這次分享巧克力款的,擺在桌上又是一個收納神器!</p><p style=\"text-align: start;\">這邊的範例是巧克力奶油蛋糕款,喜歡的水水可以點擊購買材料包,每個材料包裡面都有附贈織圖詳解</p><p style=\"text-align: start;\"><br></p><p style=\"text-align: start;\">如果看不懂織圖的水水們,在購買後會在下方開放QA問答,可以盡情發問喔~</p><p style=\"text-align: start;\">另外如果想做成背包樣式的話可以另外鉤背帶就可以了,不管是出門還是送人都很好看</p><p style=\"text-align: start;\"><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true\" style=\"width: 50%;\"></p>",
       "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
       "userId": 2,
       "createDate": 1668922069000,
@@ -396,11 +392,6 @@
           ],
           [
             "五股牛奶棉-50g",
-            "黑色",
-            "1"
-          ],
-          [
-            "五股牛奶棉-50g",
             "白色",
             "1"
           ]
@@ -408,12 +399,24 @@
         "canSell": "通過",
         "reason": "通過"
       },
-      "q&a": [],
+      "q&a": [
+        {
+          "userId": 1,
+          "Q": {
+            "content": "想問一下關於花邊的部分要怎麼弄比較飽滿",
+            "timer": 1670097245091
+          },
+          "A": {
+            "content": "可以在鉤棗形針的時候鉤比較多針,不過建議不要加太多會不好看\n",
+            "timer": 1670097369329
+          }
+        }
+      ],
       "id": 1
     },
     {
       "saveNum": 13,
-      "scanNum": 29,
+      "scanNum": 30,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true"
@@ -444,8 +447,8 @@
             "1"
           ]
         ],
-        "canSell": "待審核",
-        "reason": "客服將在3~7個工作日審核完畢"
+        "canSell": "通過",
+        "reason": "通過"
       },
       "q&a": [],
       "id": 2
@@ -476,7 +479,7 @@
     },
     {
       "saveNum": 21,
-      "scanNum": 42,
+      "scanNum": 43,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true"
@@ -619,76 +622,6 @@
       "finishTime": "",
       "totalPrice": "517",
       "id": 4
-    },
-    {
-      "userId": 4,
-      "name": "admin",
-      "tel": "0913221312",
-      "state": "待處理",
-      "isTally": false,
-      "toShop": {
-        "type": "全家便利商店",
-        "shopNumber": "33",
-        "sendNumber": ""
-      },
-      "boughtGoods": [
-        {
-          "style": "深咖",
-          "goodId": 2,
-          "num": "1"
-        }
-      ],
-      "payMethod": "貨到付款",
-      "createTime": 1669562009440,
-      "tallyTime": "",
-      "finishTime": "",
-      "totalPrice": "78",
-      "id": 5
-    },
-    {
-      "userId": 4,
-      "name": "admin",
-      "tel": "0913221312",
-      "state": "待處理",
-      "isTally": false,
-      "toShop": {
-        "type": "7-ELEVEN",
-        "shopNumber": "3333",
-        "sendNumber": ""
-      },
-      "boughtGoods": [
-        {
-          "goodId": 2,
-          "num": "1",
-          "style": "隨機"
-        },
-        {
-          "goodId": 2,
-          "num": "1",
-          "style": "隨機"
-        },
-        {
-          "goodId": 2,
-          "num": "1",
-          "style": "隨機"
-        },
-        {
-          "goodId": 2,
-          "num": "1",
-          "style": "隨機"
-        },
-        {
-          "goodId": 2,
-          "num": "1",
-          "style": "深咖"
-        }
-      ],
-      "payMethod": "貨到付款",
-      "createTime": 1669562084742,
-      "tallyTime": "",
-      "finishTime": "",
-      "totalPrice": "150",
-      "id": 6
     }
   ],
   "transfer": [
