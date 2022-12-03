@@ -2335,6 +2335,8 @@ button.postArticle:disabled {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
+  color: #1F0707;
+  white-space: nowrap;
 }
 .searchOrderId:hover {
   background-color: #FC7F79;

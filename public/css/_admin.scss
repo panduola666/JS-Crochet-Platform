@@ -158,6 +158,8 @@
     padding: .5rem 1rem;
     border: none;
     border-radius: 8px;
+    color: $darkColor;
+    white-space: nowrap;
     &:hover{
         background-color: $primaryColor;
     }

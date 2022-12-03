@@ -20,18 +20,14 @@ searchOrderId.addEventListener('click', () => {
   const thisData = ordersData.filter(item=>item.id == needSearchId.value);
   if (!needSearchId.value) {
     searchOrderTable.innerHTML = `<tr>
-    <td></td>
-    <td>請輸入要查詢的訂單編號</td>
-    <td class="text-start"></td>
+    <td class="textHidden" colspan="3">請輸入要查詢的訂單編號</td>
     </tr>`;
     needSearchId.focus();
     return;
   };
   if (thisData.length === 0) {
     searchOrderTable.innerHTML = `<tr>
-    <td></td>
-    <td>沒有該筆訂單</td>
-    <td class="text-start"></td>
+    <td class="textHidden" colspan="3">沒有該筆訂單</td>
     </tr>`;
     return;
   };
