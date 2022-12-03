@@ -30,7 +30,7 @@
     },
     {
       "email": "panduola666@gmail.com",
-      "password": "$2a$10$uzeQsAomIj1GquDJg4pvtuMQdZ6xW2lkfU9yr4UzfC.m1KO0lN02e",
+      "password": "$2a$10$ipWPFdm07kKU7rO7qPuW9ufX/lR2o2WuDF1Xw8q6HSE1jMZQhc..W",
       "userName": "顧念",
       "isCreator": true,
       "isAdmin": true,
@@ -73,7 +73,8 @@
       "saveArticles": {
         "worksId": [
           4,
-          1
+          1,
+          2
         ],
         "articlesId": [
           2
@@ -292,7 +293,7 @@
         ]
       ],
       "userId": 2,
-      "isClose": true,
+      "isClose": false,
       "id": 8
     },
     {
@@ -318,17 +319,20 @@
         ]
       ],
       "userId": 2,
-      "isClose": true,
+      "isClose": false,
       "id": 9
     }
   ],
   "articles": [
     {
       "saveNum": "1",
-      "scanNum": 4,
-      "img": [],
-      "content": "<h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">選擇鉤針的方式：看針號或直徑(以mm表示)</span></h3><p style=\"text-align: start;\">在鉤針方面，直徑指的是鉤頭後面那段的直徑長度。鉤針直徑和針號可以互相對應，因此選購鉤針時不論看針號或直徑都可以。但是，不同國家有不一樣的規格，因此必須注意你所選購的鉤針是遵照哪一個國家規格，避免買錯尺寸。</p><p style=\"text-align: start;\">以舒適性來說建議買軟柄 &gt; 扁竹柄 &gt; 金屬柄。軟柄握起來最舒適較適合長時間使用，而竹柄較輕較省力。金屬柄最硬，我之前每天使用它造成右手食指側面長繭，因此建議如果你是長時間編織的人盡量選擇其他兩種使用。</p><p style=\"text-align: start;\">金屬柄雖然沒有其他兩種用起來舒服，但仍有其他優點存在。1. 有的金屬柄鉤針是雙頭設計，等於買一支抵兩支用，很經濟實惠 2. 金屬柄鉤針從頭到尾一體成型，因此不容易斷裂，非常堅固耐用。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">怎麼選鉤針針號</span></h3><p style=\"text-align: start;\">初學者的鉤針常用針號是<strong> 2.5~3.5mm</strong>，通常數字越大鉤針越粗喔。</p><p style=\"text-align: start;\">還沒習慣鉤針針法和拿毛線的方式時，初學者較常遇到短針大小不均、針目鉤太小很難穿過去等等問題，這是因為現在還不能熟練地控制毛線，力道時大時小。除了提醒自己不要把線拉過緊之外，當發現鉤不進去時，也可以用小一點的鉤針鉤起立針 (也就是第一針之前的鎖針) 和引拔針，再換回原本的鉤針繼續鉤，以此達到改善的效果。</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">鉤針要買整組還是幾支就好?</span></h3><p>不論是網購或實體店面你可能會看到一整套的鉤針組，這可能令人很心動，但真實情況是「常用的鉤針只有那幾支」，畢竟你買的毛線通常也就固定幾種不是嗎？因此我建議初學者選購 1~2 支鉤針就好，這樣已經很夠用了。未來當你想挑戰更多作品，需要用到其他粗細的毛線時，再來買適合的鉤針更實在呢。</p>",
-      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
+      "scanNum": 8,
+      "img": [
+        "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80",
+        "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80"
+      ],
+      "content": "<h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 22px;\"><strong>選擇鉤針的方式：看針號或直徑(以mm表示)</strong></span></h3><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">在鉤針方面，直徑指的是鉤頭後面那段的直徑長度。鉤針直徑和針號可以互相對應，因此選購鉤針時不論看針號或直徑都可以。但是，不同國家有不一樣的規格，因此必須注意你所選購的鉤針是遵照哪一個國家規格，避免買錯尺寸。</span></p><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">以舒適性來說建議買軟柄 &gt; 扁竹柄 &gt; 金屬柄。軟柄握起來最舒適較適合長時間使用，而竹柄較輕較省力。金屬柄最硬，我之前每天使用它造成右手食指側面長繭，因此建議如果你是長時間編織的人盡量選擇其他兩種使用。</span></p><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">金屬柄雖然沒有其他兩種用起來舒服，但仍有其他優點存在:</span></p><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">1. 有的金屬柄鉤針是雙頭設計，等於買一支抵兩支用，很經濟實惠 </span></p><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">2. 金屬柄鉤針從頭到尾一體成型，因此不容易斷裂，非常堅固耐用。</span></p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 22px;\"><strong>怎麼選鉤針針號</strong></span></h3><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">初學者的鉤針常用針號是</span><span style=\"font-size: 15px;\"><strong> 2.5~3.5mm</strong></span><span style=\"font-size: 15px;\">，通常數字越大鉤針越粗喔。</span></p><p style=\"text-align: start;\"><span style=\"font-size: 15px;\">還沒習慣鉤針針法和拿毛線的方式時，初學者較常遇到短針大小不均、針目鉤太小很難穿過去等等問題，這是因為現在還不能熟練地控制毛線，力道時大時小。除了提醒自己不要把線拉過緊之外，當發現鉤不進去時，也可以用小一點的鉤針鉤起立針 (也就是第一針之前的鎖針) 和引拔針，再換回原本的鉤針繼續鉤，以此達到改善的效果。</span></p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 22px;\"><strong>鉤針要買整組還是幾支就好?</strong></span></h3><p><span style=\"font-size: 15px;\">不論是網購或實體店面你可能會看到一整套的鉤針組，這可能令人很心動，但真實情況是「常用的鉤針只有那幾支」，畢竟你買的毛線通常也就固定幾種不是嗎？因此我建議初學者選購 1~2 支鉤針就好，這樣已經很夠用了。未來當你想挑戰更多作品，需要用到其他粗細的毛線時，再來買適合的鉤針更實在呢。</span></p><p style=\"text-align: start; line-height: 1.5;\"><img src=\"https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80\" alt=\"\" data-href=\"https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80\" style=\"width: 30%;\"></p>",
+      "cover": "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80",
       "userId": 3,
       "createDate": 1345004471000,
       "title": "鉤針選擇指南-給初學者的建議",
@@ -337,7 +341,7 @@
     },
     {
       "saveNum": 0,
-      "scanNum": 1,
+      "scanNum": 2,
       "img": [],
       "content": "<p><span style=\"font-size: 15px;\">最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
       "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
@@ -356,7 +360,7 @@
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true"
       ],
       "saveNum": 20,
-      "scanNum": 604,
+      "scanNum": 605,
       "createDate": 1249957271000,
       "id": 3,
       "userId": 1
@@ -365,7 +369,7 @@
   "works": [
     {
       "saveNum": 113,
-      "scanNum": 43,
+      "scanNum": 44,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true"
@@ -408,13 +412,13 @@
       "id": 1
     },
     {
-      "saveNum": 2,
-      "scanNum": 5,
+      "saveNum": "3",
+      "scanNum": 10,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true"
       ],
-      "content": "<p>下面給大家帶來一款可愛的小猴子布偶</p><p><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" style=\"width: 857.20px;height: 1142.93px;\"/></p>",
+      "content": "<p>下面給大家帶來一款可愛的小猴子布偶,因為頭上有三根毛 所以我們暫時給他命名為小蘿蔔<span style=\"font-size: 12px;\">(這不是重點)</span>~</p><p>那麼怎麼把小蘿蔔生出來呢?</p><p><br></p><p>首先在這裡給一些說明:</p><p>用線部分建議用四股做皮膚,這樣膚質會比較細膩</p><p>鉤針我是使用1.75mm &nbsp;如果不習慣用那麼小的話可以用2.0mm就好</p><p>---------------------------</p><p>針法說明:</p><p>X &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;短針</p><p>V &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;短針加針</p><p>A &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;短針減針</p><p>SL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;引拔針</p><p>CH &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;鎖針/辮子針</p><p>內半圈 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;靠近棉花的一側</p><p>外半圈 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;靠近自己的一側</p><p><span style=\"color: rgb(225, 60, 57);\">注:鉤法部分紅色內容為膚色</span></p><p><span style=\"color: rgb(0, 0, 0);\">-----正式開始------</span></p><p><span style=\"color: rgb(0, 0, 0);\">耳朵*2:</span></p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\"><span style=\"color: rgb(225, 60, 57);\">6X</span></td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\"><span style=\"color: rgb(225, 60, 57);\">6V</span></td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr></tbody></table><p>頭頂呆毛:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6CH、倒2、5X、5CH、倒2、4X、4CH、倒2、3X</td></tr></tbody></table><p>愛心:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4-5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X斷線 (在鉤一個不斷線,將兩個部分相連)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X、18X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(2X、A、2X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">30</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(3X、A)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(X、A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R10-11</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R12</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R13</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6A &nbsp;(留15cm左右線)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R14</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">用縫針逐次穿入R13的外半針,然後收緊藏線</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\"></td></tr></tbody></table><p>尾巴:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2-30</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5</td></tr></tbody></table><p>腿*2:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">內半針16X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4(X、A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4(A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R7-8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr></tbody></table><p>手*2:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3(X、A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R5-7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">9</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3(A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6</td></tr></tbody></table><p>身體:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">針法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、V、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(3X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16X、<span style=\"color: rgb(225, 60, 57);\">7X</span>、17X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8X、A、5X、<span style=\"color: rgb(225, 60, 57);\">3X、A、4X</span>、4X、A、8X、A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">14X、<span style=\"color: rgb(225, 60, 57);\">8X</span>、14X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R10</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">7X、A、5X、<span style=\"color: rgb(225, 60, 57);\">3X、A、3X</span>、3X、A、7X、A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R11</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">13X、<span style=\"color: rgb(225, 60, 57);\">7X</span>、12X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R12</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6X、A、5X、<span style=\"color: rgb(225, 60, 57);\">X、A、4X</span>、2X、A、6X、A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">28</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R13</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">12X、<span style=\"color: rgb(225, 60, 57);\">6X</span>、10X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">28</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R14</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">5X、A、5X、<span style=\"color: rgb(225, 60, 57);\">X、A、3X</span>、2X、A、4X、A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R15</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">11X、<span style=\"color: rgb(225, 60, 57);\">5X</span>、8X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr></tbody></table><p>頭部:</p><table style=\"width: 100%;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">圈數</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">鉤法</th><th colSpan=\"1\" rowSpan=\"1\" width=\"auto\">總針數</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R1</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R2</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R3</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R4</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、V、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R5</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">4(7X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">36</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R6</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(5X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">42</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R7</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(3X、V、3X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">48</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R8</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">6(7X、V)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R9</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">20X、<span style=\"color: rgb(225, 60, 57);\">5X</span>、3X、<span style=\"color: rgb(225, 60, 57);\">5X</span>、21X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R10</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">19X、<span style=\"color: rgb(225, 60, 57);\">7X</span>、X、<span style=\"color: rgb(225, 60, 57);\">7X</span>、20X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R11-13</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X、<span style=\"color: rgb(225, 60, 57);\">17X</span>、19X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R14</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">19X、<span style=\"color: rgb(225, 60, 57);\">15X</span>、20X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R15</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">13X、 2(V、X) 、<span style=\"color: rgb(225, 60, 57);\"> 9(V、X) 、V</span>、 2(X、V) 、14X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">68</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R16-18</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X、<span style=\"color: rgb(225, 60, 57);\">31X</span>、19X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">68</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R19</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">13X、A、X、A、 <span style=\"color: rgb(225, 60, 57);\">10(X、A) 、X</span>、A、X、A、14X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R20</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">17X、<span style=\"color: rgb(225, 60, 57);\">19X</span>、18X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R21</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">18X、<span style=\"color: rgb(225, 60, 57);\">17X</span>、19X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">54</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R22</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">3(2X、A、2X) 、X、<span style=\"color: rgb(225, 60, 57);\">X、 2(A、4X) 、A</span>、 3(4X、A)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">45</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R23</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">2(7X、A) 、<span style=\"color: rgb(225, 60, 57);\">7X、A</span>、2(7X、A)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">40</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R24</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(3X、A)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">32</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R25</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、A、X)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">24</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R26</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8(X、A)</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">16</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">R27</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">8</td></tr></tbody></table><p><img src=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" alt=\"\" data-href=\"https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true\" style=\"width: 100%;\"/></p>",
       "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
       "userId": 2,
       "createDate": 1355508071000,
@@ -433,17 +437,22 @@
             "四股牛奶棉-50g",
             "膚色",
             "1"
+          ],
+          [
+            "五股牛奶棉-50g",
+            "紅色",
+            "1"
           ]
         ],
-        "canSell": "通過",
-        "reason": "通過"
+        "canSell": "待審核",
+        "reason": "客服將在3~7個工作日審核完畢"
       },
       "q&a": [],
       "id": 2
     },
     {
       "saveNum": 1,
-      "scanNum": 4,
+      "scanNum": 6,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
@@ -467,7 +476,7 @@
     },
     {
       "saveNum": 0,
-      "scanNum": 0,
+      "scanNum": 1,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true"

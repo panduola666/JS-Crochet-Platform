@@ -116,15 +116,22 @@ shoppingCarIcon.addEventListener('click', () => {
 // more列表路徑
 moreHref.forEach(item => {
   item.addEventListener('click', (e) => {
-    if (e.target.textContent === '後台管理') window.location.href = '/admin';
-    if (e.target.textContent === '作品列表') window.location.href = '/worksList';
-    if (e.target.textContent === '技巧文章') window.location.href = '/articleList';
-    if (e.target.textContent === '購買商城') window.location.href = '/goodsList';
+    if (e.target.textContent === '後台管理') location.href = '/admin';
+    if (e.target.textContent === '會員專區') {
+      if (localStorage.getItem('userId')) {
+        location.href = `/user/${localStorage.getItem('userId')}`;
+      } else {
+        location.href = '/login';
+      };
+    }
+    if (e.target.textContent === '作品列表') location.href = '/worksList';
+    if (e.target.textContent === '技巧文章') location.href = '/articlesList';
+    if (e.target.textContent === '購買商城') location.href = '/goodsList';
     // if (e.target.textContent === '常見問題')
     // window.location.href='/admin';
-    if (e.target.textContent === '會員登入/註冊') window.location.href = '/login';
+    if (e.target.textContent === '會員登入/註冊') location.href = '/login';
     if (e.target.textContent === '會員登出') {
-      window.location.href = '/';
+      location.href = '/';
       localStorage.clear();
     };
   });

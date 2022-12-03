@@ -55,7 +55,7 @@ function filterChange () {
     if (filterGoods.value === '全部分類') {
       renderIInit(GoodsData);
     } else {
-      let filterData = filterData = GoodsData.filter(item => item.type === filterGoods.value);
+      let filterData =  GoodsData.filter(item => item.type === filterGoods.value);
       renderIInit(filterData)
     };
   });
@@ -76,7 +76,7 @@ function renderIInit (data) {
             <td>${item.price}</td>
             <td class="small lhMore">${item.styles.map(item => item.name).join('、')}</td>
             <td><input type="checkbox" class="recommend" ${item.isRecommend ? 'checked' : ''} data-id="${item.id}"></td>
-            <td><img src="/images/Vector.png" alt="修改" class="pointer editor" style="display:${item.type === '材料包' ? 'none' : ''};" data-id="${item.id}"></td>
+            <td><img src="https://github.com/panduola666/2022JS-/blob/main/public/images/Vector.png?raw=true" alt="修改" class="pointer editor" style="display:${item.type === '材料包' ? 'none' : ''};" data-id="${item.id}"></td>
             <td><span class="pointer deleteGoods" data-id="${item.id}">X</span></td>
         </tr>`
     );
@@ -153,23 +153,10 @@ function renderC3 () {
 
 // 商品列表操作
 function goodOperation () {
-  goodsTable.addEventListener('click',(e)=>{
+  goodsTable.addEventListener('click', (e)=>{
     // 刪除商品
     if (e.target.classList.contains('deleteGoods')) {
-      axios.patch(`${baseUrl}/goods/${e.target.dataset.id}`,{
-        isClose: true,
-        isRecommend: false
-      })
-        .then(res => {
-          return axios.get(`${baseUrl}/goods`);
-        })
-        .then(res => {
-          GoodsData = res.data;
-          renderIInit(GoodsData);
-        })
-        .catch(err => {
-          console.log(err);
-        });
+      deleteGoodOperation(e.target.dataset.id);
       return;
     };
     // 編輯商品
@@ -350,4 +337,27 @@ async function goodFinishAdd () {
   document.querySelector('.dialogText').reset();
   goodsColors.innerHTML = '';
   goodsCover.setAttribute('src', '');
+};
+
+// 刪除商品
+async function deleteGoodOperation (id) {
+  try {
+    const change = await axios.patch(`${baseUrl}/goods/${id}`,{
+      isClose: true,
+      isRecommend: false
+    });
+    if (change.data.workId) {
+      const work = await axios.get(`${baseUrl}/works/${change.data.workId}`);
+      const isSell = work.data.isSell;
+      isSell.canSell = '已下架';
+      isSell.reason = '此商品已下架';
+      await axios.patch(`${baseUrl}/works/${work.data.id}`,{isSell});
+    };
+    const res = await  axios.get(`${baseUrl}/goods`);
+    GoodsData = res.data;
+    renderIInit(GoodsData);
+  }
+  catch (err) {
+    console.log(err);
+  };
 };

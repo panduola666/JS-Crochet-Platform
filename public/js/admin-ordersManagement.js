@@ -145,7 +145,7 @@ function renderOrders () {
                 <p>${item.toShop.type} ( 店號:${item.toShop.shopNumber} )</p>
             </td>
             <td><input type="text" class="sendNumber" placeholder="請輸入寄件編號..." data-id="${item.id}"></td>
-            <td><img src="/images/Vector.png" alt="修改" class="pointer"></td>
+            <td><img src="https://github.com/panduola666/2022JS-/blob/main/public/images/Vector.png?raw=true" alt="修改" class="pointer"></td>
         </tr>`
       );
     }else{

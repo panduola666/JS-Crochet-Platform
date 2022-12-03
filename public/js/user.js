@@ -140,8 +140,33 @@ baseDBList.forEach(li => {
   });
 });
 
+
+
+
+const register = {
+  原密碼: {
+    length:{
+      minimum: 6,
+      message: '長度不可小於6'
+    }
+  },
+  新密碼: {
+    length:{
+      minimum: 6,
+      message: '長度不可小於6'
+    }
+  },
+  確認新密碼: {
+    length:{
+      minimum: 6,
+      message: '長度不可小於6'
+    }
+  }
+};
 // 修改密碼
 passwordChange.addEventListener('click', () => {
+  const err = validate(passwordDB, register) || null;
+  
   const passwordRegex = /[a-zA-Z0-9]{6,}/;
   if (passwordChange.textContent === '編輯') {
     // 編輯
@@ -149,24 +174,47 @@ passwordChange.addEventListener('click', () => {
     pwInput.forEach(input => {
       input.disabled = false;
       input.style.borderBottomColor = '#1F0707';
-      // 密碼驗證
-      pwInput.forEach(input => {
-        input.addEventListener('keyup', () => input.style.borderBottomColor = passwordRegex.test(input.value) ? '#1F0707' : 'red');
-      });
-      pwInput[2].addEventListener('keyup', () => pwInput[2].style.borderBottomColor = pwInput[2].value == pwInput[1].value ? '#1F0707' : 'red');
     });
   } else {
     // 確認資料
+    const text = [];
+    for (const key in err) {
+      text.push(`<p>${err[key]}</p>`)
+    };
+    if (err) {
+      Swal.fire({
+        icon: 'error',
+        title: '修改失敗',
+        html: text.join('')
+      });
+      return;
+    };
+
+    if (pwInput[0].value.trim() === '') {
+      pwInput.forEach(input => {
+        input.disabled = true;
+        input.style.borderBottomColor = 'none';
+        input.value = '';
+      });
+      passwordChange.textContent = '編輯';
+      return;
+    };
+
     axios.post(`${baseUrl}/login`, {
       email: userDb.email,
       password: pwInput[0].value
     })
       .then(async (res) => {
       // 密碼正確
-        if (pwInput[0].style.borderBottomColor === 'red' || pwInput[1].style.borderBottomColor === 'red' || pwInput[2].value !== pwInput[1].value) {
-          alert('新密碼錯誤');
+        if (pwInput[2].value !== pwInput[1].value) {
+          Swal.fire({
+            icon: 'error',
+            title: '修改失敗',
+            text: '兩次密碼輸入不一致'
+          });
           return
         };
+
         try {
           await axios.patch(`${baseUrl}/600/users/${userDb.id}`, {
             password: pwInput[1].value
@@ -193,8 +241,10 @@ passwordChange.addEventListener('click', () => {
       })
       .catch(err => {
         // 密碼錯誤
-        console.log(err);
-        alert('原密碼錯誤');
+        Swal.fire({
+          icon: 'error',
+          title: '原密碼錯誤'
+        });
       })
   };
 });

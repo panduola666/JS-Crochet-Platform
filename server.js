@@ -1,8 +1,10 @@
 const express = require ('express');
 const  engine = require('ejs-locals');
 const app = express();
+const PORT = process.env.PORT || 3030;
 app.use(express.static(__dirname + '/public/'));
 app.engine('ejs', engine);
+var ejs = require('ejs')
 app.set('views',__dirname+'/view');
 app.set('view engine', 'ejs'); 
 
@@ -70,5 +72,6 @@ app.get('/admin', function (req, res) {
     res.render('layout', {title:'後台管理',body:'admin.ejs'});
 });
 
-app.listen(333);
-console.log( `點擊這裡開始:http://127.0.0.1:333`);
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`);
+  });

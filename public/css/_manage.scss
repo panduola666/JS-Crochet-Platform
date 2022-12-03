@@ -29,6 +29,10 @@ img.articleImg{
         &:hover{
             font-weight: 600;
         }
+    img{
+        object-fit: cover;
+        max-width: 100%;
+    }
 }
 .myArticleInfo{
     margin: .5rem 1rem;

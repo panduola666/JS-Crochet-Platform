@@ -49,8 +49,8 @@ function articleInit (page, limit, start) {
     </div>
     <article class="row justify-content-around py-3">
       <div class="col col-md-8 ">
-      <h1 class="textHidden h2Size pb-3">${item.title}</h1>
-      <div class="articleFont">
+      <h1 class="textHidden h2Size pb-3 px-3 px-md-2">${item.title}</h1>
+      <div class="articleFont px-3 px-md-2">
         ${item.content}
       </div>
       </div>
@@ -58,7 +58,7 @@ function articleInit (page, limit, start) {
     </article>
     </div>`);
   });
-  articles.innerHTML = str;
+  articles.innerHTML = str.join('');
   pagination(page, limit, start);
 
   // 點擊跳轉頁面

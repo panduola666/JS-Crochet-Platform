@@ -112,7 +112,7 @@ function renderReviewed () {
             </td>
             <td>
                 <input type="text" data-id="${item.id}" placeholder="客服將在3~7天內完成審核">
-                <img src="/images/Vector.png" alt="編輯原因" class="pointer">
+                <img src="https://github.com/panduola666/2022JS-/blob/main/public/images/Vector.png?raw=true" alt="編輯原因" class="pointer">
             </td>
         </tr>`);
       } else {
@@ -123,7 +123,7 @@ function renderReviewed () {
             <td>${item.isSell.canSell}</td>
             <td>
                 <input type="text" value="${item.isSell.reason}" data-id="${item.id}" class="finishReason">
-                <img src="/images/Vector.png" alt="" class="pointer">
+                <img src="https://github.com/panduola666/2022JS-/blob/main/public/images/Vector.png?raw=true" alt="" class="pointer">
             </td>
         </tr>`);
       };

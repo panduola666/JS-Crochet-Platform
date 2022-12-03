@@ -73,7 +73,9 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
         .then(res => {
           articlesList.click();
           newArticle = res.data;
+          contentTitle.value = res.data.title;
           editor.setHtml(res.data.content);
+          tagTypeInput.forEach(input => input.value === res.data.tag ? input.click() : '');
         })
         .catch(err => console.log(err));
     } else {

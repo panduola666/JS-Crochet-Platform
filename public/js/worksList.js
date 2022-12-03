@@ -67,9 +67,9 @@ function articleInit (page, limit, start) {
       <p class="text-end">${timer(item.createDate)}</p>
     </div>
     <article class="row justify-content-around py-3">
-      <div class="col col-md-8 ">
-        <h1 class="textHidden h2Size pb-3">${item.title}</h1>
-        <div class="articleFont">
+      <div class="col col-md-8">
+        <h1 class="textHidden h2Size pb-3 px-3 px-md-2">${item.title}</h1>
+        <div class="articleFont px-3 px-md-2">
           ${item.content}
         </div>
       </div>

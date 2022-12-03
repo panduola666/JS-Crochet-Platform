@@ -57,6 +57,8 @@ axios.get(`${baseUrl}/${nowHref[nowHref.length - 2]}/${nowHref[nowHref.length - 
         articleSell.style.display = 'none';
       };
       optionSave('works');
+      // 問答區顯示
+      document.querySelector('.articleQA').style.display = 'block';
       renderQA();
       // 材料包購買
       articleSell.addEventListener('click', (e) => {
@@ -73,6 +75,7 @@ axios.get(`${baseUrl}/${nowHref[nowHref.length - 2]}/${nowHref[nowHref.length - 
       });
     } else if (nowHref[nowHref.length - 2] === 'articles') {
       showDb();
+      // 材料包鏈接隱藏
       articleSell.style.display = 'none';
       optionSave('articles');
     };
@@ -131,12 +134,20 @@ axios.get(`${baseUrl}/${nowHref[nowHref.length - 2]}/${nowHref[nowHref.length - 
             addQuestion.addEventListener('click', () => {
               Swal.fire({
                 icon: 'error',
-                title: '發送錯誤!',
+                title: '發送錯誤',
                 text: '僅購買材料包用戶可以留言'
               });
             });
           };
         });
+    } else {
+      addQuestion.addEventListener('click', () => {
+        Swal.fire({
+          icon: 'error',
+          title: '發送錯誤',
+          text: '僅供會員操作'
+        });
+      });
     };
   })
   .catch(() => localStorage.clear());
@@ -181,7 +192,6 @@ function optionSave (which) {
           axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
             saveArticles: newSaveArticle
           }, headers)
-            .then(res => console.log(res))
             .catch(() => clearLogin());
         });
     } else {

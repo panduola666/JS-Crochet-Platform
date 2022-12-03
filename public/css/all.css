@@ -1193,6 +1193,11 @@ img.articleImg {
 .articleFont:hover {
   font-weight: 600;
 }
+.articleFont img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+}
 
 .myArticleInfo {
   margin: 0.5rem 1rem;
@@ -1578,6 +1583,8 @@ img.articleImg {
 }
 .articleBody img {
   max-width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .articleSell {
@@ -1633,6 +1640,7 @@ img.articleImg {
 }
 
 .articleQA {
+  display: none;
   padding-top: 1rem;
   border-top: 2px dashed #FFBEBA;
 }

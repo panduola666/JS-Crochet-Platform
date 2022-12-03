@@ -78,6 +78,7 @@
     }
     img{
         max-width: 100%;
+        object-fit: contain;
     }
 }
 .articleSell{
@@ -125,6 +126,7 @@
     }
 }
 .articleQA{
+    display: none;
     padding-top: 1rem;
     border-top: 2px dashed $secondaryColor;
 }
