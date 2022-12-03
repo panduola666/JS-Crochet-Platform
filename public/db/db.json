@@ -325,8 +325,8 @@
   ],
   "articles": [
     {
-      "saveNum": "1",
-      "scanNum": 8,
+      "saveNum": "10",
+      "scanNum": 38,
       "img": [
         "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80",
         "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80"
@@ -340,8 +340,8 @@
       "id": 1
     },
     {
-      "saveNum": 0,
-      "scanNum": 2,
+      "saveNum": 6,
+      "scanNum": 20,
       "img": [],
       "content": "<p><span style=\"font-size: 15px;\">最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
       "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
@@ -412,8 +412,8 @@
       "id": 1
     },
     {
-      "saveNum": "3",
-      "scanNum": 10,
+      "saveNum": 13,
+      "scanNum": 29,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/monkey.jpg?raw=true"
@@ -451,8 +451,8 @@
       "id": 2
     },
     {
-      "saveNum": 1,
-      "scanNum": 6,
+      "saveNum": 16,
+      "scanNum": 66,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
@@ -475,8 +475,8 @@
       "id": 3
     },
     {
-      "saveNum": 0,
-      "scanNum": 1,
+      "saveNum": 21,
+      "scanNum": 41,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true"

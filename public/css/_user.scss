@@ -97,37 +97,35 @@
             }
         }
     }
-    .creditCardNum{
-        display: none;
-        margin: 20px 0 0 5rem;
+}
+.creditCardNum{
+    display: none;
+    margin: 20px 0 0 5rem;
+    @media (max-width:576px) {
+        flex-direction: column;
+        margin-left: 0;
+    }
+    label{
+        margin-right: 1rem;
         @media (max-width:576px) {
-            display: flex;
-            flex-direction: column;
-            margin-left: 0;
+            margin-right: 0;
+            flex-wrap: wrap;
         }
-        label{
-            margin-right: 1rem;
-            @media (max-width:576px) {
-                margin-right: 0;
-                display: flex;
-                flex-wrap: wrap;
-            }
+        input{
+            width: 3rem;
+            margin-left: 0;
+            text-align: center;
+        }
+        &:first-child{
             input{
-                width: 3rem;
-                margin-left: 0;
-                text-align: center;
-            }
-            &:first-child{
-                input{
-                    width: 10rem;
-                    @media (max-width:576px) {
-                        width: 100%;
-                    }
+                width: 10rem;
+                @media (max-width:576px) {
+                    width: 100%;
                 }
             }
         }
-        
     }
+    
 }
 .userName{
     border-bottom: 1px solid $secondaryColor;

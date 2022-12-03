@@ -22,6 +22,7 @@
     padding: 1rem 3rem;
     background-color: $secondaryColor;
     border-radius: 8px;
+    color: $darkColor;
     border: none;
     &:hover{
         background-color: $primaryColor;
@@ -138,7 +139,7 @@
         box-shadow: 1px 1px 5px rgb(50, 50, 50);
     }
 }
-.goodsPrice{
+.goodsPrice,.goodsWeight{
     width: 80%;
 }
 .buyerInfo{
@@ -151,4 +152,16 @@
 } 
 .orderState{
     width: 10vw;
+}
+.searchOrderId{
+    background-color: $secondaryColor;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    &:hover{
+        background-color: $primaryColor;
+    }
+}
+#orderId{
+    width: 60%;
 }

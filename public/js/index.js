@@ -130,7 +130,6 @@ function renderWorksImg () {
 // 熱門作品-輪播邏輯
 function carousel () {
   let worksCarousel = setInterval(renderWorksImg, 1500);
-  // let renderWork;
   worksChangeLis.forEach((li, index) => {
     li.addEventListener('mouseenter', () => {
       clearInterval(worksCarousel);
@@ -158,7 +157,7 @@ function changeHrefClick () {
           axios.patch(`${baseUrl}/works/${data.id}`, {
             scanNum: data.scanNum
           });
-          window.location.href = `http://127.0.0.1:333/article/works/${data.id}`;
+          window.location.href = `/article/works/${data.id}`;
         };
       });
     });
@@ -170,7 +169,7 @@ function changeHrefClick () {
         axios.patch(`${baseUrl}/works/${item.id}`,{
           scanNum: item.scanNum
         });
-        window.location.href = `http://127.0.0.1:333/article/works/${item.id}`;
+        window.location.href = `/article/works/${item.id}`;
       };
     });
   });

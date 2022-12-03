@@ -30,8 +30,8 @@ function myMessagesInit () {
         </div>
         <article class="row justify-content-around py-3">
             <div class="col col-md-8 ">
-                <h1 class="textHidden h2Size pb-3">${res.data.title}</h1>
-                <div class="articleFont">${res.data.content}</div>
+                <h1 class="textHidden h2Size pb-3 px-3 px-md-2">${res.data.title}</h1>
+                <div class="articleFont px-3 px-md-2">${res.data.content}</div>
             </div>
             <img src="${res.data.cover}" alt="${res.data.cover.title}" class="articleImg col col-md-3 d-none d-md-block">
         </article>

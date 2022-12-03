@@ -41,11 +41,12 @@
                                     <label class="d-flex">
                                         <p>新增:</p><input type="text" name="" id="newGoodsName" placeholder="請輸入新增名稱">
                                     </label>
-                                    <button type="button" class="newGoodsNameBtn">新增</button>
+                                    <button type="button" class="newGoodsNameBtn mt-2 mt-md-0">新增</button>
                                 </form>
                             </div>
                             <label class="d-flex mb-3">
-                                <p>重量</p><input type="number" name="" id="goodsWeight" placeholder="單位:g">
+                                <p>重量</p><input type="number" name="" id="goodsWeight" class="goodsWeight"
+                                    placeholder="單位:g">
                             </label>
                             <div class="d-block d-md-flex align-items-center mb-3">
                                 <label class="d-flex">
@@ -126,7 +127,8 @@
     <div class="ordersManagement">
         <p class="h2Size mb-3">訂單詳情</p>
         <div class="d-flex align-items-center mb-3">
-            <label for="orderId">訂單編號:<input type="text" name="orderId" id="orderId" placeholder="請輸入訂單編號..."></label>
+            <label for="orderId">訂單編號:<input type="text" name="orderId" id="orderId" class="ms-2"
+                    placeholder="請輸入訂單編號..."></label>
             <button type="button" class="ms-3 searchOrderId">查詢</button>
         </div>
         <table class="adminTable">

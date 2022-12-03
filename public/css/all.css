@@ -1014,37 +1014,36 @@ body {
     margin-left: 0;
   }
 }
-.userDB .creditCardNum, .passwordDB .creditCardNum {
+
+.creditCardNum {
   display: none;
   margin: 20px 0 0 5rem;
 }
 @media (max-width: 576px) {
-  .userDB .creditCardNum, .passwordDB .creditCardNum {
-    display: flex;
+  .creditCardNum {
     flex-direction: column;
     margin-left: 0;
   }
 }
-.userDB .creditCardNum label, .passwordDB .creditCardNum label {
+.creditCardNum label {
   margin-right: 1rem;
 }
 @media (max-width: 576px) {
-  .userDB .creditCardNum label, .passwordDB .creditCardNum label {
+  .creditCardNum label {
     margin-right: 0;
-    display: flex;
     flex-wrap: wrap;
   }
 }
-.userDB .creditCardNum label input, .passwordDB .creditCardNum label input {
+.creditCardNum label input {
   width: 3rem;
   margin-left: 0;
   text-align: center;
 }
-.userDB .creditCardNum label:first-child input, .passwordDB .creditCardNum label:first-child input {
+.creditCardNum label:first-child input {
   width: 10rem;
 }
 @media (max-width: 576px) {
-  .userDB .creditCardNum label:first-child input, .passwordDB .creditCardNum label:first-child input {
+  .creditCardNum label:first-child input {
     width: 100%;
   }
 }
@@ -2183,6 +2182,7 @@ button.postArticle:disabled {
   padding: 1rem 3rem;
   background-color: #FFBEBA;
   border-radius: 8px;
+  color: #1F0707;
   border: none;
 }
 .addGoods:hover {
@@ -2311,7 +2311,7 @@ button.postArticle:disabled {
   box-shadow: 1px 1px 5px rgb(50, 50, 50);
 }
 
-.goodsPrice {
+.goodsPrice, .goodsWeight {
   width: 80%;
 }
 
@@ -2328,6 +2328,20 @@ button.postArticle:disabled {
 
 .orderState {
   width: 10vw;
+}
+
+.searchOrderId {
+  background-color: #FFBEBA;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+}
+.searchOrderId:hover {
+  background-color: #FC7F79;
+}
+
+#orderId {
+  width: 60%;
 }
 
 .goodImg {

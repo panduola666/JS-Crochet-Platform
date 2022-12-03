@@ -31,8 +31,8 @@ function mySaveInit () {
             </div>
             <article class="row justify-content-around py-3">
               <div class="col col-md-8 ">
-                <h1 class="textHidden h2Size pb-3">${item.title}</h1>
-                <div class="articleFont">${item.content}</div>
+                <h1 class="textHidden h2Size pb-3 px-3 px-md-2">${item.title}</h1>
+                <div class="articleFont px-3 px-md-2">${item.content}</div>
               </div>
               <img src="${item.cover}" alt="${item.cover.title}" class="articleImg col col-md-3 d-none d-md-block">
             </article>
