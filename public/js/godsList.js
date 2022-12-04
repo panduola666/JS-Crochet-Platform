@@ -12,7 +12,7 @@ axios.get(`${baseUrl}/goods`)
   .then(res => {
     data = res.data;
     const page = 1;// 頁數
-    const limit = 9;// 一頁幾個
+    const limit = 6;// 一頁幾個
     const start = 0;
     articleInit(page, limit, start);
     filterArticles(page, limit, start);
@@ -21,12 +21,13 @@ axios.get(`${baseUrl}/goods`)
     pagination(page, limit, start);
   });
 function pagination (page, limit, start) {
+  const newData = data.filter(item => !item.isClose);
   pageList.children[0].addEventListener('click', () => {
     if (page > 1) {
       page--;
       start -= limit;
       articleInit(page, limit, start);
-      pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
+      pageList.children[1].textContent = `第${page}/${Math.ceil(newData.length / limit)}頁`;
     }
   });
   pageList.children[2].addEventListener('click', () => {
@@ -34,17 +35,17 @@ function pagination (page, limit, start) {
       page++;
       start += limit;
       articleInit(page, limit, start);
-      pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
+      pageList.children[1].textContent = `第${page}/${Math.ceil(newData.length / limit)}頁`;
     }
   });
-  pageList.children[1].textContent = `第${page}/${Math.ceil(data.length / limit)}頁`;
+  pageList.children[1].textContent = `第${page}/${Math.ceil(newData.length / limit)}頁`;
 }
 
 function articleInit (page, limit, start) {
+  const newData = data.filter(item => !item.isClose);
+  const sliceData = newData.slice(start , limit*page);
   const str = [];
-  const newData = data.slice(start, limit * page);
-  newData.forEach(item => {
-    if (item.type === '材料包' && item.isClose) return
+  sliceData.forEach(item => {
     str.push(` <li class="card col-4" data-id="${item.id}">
     <img src="${item.cover}" class="card-img-top pointer" alt="${item.title}">
     <div class="card-body">

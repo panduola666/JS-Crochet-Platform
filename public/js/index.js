@@ -282,8 +282,18 @@ function goodsInit () {
     <h3 class="h3Size">${item.title}</h3>
     </li>`);
   });
-  str.push(`<li class="d-flex align-items-center text-start">
-  <p class="h3Size">現在還沒有其他商品<br><a href="/goodsList">來去逛逛 ></a></p>
-  </li>`)
+  if (screen.width > 768) {
+    str.push(`
+    <li class="d-flex align-items-center text-start">
+    <p class="h3Size textHidden">現在還沒有其他商品<br><a href="/goodsList">來去逛逛 ></a></p>
+    </li>`);
+  } else if (recommendGoods.length < 1) {
+    str.push(`
+    <li class="d-flex align-items-center text-start">
+    <p class="h3Size textHidden">現在還沒有其他商品<br><a href="/goodsList">來去逛逛 ></a></p>
+    </li>`);
+  }
   goodsRecommend.innerHTML = str.join('');
+  if (screen.width < 768 && recommendGoods.length < 2) goodsRecommend.querySelectorAll('li').forEach(li => li.style.transform = 'translateX(25vw)');
+  
 };

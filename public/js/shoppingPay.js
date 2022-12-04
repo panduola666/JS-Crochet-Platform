@@ -167,7 +167,7 @@ async function patchUser (shoppingCar) {
   shoppingCar.forEach(async item =>{
     const good = await axios.get(`${baseUrl}/goods/${item.goodId}`);
     if(good.data.type === '材料包') {
-      boughtArticles.push(good.data.workId)
+      boughtArticles.includes(good.data.workId) ? boughtArticles : boughtArticles.push(good.data.workId);
       await axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
         boughtArticles,
         shoppingCar:[]

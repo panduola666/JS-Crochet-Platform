@@ -213,12 +213,14 @@ function dialogInit () {
   const newColorBtn = document.querySelector('.newColorBtn');
   // 新增名稱
   newGoodsNameBtn.addEventListener('click', () => {
+    if(newGoodsName.value.trim() === '') return;
     goodsName.innerHTML += `<option value="${newGoodsName.value}">${newGoodsName.value}</option>`;
     goodsName.value = newGoodsName.value;
     newGoodsName.value = '';
   });
   // 新增分類
   newGoodsTypeBtn.addEventListener('click', () => {
+    if(newGoodsType.value.trim() === '') return;
     goodsType.innerHTML += `<option value="${newGoodsType.value}">${newGoodsType.value}</option>`;
     goodsType.value = newGoodsType.value;
     newGoodsType.value = '';
@@ -332,7 +334,7 @@ function addNewGoods () {
 async function goodFinishAdd () {
   const res = await axios.get(`${baseUrl}/goods`);
   GoodsData = res.data;
-  renderIInit();
+  renderIInit(GoodsData);
   document.querySelector('.cancel').click();
   document.querySelector('.dialogText').reset();
   goodsColors.innerHTML = '';
