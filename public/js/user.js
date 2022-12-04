@@ -214,7 +214,14 @@ passwordChange.addEventListener('click', () => {
           });
           return
         };
-
+        if (pwInput[2].value ==='' || pwInput[1].value ===''){
+          Swal.fire({
+            icon: 'error',
+            title: '修改失敗',
+            text: '新密碼不得為空'
+          });
+          return
+        }
         try {
           await axios.patch(`${baseUrl}/600/users/${userDb.id}`, {
             password: pwInput[1].value
