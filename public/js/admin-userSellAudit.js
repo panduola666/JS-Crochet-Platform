@@ -57,7 +57,13 @@ function needReviewedOperate () {
                 break;
               };
             };
-            axios.post(`${baseUrl}/goods`, newData);
+            axios.post(`${baseUrl}/goods`, newData)
+            .then(()=>{
+              Swal.fire({
+                icon: 'success',
+                title: '修改成功'
+              });
+            })
           }
           const newRes = await axios.get(`${baseUrl}/works`);
           worksData = newRes.data;

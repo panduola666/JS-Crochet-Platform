@@ -190,7 +190,13 @@ function orderStateChange () {
       };
       let finishTime = '';
       if (state.value !== '待處理') finishTime = new Date().getTime();
-      orderFinish(state, thisInput, thisBuyerInfo, finishTime);
+      orderFinish(state, thisInput, thisBuyerInfo, finishTime)
+      .then(()=>{
+        Swal.fire({
+          icon: 'success',
+          title: '修改成功'
+        });
+      });
     });
   });
 };

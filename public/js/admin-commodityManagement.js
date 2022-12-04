@@ -156,7 +156,13 @@ function goodOperation () {
   goodsTable.addEventListener('click', (e)=>{
     // 刪除商品
     if (e.target.classList.contains('deleteGoods')) {
-      deleteGoodOperation(e.target.dataset.id);
+      deleteGoodOperation(e.target.dataset.id)
+      .then(()=>{
+        Swal.fire({
+          icon: 'success',
+          title: '刪除成功'
+        });
+      })
       return;
     };
     // 編輯商品

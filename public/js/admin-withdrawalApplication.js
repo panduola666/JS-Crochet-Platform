@@ -18,6 +18,10 @@ adminNav.addEventListener('click', (e) => {
             const res = await axios.get(`${baseUrl}/transfer?_expand=user`);
             transferData = res.data;
             renderTransfer(transferData);
+            Swal.fire({
+              icon: 'success',
+              title: '修改成功'
+            });
           });
         });
       })

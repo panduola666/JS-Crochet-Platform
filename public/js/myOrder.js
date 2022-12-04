@@ -79,5 +79,5 @@ function renderTotalPrice (item) {
       };
     });
   });
-  return num;
+  return num + 60;
 };
