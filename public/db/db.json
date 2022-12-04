@@ -34,13 +34,7 @@
       "userName": "顧念",
       "isCreator": true,
       "isAdmin": true,
-      "shoppingCar": [
-        {
-          "goodId": 8,
-          "num": "1",
-          "style": "隨機"
-        }
-      ],
+      "shoppingCar": [],
       "saveArticles": {
         "worksId": [
           2,
@@ -48,7 +42,9 @@
         ],
         "articlesId": []
       },
-      "boughtArticles": [],
+      "boughtArticles": [
+        1
+      ],
       "phoneNumber": "0972198312",
       "barcode": "/2edcdWQ",
       "creditCard": {

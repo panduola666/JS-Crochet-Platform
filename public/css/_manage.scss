@@ -5,15 +5,23 @@
 }
 .actionBTN{
     display: flex;
+    flex-shrink: 0;
     justify-content: end;
     button{
+        flex-shrink: 0;
+        color: $darkColor;
         padding: .5rem 1rem;
-        margin-right: 1rem;
         border: 1px solid $secondaryColor;
         border-radius: 8px;
         background-color: rgba(0,0,0,0);
+        &:first-child{
+            margin-right: 1rem;
+        }
         &:hover{
             background-color: $secondaryColor;
+        }
+        @media (max-width:576px) {
+            padding: .3rem .5rem;
         }
     }
 }
@@ -46,6 +54,7 @@ img.articleImg{
     display: flex;
     justify-content: space-around;
     button{
+        color: $darkColor;
         margin-bottom: -1px;
         padding: .5rem;
         width: 100%;

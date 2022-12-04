@@ -1164,17 +1164,27 @@ body {
 
 .actionBTN {
   display: flex;
+  flex-shrink: 0;
   justify-content: end;
 }
 .actionBTN button {
+  flex-shrink: 0;
+  color: #1F0707;
   padding: 0.5rem 1rem;
-  margin-right: 1rem;
   border: 1px solid #FFBEBA;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0);
 }
+.actionBTN button:first-child {
+  margin-right: 1rem;
+}
 .actionBTN button:hover {
   background-color: #FFBEBA;
+}
+@media (max-width: 576px) {
+  .actionBTN button {
+    padding: 0.3rem 0.5rem;
+  }
 }
 
 img.articleImg {
@@ -1212,6 +1222,7 @@ img.articleImg {
   justify-content: space-around;
 }
 .articleBTN button {
+  color: #1F0707;
   margin-bottom: -1px;
   padding: 0.5rem;
   width: 100%;
