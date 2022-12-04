@@ -57,17 +57,15 @@ function needReviewedOperate () {
                 break;
               };
             };
-            axios.post(`${baseUrl}/goods`, newData)
-            .then(()=>{
-              Swal.fire({
-                icon: 'success',
-                title: '修改成功'
-              });
-            })
+            axios.post(`${baseUrl}/goods`, newData);
           }
           const newRes = await axios.get(`${baseUrl}/works`);
           worksData = newRes.data;
           renderReviewed();
+          Swal.fire({
+            icon: 'success',
+            title: '修改成功'
+          });
         });
     };
   });

@@ -31,7 +31,7 @@ function pagination (page, limit, start) {
     }
   });
   pageList.children[2].addEventListener('click', () => {
-    if (page < Math.ceil(data.length / limit)) {
+    if (page < Math.ceil(newData.length / limit)) {
       page++;
       start += limit;
       articleInit(page, limit, start);

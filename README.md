@@ -10,3 +10,6 @@ npm start
 要先前往 public/js/config.js 把 baseUrl 變數改成 http://127.0.0.1:3000
 <br>
 這樣才可以在本地端跑唷
+
+## 如果選擇線上Demo
+請聯繫我,線上demo的服務器時間僅15分鐘,超過15分鐘自動休眠
