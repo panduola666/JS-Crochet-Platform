@@ -156,8 +156,8 @@ function changeHrefClick () {
           data.scanNum++;
           axios.patch(`${baseUrl}/works/${data.id}`, {
             scanNum: data.scanNum
-          });
-          window.location.href = `/article/works/${data.id}`;
+          })
+          .then(res => window.location.href = `/article/works/${data.id}`);
         };
       });
     });
@@ -168,8 +168,8 @@ function changeHrefClick () {
         item.scanNum++;
         axios.patch(`${baseUrl}/works/${item.id}`,{
           scanNum: item.scanNum
-        });
-        window.location.href = `/article/works/${item.id}`;
+        })
+        .then(res => window.location.href = `/article/works/${item.id}`);
       };
     });
   });
