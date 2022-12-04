@@ -124,11 +124,15 @@ moreHref.forEach(item => {
         location.href = '/login';
       };
     }
-    if (e.target.textContent === '作品列表') location.href = '/worksList';
-    if (e.target.textContent === '技巧文章') location.href = '/articlesList';
+    if (e.target.textContent === '作品文章') location.href = '/worksList';
+    if (e.target.textContent === '購物車') {
+      if (localStorage.getItem('userId')) {
+        location.href = `/shoppingCar/${localStorage.getItem('userId')}`;
+      } else {
+        location.href = '/login';
+      };
+    }
     if (e.target.textContent === '購買商城') location.href = '/goodsList';
-    // if (e.target.textContent === '常見問題')
-    // window.location.href='/admin';
     if (e.target.textContent === '會員登入/註冊') location.href = '/login';
     if (e.target.textContent === '會員登出') {
       location.href = '/';
