@@ -159,6 +159,7 @@ loginBtn.addEventListener('click', () => {
       title: '登入失敗',
       html: text.join('')
     });
+    verifyImg.click();
     return
   };
   if (verifyText.value.toUpperCase() !== verifyImg.textContent.toUpperCase()) {
@@ -166,6 +167,7 @@ loginBtn.addEventListener('click', () => {
       icon: 'error',
       title: '驗證錯誤'
     });
+    verifyImg.click();
     return
   };
 
