@@ -30,11 +30,17 @@
     },
     {
       "email": "panduola666@gmail.com",
-      "password": "$2a$10$ipWPFdm07kKU7rO7qPuW9ufX/lR2o2WuDF1Xw8q6HSE1jMZQhc..W",
+      "password": "$2a$10$ClJxn3K313CrhmMCRUw4nO0bah8R0ARPazJjRYEbiaQEVMp6QcoVa",
       "userName": "顧念",
       "isCreator": true,
       "isAdmin": true,
-      "shoppingCar": [],
+      "shoppingCar": [
+        {
+          "goodId": 8,
+          "num": "1",
+          "style": "隨機"
+        }
+      ],
       "saveArticles": {
         "worksId": [
           2,
@@ -42,9 +48,7 @@
         ],
         "articlesId": []
       },
-      "boughtArticles": [
-        1
-      ],
+      "boughtArticles": [],
       "phoneNumber": "0972198312",
       "barcode": "/2edcdWQ",
       "creditCard": {
@@ -318,7 +322,7 @@
   "articles": [
     {
       "saveNum": "10",
-      "scanNum": 38,
+      "scanNum": 39,
       "img": [
         "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80",
         "https://images.unsplash.com/photo-1630191631464-24a005b8cfda?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=581&amp;q=80"
@@ -333,7 +337,7 @@
     },
     {
       "saveNum": 6,
-      "scanNum": 20,
+      "scanNum": 22,
       "img": [],
       "content": "<p><span style=\"font-size: 15px;\">最適合初學者的毛線：貝碧嘉、娃娃紗、四股牛奶棉等等</span></p><p style=\"text-align: start;\">毛線的種類有很多，如果你想找價格較便宜而且專門用來織娃娃的毛線，以上三種都可以考慮。要注意鉤針和線材適不適合，太粗太細不僅難鉤而且成品也不好看。編織初學者建議初期選擇<strong> 2~4mm </strong>左右的線材。</p><p style=\"text-align: start;\">適合初學者使用的毛線特徵是看起來條理分明、完成後的鎖針針目清楚可辨；這種毛線會讓你更好數針。另外小提醒想買到便宜一點的毛線，比價時要注意「重量」也就是克數是否划算，不能只看單價做決定喔：）</p><h3 style=\"text-align: start; line-height: 1.5;\"><span style=\"font-size: 19px;\">編織初學者的地雷毛線</span></h3><p><span style=\"color: rgb(31, 7, 7); background-color: rgb(255, 255, 255);\">太細、毛很多的毛線比較不建議一開始就用。想像你現在正在努力一針一針織，但每一針看起來都好小或很難分辨出來，這樣實在鉤得很累阿！如果你還在摸索階段的話，不如還是選上面建議的毛線吧</span></p>",
       "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
@@ -345,11 +349,12 @@
     },
     {
       "tag": "針法介紹",
-      "cover": "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true",
+      "cover": "https://ci.xiaohongshu.com/80ac0c36-a948-d1a7-35dd-03e74a71275a?imageView2/2/w/540/format/jpg",
       "title": "鉤針的常見符號",
-      "content": "<p><span style='font-size: 19px;'>鉤針常用符號:</span></p><table style='width: auto;'><tbody><tr><th colSpan='1' rowSpan='1' width='91'>符號</th><th colSpan='1' rowSpan='1' width='150'>說明</th></tr><tr><td colSpan='1' rowSpan='1' width='auto'>X</td><td colSpan='1' rowSpan='1' width='auto'>短針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>V</td><td colSpan='1' rowSpan='1' width='auto'>加針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>A</td><td colSpan='1' rowSpan='1' width='auto'>減針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>T</td><td colSpan='1' rowSpan='1' width='auto'>中長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>F</td><td colSpan='1' rowSpan='1' width='auto'>長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>E</td><td colSpan='1' rowSpan='1' width='auto'>長長針</td></tr><tr><td colSpan='1' rowSpan='1' width='auto'>W</td><td colSpan='1' rowSpan='1' width='auto'>一針鉤三針短針</td></tr></tbody></table><p>範例:</p><p>(X,V)6 : 一針短針一針加針,循環6次,總共18針</p><p>(2X,V)6 : 一針分別鉤2個短針,一針加針,循環6次,總共24針</p><p>以此類推...</p>",
+      "content": "<p><span style=\"font-size: 19px;\">鉤針常用符號:</span></p><table style=\"width: auto;\"><tbody><tr><th colSpan=\"1\" rowSpan=\"1\" width=\"91\">符號</th><th colSpan=\"1\" rowSpan=\"1\" width=\"150\">說明</th></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">X</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">短針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">V</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">加針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">A</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">減針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">T</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">中長針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">F</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">長針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">E</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">長長針</td></tr><tr><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">W</td><td colSpan=\"1\" rowSpan=\"1\" width=\"auto\">一針鉤三針短針</td></tr></tbody></table><p>範例:</p><p>(X,V)6 : 一針短針一針加針,循環6次,總共18針</p><p>(2X,V)6 : 一針分別鉤2個短針,一針加針,循環6次,總共24針</p><p>以此類推...</p><p><br></p><p>總圖表:</p><p><img src=\"https://ci.xiaohongshu.com/80ac0c36-a948-d1a7-35dd-03e74a71275a?imageView2/2/w/540/format/jpg\" alt=\"鉤針字母符號表\" data-href=\"https://ci.xiaohongshu.com/80ac0c36-a948-d1a7-35dd-03e74a71275a?imageView2/2/w/540/format/jpg\" style=\"\"/></p>",
       "img": [
-        "https://github.com/panduola666/2022JS-/blob/main/public/images/cover.jpg?raw=true"
+        "https://ci.xiaohongshu.com/80ac0c36-a948-d1a7-35dd-03e74a71275a?imageView2/2/w/540/format/jpg",
+        "https://ci.xiaohongshu.com/80ac0c36-a948-d1a7-35dd-03e74a71275a?imageView2/2/w/540/format/jpg"
       ],
       "saveNum": 20,
       "scanNum": 605,
@@ -361,7 +366,7 @@
   "works": [
     {
       "saveNum": 113,
-      "scanNum": 47,
+      "scanNum": 51,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/cakeBag.jpg?raw=true"
@@ -403,8 +408,8 @@
             "timer": 1670097245091
           },
           "A": {
-            "content": "可以在鉤棗形針的時候鉤比較多針,不過建議不要加太多會不好看\n",
-            "timer": 1670097369329
+            "content": "可以在鉤棗形針的時候鉤比較多針,不過建議不要加太多會不好看",
+            "timer": 1670339493640
           }
         }
       ],
@@ -450,7 +455,7 @@
       "id": 2
     },
     {
-      "saveNum": 16,
+      "saveNum": 17,
       "scanNum": 66,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/scarf-2.jpg?raw=true",
@@ -475,7 +480,7 @@
     },
     {
       "saveNum": 21,
-      "scanNum": 43,
+      "scanNum": 44,
       "img": [
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true",
         "https://github.com/panduola666/2022JS-/blob/main/public/images/pig.jpg?raw=true"

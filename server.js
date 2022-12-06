@@ -73,5 +73,5 @@ app.get('/admin', function (req, res) {
 });
 
 app.listen(PORT, () => {
-    console.log(`server started on port ${PORT}`);
+    console.log(`http://127.0.0.1:${PORT}`);
   });

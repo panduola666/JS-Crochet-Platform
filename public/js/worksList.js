@@ -1,7 +1,6 @@
 /**
  * 完成
  */
-
 const tagList = document.querySelectorAll('.tagList > li');
 const sortBTN = document.querySelectorAll('.sortBTN > button');
 const addArticleBTN = document.querySelector('.addArticle');

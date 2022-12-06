@@ -1,6 +1,6 @@
 const needReviewedTable = document.querySelector('.needReviewedTable');
 const finishReviewedTable = document.querySelector('.finishReviewedTable');
-let worksData
+let worksData;
 adminNav.addEventListener('click', (e) => {
   if (e.target.textContent === '材料包審核') {
     axios.get(`${baseUrl}/works`)
@@ -53,7 +53,7 @@ function needReviewedOperate () {
               if (getGoods.data[i].workId === newData.workId && getGoods.data[i].userId === newData.userId && !getGoods.data[i].isClose) {
                 axios.patch(`${baseUrl}/goods/${i + 1}`, {
                   isClose: true
-                })
+                });
                 break;
               };
             };
@@ -86,7 +86,7 @@ function reasonChange () {
       const res = await axios.get(`${baseUrl}/works/${input.dataset.id}`);
       const isSell = res.data.isSell;
       isSell.reason = input.value;
-      const patchRes = await axios.patch(`${baseUrl}/works/${input.dataset.id}`,{isSell});
+      await axios.patch(`${baseUrl}/works/${input.dataset.id}`, { isSell });
       Swal.fire({
         icon: 'success',
         title: '當前原因修改完成'
@@ -153,7 +153,7 @@ async function isSellChange (id, auditResults, auditReason) {
   const isSell = res.data.isSell;
   isSell.canSell = auditResults;
   isSell.reason = auditReason;
-  return axios.patch(`${baseUrl}/works/${id}`,{
+  return axios.patch(`${baseUrl}/works/${id}`, {
     isSell
   });
 };

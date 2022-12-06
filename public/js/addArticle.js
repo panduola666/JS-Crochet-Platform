@@ -36,6 +36,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
   .then(res => {
     userData = res.data;
     isSell.children[1].style.display = userData.isCreator ? 'block' : 'none';
+
     // 編輯原有文章
     if (localStorage.getItem('works')) {
       axios.get(`${baseUrl}/works/${localStorage.getItem('works')}`)
@@ -87,6 +88,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
       newArticle.title = contentTitle.value;
       newArticle.tag = localStorage.getItem('tagType');
     }
+
     chooseConfig();
     workSell();
     tableOperate();
@@ -100,6 +102,7 @@ function chooseConfig () {
   // 分類
   articleType.addEventListener('click', (e) => {
     articleType.previousElementSibling.style.color = '#1F0707';
+
     if (e.target.nodeName !== 'DIV') {
       localStorage.setItem('articleType', e.target.value);
       noSell.click();
@@ -108,6 +111,7 @@ function chooseConfig () {
     tagTypeInput.forEach(input => {
       input.checked = false;
     });
+
     // 標籤篩選
     if (e.target.value === 'works') {
       tagTypeInput.forEach(input => {
@@ -116,7 +120,6 @@ function chooseConfig () {
       for (let i = tagTypeInput.length - 1; i >= tagTypeInput.length - 3; i--) {
         tagTypeInput[i].disabled = true;
       }
-
       needSell.disabled = false;
     } else if (e.target.value === 'articles') {
       tagTypeInput.forEach(input => {
@@ -128,6 +131,7 @@ function chooseConfig () {
       needSell.disabled = true;
     }
   });
+
   // 標籤
   tagType.addEventListener('click', (e) => {
     if (e.target.nodeName !== 'DIV') {
@@ -135,10 +139,10 @@ function chooseConfig () {
       if (e.target.value === undefined) {
         return;
       }
-      
       localStorage.setItem('tagType', e.target.value);
     }
   });
+
   // 販售選擇
   isSell.addEventListener('click', (e) => {
     if (e.target.nodeName !== 'DIV') {
@@ -153,18 +157,19 @@ function chooseConfig () {
       const sellByInput = document.querySelectorAll('.sellBy input[type=radio]');
       sellByInput.forEach(input => input.checked = false );
       addContent.style.display = 'block';
-
     } else {
       addContent.style.display = 'none';
     }
     if (e.target.value === '否') localStorage.removeItem('sellMethod');
   });
+
   addContent.addEventListener('click', (e) => {
     isSell.previousElementSibling.style.color = '#1F0707';
     if (e.target.getAttribute('name') === 'sellSelf') {
       localStorage.setItem('sellMethod', e.target.value);
     }
   });
+
   choose.forEach(label => {
     if (label.children[0].value === localStorage.getItem('articleType')) label.children[0].click();
     if (label.children[0].value === localStorage.getItem('tagType')) label.children[0].click();
@@ -256,7 +261,6 @@ postArticleBtn.addEventListener('click', () => {
     newArticle['q&a'] = newArticle['q&a'] ? newArticle['q&a'] : [];
     if (localStorage.getItem('sellMethod') === '我有自己的販售平台:') {
       newArticle.isSell = sellSelfUrl.value;
-
     } else if (localStorage.getItem('sellMethod') === '我需要委託該平台販售:') {
       isSellInfo.title = contentTitle.value;
       isSellInfo.price = sellPrice.value;
@@ -303,7 +307,6 @@ postArticleBtn.addEventListener('click', () => {
           location.href = '/success';
         });
     }, 500);
-    return;
   } else if (localStorage.getItem('articles')) {
     postArticleDelay = setTimeout(() => {
       postArticleBtn.disabled = false;
@@ -317,7 +320,6 @@ postArticleBtn.addEventListener('click', () => {
           location.href = '/success';
         });
     }, 500);
-    return;
   } else {
     // 新文章
     postArticleDelay = setTimeout(() => {
@@ -331,7 +333,6 @@ postArticleBtn.addEventListener('click', () => {
           location.href = '/success';
         });
     }, 500);
-    return;
   }
 });
 

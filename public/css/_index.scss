@@ -227,6 +227,8 @@
         text-align: center;
         &:hover{
             font-weight: 600;
+            transform: translateY(-20px);
+
         }
         @media (max-width:768px) {
             transform: translateX(-25vw);

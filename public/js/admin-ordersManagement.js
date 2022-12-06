@@ -7,7 +7,7 @@ let ordersData;
 let goodsData;
 adminNav.addEventListener('click', (e) => {
   if (e.target.textContent === '訂單管理') {
-    Promise.all([axios.get(`${baseUrl}/orders`) , axios.get(`${baseUrl}/goods`)])
+    Promise.all([axios.get(`${baseUrl}/orders`), axios.get(`${baseUrl}/goods`)])
       .then(res => {
         ordersData = res[0].data;
         goodsData = res[1].data;
@@ -17,7 +17,7 @@ adminNav.addEventListener('click', (e) => {
 });
 // 訂單詳情
 searchOrderId.addEventListener('click', () => {
-  const thisData = ordersData.filter(item=>item.id == needSearchId.value);
+  const thisData = ordersData.filter(item => Number(item.id) === Number(needSearchId.value));
   if (!needSearchId.value) {
     searchOrderTable.innerHTML = `<tr>
     <td class="textHidden" colspan="3">請輸入要查詢的訂單編號</td>
@@ -70,13 +70,9 @@ function show (good, bought) {
   const goodsMaterial = [];
   const text = [];
   if (good.type === '材料包') {
-    goodsMaterial.push(...good.materials)
+    goodsMaterial.push(...good.materials);
     goodsMaterial.forEach(item => {
-      if (isNaN(parseInt(item[2]))) {
-        item[2];
-      } else {
-        item[2] = parseInt(item[2]) * parseInt(bought.num);
-      };
+      item[2] = isNaN(parseInt(item[2])) ? item[2] : parseInt(item[2]) * parseInt(bought.num);
     });
     const obj = goodsMaterial.reduce((obj, item) => {
       obj[item[0]] ? obj[item[0]] += `${item[1]}*${item[2]}  ` : obj[item[0]] = `${item[1]}*${item[2]}  `;
@@ -112,7 +108,7 @@ pendingOrders.addEventListener('click', (e) => {
     if (e.target.checked) tallyTime = new Date().getTime();
     axios.patch(`${baseUrl}/orders/${e.target.dataset.id}`, {
       isTally: e.target.checked,
-      tallyTime: tallyTime
+      tallyTime
     });
   };
   if (e.target.className === 'pointer') {
@@ -144,8 +140,8 @@ function renderOrders () {
             <td><img src="https://github.com/panduola666/2022JS-/blob/main/public/images/Vector.png?raw=true" alt="修改" class="pointer"></td>
         </tr>`
       );
-    }else{
-        completedStr.push(
+    } else {
+      completedStr.push(
             `<tr>
             <td>${item.id}</td>
             <td>${item.state}</td>
@@ -156,7 +152,7 @@ function renderOrders () {
             </td>
             <td><input type="text" value="${item.toShop.sendNumber}" disabled></td>
             </tr>`
-        );
+      );
     };
   });
   pendingOrders.innerHTML = pendingStr.join('');
@@ -191,12 +187,12 @@ function orderStateChange () {
       let finishTime = '';
       if (state.value !== '待處理') finishTime = new Date().getTime();
       orderFinish(state, thisInput, thisBuyerInfo, finishTime)
-      .then(()=>{
-        Swal.fire({
-          icon: 'success',
-          title: '修改成功'
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: '修改成功'
+          });
         });
-      });
     });
   });
 };
@@ -211,7 +207,7 @@ async function orderFinish (state, thisInput, thisBuyerInfo, finishTime) {
       sendNumber: thisInput.value
     }
   };
-  const res = await axios.patch(`${baseUrl}/orders/${state.dataset.id}`, data);
+  await axios.patch(`${baseUrl}/orders/${state.dataset.id}`, data);
   const orders = await axios.get(`${baseUrl}/orders`);
   ordersData = orders.data;
   renderOrders();
@@ -220,16 +216,16 @@ async function orderFinish (state, thisInput, thisBuyerInfo, finishTime) {
   const thisData = await axios.get(`${baseUrl}/orders/${state.dataset.id}`);
   const thisSellNum = thisData.data.boughtGoods.reduce((obj, item) => {
     obj[item.goodId] ? obj[item.goodId] += Number(item.num) : obj[item.goodId] = Number(item.num);
-    return obj
+    return obj;
   }, {});
   for (const key in thisSellNum) {
     axios.get(`${baseUrl}/goods/${key}`)
       .then(async res => {
         const sellNum = res.data.sellNum + thisSellNum[key];
-        await axios.patch(`${baseUrl}/goods/${key}`,{sellNum})
+        await axios.patch(`${baseUrl}/goods/${key}`, { sellNum });
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   };
 };

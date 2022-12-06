@@ -36,10 +36,14 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=article
         } else if (e.target.textContent === '刪除') {
           if (articleId.dataset.work) {
             axios.delete(`${baseUrl}/works/${articleId.dataset.work}`)
-              .then(() => location.reload());
+              .then(() => {
+                articleId.remove();
+              });
           } else if (articleId.dataset.article) {
             axios.delete(`${baseUrl}/articles/${articleId.dataset.article}`)
-              .then(() => location.reload());
+              .then(() => {
+                articleId.remove();
+              });
           };
         };
       });
@@ -78,11 +82,10 @@ function worksInit (works) {
             <img src="${work.cover}" alt="${work.title}" class="articleImg col col-md-3 d-none d-md-block">
         </article>
         <div class="articleBTN">
-            <button type="button" class="active" data-id="${work.id}">待回應( ${needReply(work['q&a']).length} )</button>
+            <button type="button" data-id="${work.id}">待回應( ${needReply(work['q&a']).length} )</button>
             <button type="button" data-id="${work.id}">已回應( ${replied(work['q&a']).length} )</button>
         </div>
         <ul class="myArticleQA">
-        ${renderQA(needReply(work['q&a']))}
         </ul>
     </div>`);
   });
@@ -108,11 +111,11 @@ function renderQA (qaData) {
 };
 // 信息過濾
 function needReply (qaData) {
-  const needReply = qaData.filter(item => item.A.content === '');
+  const needReply = qaData.filter(item => item.A.content.trim() === '');
   return needReply;
 };
 function replied (qaData) {
-  const replied = qaData.filter(item => item.A.content !== '');
+  const replied = qaData.filter(item => item.A.content.trim() !== '');
   return replied;
 };
 // QA回應切換
@@ -186,7 +189,11 @@ function textChange () {
               'q&a': res
             });
           })
-          .then(() => location.reload());
+          .then(() => axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=works`, headers))
+          .then(res => {
+            worksInit(res.data.works);
+            qaInit(res.data.works);
+          });
       };
     });
     if (textarea.value) {

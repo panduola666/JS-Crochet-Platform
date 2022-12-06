@@ -9,7 +9,7 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
     userData = res.data;
     mySaveInit();
   })
-  .catch(() => {
+  .catch(err => {
     if (err.request.status === 403) {
       document.location.href = `/user/${localStorage.getItem('userId')}`;
     } else if (err.request.status === 401) {

@@ -1,3 +1,4 @@
+
 /**
  * 欠常見問題
  */
@@ -10,6 +11,16 @@ const searchBtn = document.querySelector('.searchBtn');
 const searchContent = document.querySelector('.searchContent');
 const userMore = document.querySelector('.userMore');
 const userMoreHref = document.querySelector('.userMoreHref');
+const loading = document.querySelector('.loading');
+// loading動畫
+setTimeout(() => {
+  loading.style.opacity = '0';
+}, 2500);
+setTimeout(() => {
+  loading.style.display = 'none';
+  document.querySelector('body').style.overflow = 'auto';
+}, 3500);
+
 // 返回頂部
 toTopShow();
 toTop.addEventListener('click', () => {
@@ -56,7 +67,7 @@ if (localStorage.getItem('userId')) {
       if (res.data.isAdmin) {
         goToAdmin.style.display = 'block';
         moreHref[0].style.display = 'block';
-        goToAdmin.addEventListener('click',() => window.location.href= '/admin' );
+        goToAdmin.addEventListener('click', () => window.location.href= '/admin');
       } else {
         goToAdmin.style.display = 'none';
         moreHref[0].style.display = 'none';
@@ -87,10 +98,10 @@ if (localStorage.getItem('userId')) {
         });
     }
   });
-  userMore.addEventListener('mouseenter',()=>{
+  userMore.addEventListener('mouseenter', () => {
     userMoreHref.style.display = 'block';
   });
-  userMore.addEventListener('mouseleave',()=>{
+  userMore.addEventListener('mouseleave', () => {
     userMoreHref.style.display = 'none';
   });
 } else {

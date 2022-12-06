@@ -12,6 +12,7 @@ const newGoodsName = document.querySelector('#newGoodsName');
 const newGoodsType = document.querySelector('#newGoodsType');
 const newGoodsColor = document.querySelector('#newGoodsColor');
 const goodsPrice = document.querySelector('#goodsPrice');
+
 /**
  * 新增 C3 銷量 圖表
  */
@@ -19,12 +20,11 @@ const goodsPrice = document.querySelector('#goodsPrice');
 let GoodsData;
 let recommendNum = 0;
 init();
-adminNav.addEventListener('click',(e)=>{
+adminNav.addEventListener('click', (e) => {
   if (e.target.textContent === '商品管理') {
     init();
   };
 });
-
 
 // 全部功能啟用
 function init () {
@@ -55,8 +55,8 @@ function filterChange () {
     if (filterGoods.value === '全部分類') {
       renderIInit(GoodsData);
     } else {
-      let filterData =  GoodsData.filter(item => item.type === filterGoods.value);
-      renderIInit(filterData)
+      const filterData = GoodsData.filter(item => item.type === filterGoods.value);
+      renderIInit(filterData);
     };
   });
 }
@@ -67,7 +67,7 @@ function renderIInit (data) {
   const goodsNameStr = ['<option value="" selected disabled hidden>商品種類</option>'];
   const goodsTypeStr = ['<option value="" selected disabled hidden>請選擇分類</option>'];
   data.forEach(item => {
-    if(item.isClose) return
+    if (item.isClose) return;
     goodsTableStr.push(
         `<tr>
             <td>${item.title.split('-')[0]}</td>
@@ -104,6 +104,7 @@ function renderC3 () {
     return obj;
   }, {});
   const newKeys = Object.keys(newData).map(item => item.length > 8 ? `${item.substring(0, 6)}...` : item);
+
   const commodityChart = c3.generate({
     size: {
       height: Object.keys(newData).length * 40
@@ -153,22 +154,22 @@ function renderC3 () {
 
 // 商品列表操作
 function goodOperation () {
-  goodsTable.addEventListener('click', (e)=>{
+  goodsTable.addEventListener('click', (e) => {
     // 刪除商品
     if (e.target.classList.contains('deleteGoods')) {
       deleteGoodOperation(e.target.dataset.id)
-      .then(()=>{
-        Swal.fire({
-          icon: 'success',
-          title: '刪除成功'
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: '刪除成功'
+          });
         });
-      })
       return;
     };
     // 編輯商品
     if (e.target.classList.contains('editor')) {
       addGoods.click();
-      localStorage.setItem('editorId',e.target.dataset.id);
+      localStorage.setItem('editorId', e.target.dataset.id);
       axios.get(`${baseUrl}/goods/${e.target.dataset.id}`)
         .then(res => {
           const data = res.data;
@@ -219,14 +220,14 @@ function dialogInit () {
   const newColorBtn = document.querySelector('.newColorBtn');
   // 新增名稱
   newGoodsNameBtn.addEventListener('click', () => {
-    if(newGoodsName.value.trim() === '') return;
+    if (newGoodsName.value.trim() === '') return;
     goodsName.innerHTML += `<option value="${newGoodsName.value}">${newGoodsName.value}</option>`;
     goodsName.value = newGoodsName.value;
     newGoodsName.value = '';
   });
   // 新增分類
   newGoodsTypeBtn.addEventListener('click', () => {
-    if(newGoodsType.value.trim() === '') return;
+    if (newGoodsType.value.trim() === '') return;
     goodsType.innerHTML += `<option value="${newGoodsType.value}">${newGoodsType.value}</option>`;
     goodsType.value = newGoodsType.value;
     newGoodsType.value = '';
@@ -256,7 +257,7 @@ function dialogInit () {
     };
   });
   // 封面上傳
-  goodsCoverBtn.addEventListener('click',(e)=>{
+  goodsCoverBtn.addEventListener('click', (e) => {
     e.preventDefault();
     if (!/^http/.test(goodsCoverBtn.previousElementSibling.value) || goodsCoverBtn.previousElementSibling.value.includes('base64')) {
       Swal.fire({
@@ -299,7 +300,7 @@ function dialogOperation () {
 
 // 彈跳窗口-添加新商品
 function addNewGoods () {
-  addGoodsData.addEventListener('click',()=>{
+  addGoodsData.addEventListener('click', () => {
     // 表單判斷
     if (goodsName.value === '') {
       goodsName.focus();
@@ -329,7 +330,7 @@ function addNewGoods () {
           console.log(err);
         });
     } else {
-      axios.post(`${baseUrl}/goods`,obj)
+      axios.post(`${baseUrl}/goods`, obj)
         .then(() => {
           goodFinishAdd();
         });
@@ -350,22 +351,23 @@ async function goodFinishAdd () {
 // 刪除商品
 async function deleteGoodOperation (id) {
   try {
-    const change = await axios.patch(`${baseUrl}/goods/${id}`,{
+    const change = await axios.patch(`${baseUrl}/goods/${id}`, {
       isClose: true,
       isRecommend: false
     });
     if (change.data.workId) {
       const work = await axios.get(`${baseUrl}/works/${change.data.workId}`);
       const isSell = work.data.isSell;
+      console.log(isSell);
       isSell.canSell = '已下架';
       isSell.reason = '此商品已下架';
-      await axios.patch(`${baseUrl}/works/${work.data.id}`,{isSell});
+      const a = await axios.patch(`${baseUrl}/works/${work.data.id}`, { isSell });
+      console.log(a);
     };
-    const res = await  axios.get(`${baseUrl}/goods`);
+    const res = await axios.get(`${baseUrl}/goods`);
     GoodsData = res.data;
     renderIInit(GoodsData);
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
   };
 };

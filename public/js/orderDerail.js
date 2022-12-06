@@ -66,9 +66,7 @@ if (localStorage.getItem('userId')) {
     <p>訂單金額:<span class="primaryColor h3Size">$${orderData.totalPrice}</span></p>
   </div>`;
     })
-    .catch((err) => {
-      clearLogin();
-    });
+    .catch(() => clearLogin());
 } else {
   // 未登入
   Swal.fire({

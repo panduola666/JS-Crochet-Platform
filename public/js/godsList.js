@@ -43,10 +43,10 @@ function pagination (page, limit, start) {
 
 function articleInit (page, limit, start) {
   const newData = data.filter(item => !item.isClose);
-  const sliceData = newData.slice(start , limit*page);
+  const sliceData = newData.slice(start, limit * page);
   const str = [];
   sliceData.forEach(item => {
-    str.push(` <li class="card col-4" data-id="${item.id}">
+    str.push(` <li class="card col-6 col-md-4" data-id="${item.id}">
     <img src="${item.cover}" class="card-img-top pointer" alt="${item.title}">
     <div class="card-body">
       <h1 class="textHidden-2">${item.title}</h1>
@@ -68,29 +68,29 @@ function articleInit (page, limit, start) {
 function filterArticles (page, limit, start) {
   sortBTN.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      
       if (e.target.textContent === '綜合') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => a.id - b.id);
         articleInit(page, limit, start);
+      };
 
-      } else if (e.target.textContent === '推薦') {
+      if (e.target.textContent === '推薦') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => b.isRecommend - a.isRecommend);
         articleInit(page, limit, start);
+      };
 
-      } else if (e.target.textContent === '熱門') {
+      if (e.target.textContent === '熱門') {
         sortBTN.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = data.sort((a, b) => b.sellNum - a.sellNum);
         articleInit(page, limit, start);
-
-      }
+      };
     });
   });
-}
+};
 
 // 文章分類
 function typeArticles (total, page, limit, start) {
@@ -101,13 +101,11 @@ function typeArticles (total, page, limit, start) {
         e.target.classList.add('active');
         data = total.filter(item => item);
         articleInit(page, limit, start);
-        
       } else if (e.target.textContent) {
         tagList.forEach(item => item.classList.remove('active'));
         e.target.classList.add('active');
         data = total.filter(item => item.type === e.target.textContent);
         articleInit(page, limit, start);
-
       }
     });
   });

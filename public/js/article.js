@@ -25,9 +25,9 @@ if (localStorage.getItem('userId')) {
     .then(res => {
       if (nowHref[nowHref.length - 2] === 'works') {
         if (res.data.saveArticles.worksId.includes(Number(nowHref[nowHref.length - 1]))) {
-          saveIcons.children[0].setAttribute('d',like);
+          saveIcons.children[0].setAttribute('d', like);
         } else {
-          saveIcons.children[0].setAttribute('d',normal);
+          saveIcons.children[0].setAttribute('d', normal);
         };
       } else if (nowHref[nowHref.length - 2] === 'articles') {
         if (res.data.saveArticles.articlesId.includes(Number(nowHref[nowHref.length - 1]))) {

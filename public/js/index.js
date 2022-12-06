@@ -38,10 +38,10 @@ axios.get(`${baseUrl}/articles`)
         readerArticles(title);
       });
     });
-    // 點擊數增加
+    // 文章點擊數增加
     articlesList.forEach(article => {
-      article.addEventListener('click',(e)=>{
-        articlesData.forEach(item=>{
+      article.addEventListener('click', (e) => {
+        articlesData.forEach(item => {
           if (item.title === article.children[1].children[0].textContent.trim()) {
             item.scanNum++;
             axios.patch(`${baseUrl}/articles/${item.id}`, {
@@ -133,10 +133,10 @@ function carousel () {
   worksChangeLis.forEach((li, index) => {
     li.addEventListener('mouseenter', () => {
       clearInterval(worksCarousel);
-        worksChangeLis.forEach(item => item.classList.remove('active'));
-        li.classList.add('active');
-        count = index;
-        renderWorksImg();
+      worksChangeLis.forEach(item => item.classList.remove('active'));
+      li.classList.add('active');
+      count = index;
+      renderWorksImg();
     });
     li.addEventListener('mouseleave', () => {
       worksCarousel = setInterval(renderWorksImg, 1500);
@@ -157,7 +157,7 @@ function changeHrefClick () {
           axios.patch(`${baseUrl}/works/${data.id}`, {
             scanNum: data.scanNum
           })
-          .then(res => window.location.href = `/article/works/${data.id}`);
+            .then(res => window.location.href = `/article/works/${data.id}`);
         };
       });
     });
@@ -166,23 +166,22 @@ function changeHrefClick () {
     top4WorksData.forEach(item => {
       if (item.title === worksImg.children[1].children[0].textContent.trim() && e.target.nodeName !== 'path' && e.target.nodeName !== 'svg' && e.target.nodeName !== 'rect') {
         item.scanNum++;
-        axios.patch(`${baseUrl}/works/${item.id}`,{
+        axios.patch(`${baseUrl}/works/${item.id}`, {
           scanNum: item.scanNum
         })
-        .then(res => window.location.href = `/article/works/${item.id}`);
+          .then(res => window.location.href = `/article/works/${item.id}`);
       };
     });
   });
 };
 
 // 熱門作品-收藏數據變更
-// 這邊很容易服務器崩潰
 function saveIconClick () {
   worksImg.addEventListener('click', (e) => {
     if (e.target.nodeName === 'svg' || e.target.nodeName === 'path' || e.target.nodeName === 'rect') {
       axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
         .then(res => {
-          if (saveIcon.children[0].getAttribute('d') == normal) {
+          if (saveIcon.children[0].getAttribute('d') === normal) {
             // 收藏
             saveIcon.children[0].setAttribute('d', like);
             // 文章收藏數
@@ -295,5 +294,4 @@ function goodsInit () {
   }
   goodsRecommend.innerHTML = str.join('');
   if (screen.width < 768 && recommendGoods.length < 2) goodsRecommend.querySelectorAll('li').forEach(li => li.style.transform = 'translateX(25vw)');
-  
 };

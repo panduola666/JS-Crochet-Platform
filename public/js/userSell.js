@@ -82,7 +82,7 @@ myGoodsBTN.addEventListener('click', async () => {
       return [
         document.getElementById('swal-input1').value,
         document.getElementById('swal-input2').value
-      ]
+      ];
     }
   });
 
@@ -93,14 +93,14 @@ myGoodsBTN.addEventListener('click', async () => {
         icon: 'error',
         title: '資料錯誤'
       });
-      return
+      return;
     };
     if (myGoodsBody.innerHTML === '') {
       Swal.fire({
         icon: 'error',
         title: '當前沒有收益可以提取'
       });
-      return
+      return;
     }
     const data = {
       userId: userData.id,
@@ -125,7 +125,7 @@ function transferMoney (data) {
         const transferNum = item.sellNum;
         axios.patch(`${baseUrl}/goods/${item.id}`, { transferNum });
       });
-      return axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=goods`, headers)
+      return axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=goods`, headers);
     })
     .then(res => {
       myGoodsData = res.data.goods;

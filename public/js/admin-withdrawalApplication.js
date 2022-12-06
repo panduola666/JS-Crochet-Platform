@@ -11,7 +11,7 @@ adminNav.addEventListener('click', (e) => {
         const states = pendingTransfer.querySelectorAll('.state');
         states.forEach(select => {
           select.addEventListener('change', async () => {
-            await axios.patch(`${baseUrl}/transfer/${select.dataset.id}`,{
+            await axios.patch(`${baseUrl}/transfer/${select.dataset.id}`, {
               state: select.value,
               finishTime: new Date().getTime()
             });
@@ -59,7 +59,7 @@ function renderTransfer (transferData) {
             <td class="small lhMore">
                 ${timer(item.finishTime)}
             </td>
-        </tr>`)
+        </tr>`);
     }
   });
   pendingTransfer.innerHTML = pending.join('');

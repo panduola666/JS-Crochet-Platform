@@ -15,7 +15,7 @@ axios.get(`${baseUrl}/goods/${location.href.split('/').pop()}`)
     goodPrice.textContent = `$${data.price}`;
     colorsInit();
     // 加入購物車
-    addShoppingCar.addEventListener('click',()=>{
+    addShoppingCar.addEventListener('click', () => {
       axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
         .then(res => {
           obj.goodId = data.id;
@@ -36,7 +36,6 @@ axios.get(`${baseUrl}/goods/${location.href.split('/').pop()}`)
             icon: 'success',
             title: '商品添加成功'
           });
-          document.querySelector('.swal2-confirm').addEventListener('click', () => location.reload());
         })
         .catch(() => {
           clearLogin();

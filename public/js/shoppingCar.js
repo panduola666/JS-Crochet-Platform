@@ -114,7 +114,11 @@ function deleteShoppingGoods () {
           userData.shoppingCar.splice(index, 1);
           axios.patch(`${baseUrl}/600/users/${userData.id}`, {
             shoppingCar: userData.shoppingCar
-          }, headers);
+          }, headers)
+            .then(res => {
+              const shoppingCarLength = res.data.shoppingCar.length;
+              shoppingCarIcon.nextElementSibling.textContent = shoppingCarLength > 9 ? '9+' : shoppingCarLength;
+            });
         };
       });
       addTotalPrice();

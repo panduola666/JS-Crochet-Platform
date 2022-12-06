@@ -410,6 +410,7 @@ body {
   background-image: url(../images/background.png);
   background-size: cover;
   color: #1F0707;
+  overflow: hidden;
 }
 
 .shoppingCart {
@@ -429,6 +430,84 @@ body {
   color: #fff;
 }
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  scroll-behavior: unset;
+  z-index: 999;
+  -webkit-animation: loadingBg 4s;
+          animation: loadingBg 4s;
+  transition: all 3s;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(254, 221, 221);
+}
+.loading svg {
+  position: absolute;
+  top: 15px;
+  left: 70px;
+  -webkit-animation: loading-text 4s;
+          animation: loading-text 4s;
+}
+
+.loading-box {
+  display: inline-block;
+  position: relative;
+  width: 450px;
+  height: 150px;
+}
+
+.loadingImg {
+  -webkit-animation: loadingImg 3s ease-in;
+          animation: loadingImg 3s ease-in;
+  height: 150px;
+  width: 450px;
+  opacity: 0.5;
+  background-image: url(/images/loading.png);
+  background-repeat: no-repeat;
+}
+
+@-webkit-keyframes loading-text {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 70px;
+  }
+}
+
+@keyframes loading-text {
+  from {
+    opacity: 0;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: 70px;
+  }
+}
+@-webkit-keyframes loadingImg {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 450px;
+  }
+}
+@keyframes loadingImg {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 450px;
+  }
+}
 .banner {
   position: relative;
   margin-bottom: 60px;
@@ -702,6 +781,7 @@ body {
 }
 .goodsRecommend li:hover {
   font-weight: 600;
+  transform: translateY(-20px);
 }
 @media (max-width: 768px) {
   .goodsRecommend li {
@@ -1160,6 +1240,7 @@ body {
   border: 1px solid #1F0707;
   width: 100%;
   border-radius: 8px;
+  overflow: hidden;
 }
 
 .actionBTN {
@@ -1171,7 +1252,7 @@ body {
   flex-shrink: 0;
   color: #1F0707;
   padding: 0.5rem 1rem;
-  border: 1px solid #FFBEBA;
+  border: 1px solid #FC7F79;
   border-radius: 8px;
   background-color: rgba(0, 0, 0, 0);
 }
@@ -1226,7 +1307,7 @@ img.articleImg {
   margin-bottom: -1px;
   padding: 0.5rem;
   width: 100%;
-  border: none;
+  border: 1px solid rgb(240, 240, 240);
   background-color: #FFBEBA;
 }
 .articleBTN button:hover {

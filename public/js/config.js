@@ -1,17 +1,17 @@
-// const baseUrl = 'http://127.0.0.1:3000';
-const baseUrl = 'https://js-json-data.onrender.com';
+const baseUrl = 'http://127.0.0.1:3000';
+// const baseUrl = 'https://js-json-data.onrender.com';
 const headers = {
-  headers:{
+  headers: {
     Authorization: localStorage.getItem('accessToken')
   }
 };
 // 時間戳格式
 function timer (ms) {
-  let times = new Date(ms);
-  let day = times.toLocaleDateString();
-  let h = times.getHours() < 10 ? `0${times.getHours()}` : times.getHours();
-  let m = times.getMinutes() < 10 ? `0${times.getMinutes()}` : times.getMinutes();
-  let s = times.getSeconds() < 10 ? `0${times.getSeconds()}` : times.getSeconds();
+  const times = new Date(ms);
+  const day = times.toLocaleDateString();
+  const h = times.getHours() < 10 ? `0${times.getHours()}` : times.getHours();
+  const m = times.getMinutes() < 10 ? `0${times.getMinutes()}` : times.getMinutes();
+  const s = times.getSeconds() < 10 ? `0${times.getSeconds()}` : times.getSeconds();
   return `${day.replace(/\//g, '-')} ${h}:${m}:${s}`;
 };
 

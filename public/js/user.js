@@ -140,24 +140,21 @@ baseDBList.forEach(li => {
   });
 });
 
-
-
-
 const register = {
   原密碼: {
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
   },
   新密碼: {
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
   },
   確認新密碼: {
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
@@ -166,8 +163,7 @@ const register = {
 // 修改密碼
 passwordChange.addEventListener('click', () => {
   const err = validate(passwordDB, register) || null;
-  
-  const passwordRegex = /[a-zA-Z0-9]{6,}/;
+
   if (passwordChange.textContent === '編輯') {
     // 編輯
     passwordChange.textContent = '確認';
@@ -179,7 +175,7 @@ passwordChange.addEventListener('click', () => {
     // 確認資料
     const text = [];
     for (const key in err) {
-      text.push(`<p>${err[key]}</p>`)
+      text.push(`<p>${err[key]}</p>`);
     };
     if (err) {
       Swal.fire({
@@ -212,15 +208,15 @@ passwordChange.addEventListener('click', () => {
             title: '修改失敗',
             text: '兩次密碼輸入不一致'
           });
-          return
+          return;
         };
-        if (pwInput[2].value ==='' || pwInput[1].value ===''){
+        if (pwInput[2].value === '' || pwInput[1].value === '') {
           Swal.fire({
             icon: 'error',
             title: '修改失敗',
             text: '新密碼不得為空'
           });
-          return
+          return;
         }
         try {
           await axios.patch(`${baseUrl}/600/users/${userDb.id}`, {
@@ -246,12 +242,12 @@ passwordChange.addEventListener('click', () => {
           clearLogin();
         };
       })
-      .catch(err => {
+      .catch(() => {
         // 密碼錯誤
         Swal.fire({
           icon: 'error',
           title: '原密碼錯誤'
         });
-      })
+      });
   };
 });

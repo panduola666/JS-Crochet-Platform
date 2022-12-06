@@ -43,7 +43,7 @@ const register = {
     presence: {
       message: '必填'
     },
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
@@ -52,7 +52,7 @@ const register = {
     presence: {
       message: '必填'
     },
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
@@ -65,7 +65,7 @@ registerBtn.addEventListener('click', () => {
   const err = validate(registerForm, register) || null;
   const text = [];
   for (const key in err) {
-    text.push(`<p>${err[key]}</p>`)
+    text.push(`<p>${err[key]}</p>`);
   };
   if (err) {
     Swal.fire({
@@ -73,7 +73,7 @@ registerBtn.addEventListener('click', () => {
       title: '註冊失敗',
       html: text.join('')
     });
-    return
+    return;
   }
   if (!err && registerPassword.value !== registerPasswordCheck.value) {
     Swal.fire({
@@ -81,7 +81,7 @@ registerBtn.addEventListener('click', () => {
       title: '註冊失敗',
       text: '兩者密碼不一致'
     });
-    return
+    return;
   }
   axios.post(`${baseUrl}/users`, {
     email: registerForm.帳號.value,
@@ -104,14 +104,27 @@ registerBtn.addEventListener('click', () => {
     }
   })
     .then(res => {
+      Swal.fire({
+        icon: 'success',
+        title: '註冊成功'
+      });
+      return axios.post(`${baseUrl}/login`, {
+        email: registerForm.帳號.value,
+        password: registerForm.密碼.value
+      });
+    })
+    .then(res => {
       registerForm.reset();
-      window.location.href = '/success';
+      loginSuccess(res.data);
+      setTimeout(() => {
+        location.href = `/user/${res.data.user.id}`;
+      }, 2000);
     })
     .catch(() => {
       localStorage.clear();
       Swal.fire({
         icon: 'error',
-        title: '註冊失敗!',
+        title: '註冊失敗',
         text: '此帳號已被使用'
       });
     });
@@ -131,7 +144,7 @@ const login = {
     presence: {
       message: '必填'
     },
-    length:{
+    length: {
       minimum: 6,
       message: '長度不可小於6'
     }
@@ -140,7 +153,7 @@ const login = {
     presence: {
       message: '必填'
     },
-    length:{
+    length: {
       is: 6,
       message: '為6個字元'
     }
@@ -151,7 +164,7 @@ loginBtn.addEventListener('click', () => {
   const err = validate(loginForm, login) || null;
   const text = [];
   for (const key in err) {
-    text.push(`<p>${err[key]}</p>`)
+    text.push(`<p>${err[key]}</p>`);
   };
   if (err) {
     Swal.fire({
@@ -160,7 +173,7 @@ loginBtn.addEventListener('click', () => {
       html: text.join('')
     });
     verifyImg.click();
-    return
+    return;
   };
   if (verifyText.value.toUpperCase() !== verifyImg.textContent.toUpperCase()) {
     Swal.fire({
@@ -168,7 +181,7 @@ loginBtn.addEventListener('click', () => {
       title: '驗證錯誤'
     });
     verifyImg.click();
-    return
+    return;
   };
 
   axios.post(`${baseUrl}/login`, {
@@ -176,9 +189,8 @@ loginBtn.addEventListener('click', () => {
     password: loginForm.密碼.value
   })
     .then(res => {
-      localStorage.setItem('accessToken', `Bearer ${res.data.accessToken}`);
-      localStorage.setItem('userId', res.data.user.id);
-      window.location.href = `/user/${res.data.user.id}`;
+      loginSuccess(res.data);
+      location.href = `/user/${res.data.user.id}`;
     })
     .catch(() => {
       localStorage.clear();
@@ -194,3 +206,8 @@ loginBtn.addEventListener('click', () => {
 window.addEventListener('change', (e) => {
   if (e.key === 'Enter') loginBtn.focus();
 });
+
+function loginSuccess (data) {
+  localStorage.setItem('accessToken', `Bearer ${data.accessToken}`);
+  localStorage.setItem('userId', data.user.id);
+};

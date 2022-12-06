@@ -164,15 +164,15 @@ async function getGoodsData (shoppingCar) {
 async function patchUser (shoppingCar) {
   const user = await axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers);
   const boughtArticles = user.data.boughtArticles;
-  shoppingCar.forEach(async item =>{
+  shoppingCar.forEach(async item => {
     const good = await axios.get(`${baseUrl}/goods/${item.goodId}`);
-    if(good.data.type === '材料包') {
+    if (good.data.type === '材料包') {
       boughtArticles.includes(good.data.workId) ? boughtArticles : boughtArticles.push(good.data.workId);
-      await axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`,{
+      await axios.patch(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, {
         boughtArticles,
-        shoppingCar:[]
+        shoppingCar: []
       }, headers);
-      location.href = `/shoppingFinish/${localStorage.getItem('userId')}`
+      location.href = `/shoppingFinish/${localStorage.getItem('userId')}`;
     }
-  })
-}
+  });
+};
