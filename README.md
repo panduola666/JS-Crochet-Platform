@@ -16,4 +16,5 @@ npm start
 
 ### 管理者帳號 提供試玩後台功能
 帳號: admin@gmail.com
+<br>
 密碼: 111111
