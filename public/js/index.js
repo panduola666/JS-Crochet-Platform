@@ -58,13 +58,6 @@ axios.get(`${baseUrl}/goods`)
   .then(res => {
     recommendGoods = res.data.filter(item => item.isRecommend);
     goodsInit();
-    // 推薦商品-左右切換
-    const goodsRecommendLi = goodsRecommend.querySelectorAll('li');
-    goodsRecommendLi.forEach(li => {
-      li.addEventListener('click', () => {
-        location.href = `/commodity/${li.dataset.id}`;
-      });
-    });
     goodsChangeLeft.addEventListener('click', () => {
       const first = recommendGoods.shift();
       recommendGoods.push(first);
@@ -293,5 +286,12 @@ function goodsInit () {
     </li>`);
   }
   goodsRecommend.innerHTML = str.join('');
+  // 點擊跳轉
+  const goodsRecommendLi = goodsRecommend.querySelectorAll('li');
+  goodsRecommendLi.forEach(li => {
+    li.addEventListener('click', () => {
+      location.href = `/commodity/${li.dataset.id}`;
+    });
+  });
   if (screen.width < 768 && recommendGoods.length < 2) goodsRecommend.querySelectorAll('li').forEach(li => li.style.transform = 'translateX(25vw)');
 };

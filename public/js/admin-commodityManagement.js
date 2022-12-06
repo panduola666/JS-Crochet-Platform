@@ -97,12 +97,11 @@ function renderIInit (data) {
 
 // c3圖表繪製
 function renderC3 () {
-  const newData = GoodsData.reduce((obj, item) => {
-    obj[item.title.split('-')[0]] ? 
-      obj[item.title.split('-')[0]] += item.sellNum :
-      obj[item.title.split('-')[0]] = item.sellNum;
-    return obj;
-  }, {});
+  const newData = {};
+  GoodsData.forEach(item => {
+    if (item.isClose) return;
+    newData[item.title.split('-')[0]] ? newData[item.title.split('-')[0]] += item.sellNum : newData[item.title.split('-')[0]] = item.sellNum;
+  });
   const newKeys = Object.keys(newData).map(item => item.length > 8 ? `${item.substring(0, 6)}...` : item);
 
   const commodityChart = c3.generate({

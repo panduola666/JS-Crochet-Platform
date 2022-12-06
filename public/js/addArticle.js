@@ -36,7 +36,6 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
   .then(res => {
     userData = res.data;
     isSell.children[1].style.display = userData.isCreator ? 'block' : 'none';
-
     // 編輯原有文章
     if (localStorage.getItem('works')) {
       axios.get(`${baseUrl}/works/${localStorage.getItem('works')}`)
@@ -80,14 +79,10 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}`, headers)
         })
         .catch(err => console.log(err));
     } else {
-      // 通用物件值
-      newArticle.userId = parseInt(localStorage.getItem('userId'));
-      newArticle.saveNum = 0;
-      newArticle.scanNum = 0;
-      newArticle.createDate = newArticle.createDate ? newArticle.createDate : new Date().getTime();
-      newArticle.title = contentTitle.value;
-      newArticle.tag = localStorage.getItem('tagType');
-    }
+      localStorage.removeItem('tagType');
+      localStorage.removeItem('isSell');
+      localStorage.removeItem('articleType');
+    };
 
     chooseConfig();
     workSell();
@@ -155,7 +150,7 @@ function chooseConfig () {
     }
     if (e.target.value === '是,我要販售材料包:') {
       const sellByInput = document.querySelectorAll('.sellBy input[type=radio]');
-      sellByInput.forEach(input => input.checked = false );
+      sellByInput.forEach(input => input.checked = false);
       addContent.style.display = 'block';
     } else {
       addContent.style.display = 'none';
@@ -206,10 +201,10 @@ function renderOption () {
   material.innerHTML = materialStr.join('');
 }
 
-// 未完成-編輯文章
+// 編輯文章
 postArticleBtn.addEventListener('click', () => {
 // 判斷表單
-  if (!contentTitle.value) {
+  if (!contentTitle.value.trim()) {
     contentTitle.focus();
     Swal.fire({
       icon: 'info',
@@ -291,6 +286,13 @@ postArticleBtn.addEventListener('click', () => {
     });
     return;
   };
+  // 通用項
+  newArticle.userId = parseInt(localStorage.getItem('userId'));
+  newArticle.saveNum = 0;
+  newArticle.scanNum = 0;
+  newArticle.createDate = newArticle.createDate ? newArticle.createDate : new Date().getTime();
+  newArticle.tag = localStorage.getItem('tagType');
+  newArticle.title = contentTitle.value.trim();
 
   postArticleBtn.disabled = true;
   clearTimeout(postArticleDelay);
@@ -298,26 +300,38 @@ postArticleBtn.addEventListener('click', () => {
     postArticleDelay = setTimeout(() => {
       postArticleBtn.disabled = false;
       axios.put(`${baseUrl}/works/${localStorage.getItem('works')}`, newArticle)
-        .then(() => {
+        .then((res) => {
           localStorage.removeItem('works');
           localStorage.removeItem('tagType');
           localStorage.removeItem('isSell');
           localStorage.removeItem('articleType');
           if (localStorage.getItem('sellMethod')) localStorage.removeItem('sellMethod');
-          location.href = '/success';
+          Swal.fire({
+            icon: 'success',
+            title: '編輯成功'
+          });
+          setTimeout(() => {
+            document.location.href = `/article/works/${res.data.id}`;
+          }, 2000);
         });
     }, 500);
   } else if (localStorage.getItem('articles')) {
     postArticleDelay = setTimeout(() => {
       postArticleBtn.disabled = false;
       axios.put(`${baseUrl}/articles/${localStorage.getItem('articles')}`, newArticle)
-        .then(() => {
+        .then((res) => {
           localStorage.removeItem('articles');
           localStorage.removeItem('tagType');
           localStorage.removeItem('isSell');
           localStorage.removeItem('articleType');
           if (localStorage.getItem('sellMethod')) localStorage.removeItem('sellMethod');
-          location.href = '/success';
+          Swal.fire({
+            icon: 'success',
+            title: '編輯成功'
+          });
+          setTimeout(() => {
+            document.location.href = `/article/articles/${res.data.id}`;
+          }, 2000);
         });
     }, 500);
   } else {
@@ -325,12 +339,18 @@ postArticleBtn.addEventListener('click', () => {
     postArticleDelay = setTimeout(() => {
       postArticleBtn.disabled = false;
       axios.post(`${baseUrl}/${localStorage.getItem('articleType')}`, newArticle)
-        .then(() => {
+        .then((res) => {
           localStorage.removeItem('tagType');
           localStorage.removeItem('isSell');
           localStorage.removeItem('articleType');
           if (localStorage.getItem('sellMethod')) localStorage.removeItem('sellMethod');
-          location.href = '/success';
+          Swal.fire({
+            icon: 'success',
+            title: '新增成功'
+          });
+          setTimeout(() => {
+            document.location.href = '/worksList';
+          }, 2000);
         });
     }, 500);
   }
@@ -341,7 +361,7 @@ function tableOperate () {
   // 新增材料
   let tableText = '';
   addMaterial.addEventListener('click', () => {
-    if (material.value === '') return;
+    if (material.value.trim() === '') return;
     tableText = `<tr>
         <td>${material.value} <span class="ms-3">${materialColor.value ? `(${materialColor.value})` : '(隨機)'}</span></td>
         <td>${materialNum.value}</td>

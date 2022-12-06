@@ -34,6 +34,10 @@ axios.get(`${baseUrl}/600/users/${localStorage.getItem('userId')}?_embed=article
             localData('articles', articleId.dataset.article);
           };
         } else if (e.target.textContent === '刪除') {
+          Swal.fire({
+            icon: 'success',
+            title: '刪除成功'
+          });
           if (articleId.dataset.work) {
             axios.delete(`${baseUrl}/works/${articleId.dataset.work}`)
               .then(() => {

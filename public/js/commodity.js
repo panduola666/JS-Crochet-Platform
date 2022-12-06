@@ -9,6 +9,7 @@ const obj = {};
 axios.get(`${baseUrl}/goods/${location.href.split('/').pop()}`)
   .then(res => {
     data = res.data;
+    document.title = `商品-${data.title.split('-')[0]}`;
     goodImg.setAttribute('src', data.cover);
     goodTitle.textContent = data.title;
     goodTitle.nextElementSibling.textContent = `銷量:${data.sellNum}`;
