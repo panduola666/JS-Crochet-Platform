@@ -446,12 +446,14 @@ body {
   height: 100%;
   background-color: rgb(254, 221, 221);
 }
-.loading svg {
-  position: absolute;
-  top: 15px;
-  left: 70px;
-  -webkit-animation: loading-text 4s;
-          animation: loading-text 4s;
+
+.simpleLoading {
+  display: none;
+}
+@media (max-width: 576px) {
+  .simpleLoading {
+    display: block;
+  }
 }
 
 .loading-box {
@@ -460,15 +462,29 @@ body {
   width: 450px;
   height: 150px;
 }
+@media (max-width: 576px) {
+  .loading-box {
+    display: none;
+  }
+}
+.loading-box svg {
+  position: absolute;
+  -webkit-animation: loading-text 4s;
+          animation: loading-text 4s;
+  width: 100%;
+  top: 20px;
+  left: 20%;
+}
 
 .loadingImg {
   -webkit-animation: loadingImg 3s ease-in;
           animation: loadingImg 3s ease-in;
   height: 150px;
-  width: 450px;
+  width: 100%;
   opacity: 0.5;
   background-image: url(/images/loading.png);
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @-webkit-keyframes loading-text {
@@ -497,7 +513,7 @@ body {
     width: 0px;
   }
   to {
-    width: 450px;
+    width: 100%;
   }
 }
 @keyframes loadingImg {
@@ -505,7 +521,7 @@ body {
     width: 0px;
   }
   to {
-    width: 450px;
+    width: 100%;
   }
 }
 .banner {

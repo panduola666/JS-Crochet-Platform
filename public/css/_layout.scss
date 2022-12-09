@@ -46,11 +46,11 @@ body{
     width: 100%;
     height: 100%;
     background-color: rgb(254, 221, 221);
-    svg {
-        position: absolute;
-        top: 15px;
-        left: 70px;
-        animation: loading-text 4s;
+}
+.simpleLoading{
+    display: none;
+    @media (max-width:576px) {
+        display: block;
     }
 }
 .loading-box {
@@ -58,14 +58,25 @@ body{
     position: relative;
     width: 450px;
     height: 150px;
+    @media (max-width:576px) {
+        display: none;
+    }
+    svg {
+        position: absolute;
+        animation: loading-text 4s;
+        width: 100%;
+        top: 20px;
+        left: 20%;
+    }
 }
 .loadingImg {
     animation: loadingImg 3s ease-in;
     height: 150px;
-    width: 450px;
+    width: 100%;
     opacity: .5;
     background-image: url(/images/loading.png);
     background-repeat: no-repeat;
+    background-size: cover;
 }
 @keyframes loading-text {
     from {
@@ -82,8 +93,7 @@ body{
     from {
         width: 0px;
     }
-
     to {
-        width: 450px;
+        width: 100%;
     }
 }
